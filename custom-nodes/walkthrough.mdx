@@ -17,13 +17,13 @@ After this walkthrough, dive into the details of [backend code](./backend/server
 
 ### Prerequisites
 
-- A working ComfyUI [installation](/installation/manual_install). For development, we recommend installing ComfyUI manually.
-- A working comfy-cli [installation](/comfy-cli/getting-started).
+- A working Hanzo Studio [installation](/installation/manual_install). For development, we recommend installing Hanzo Studio manually.
+- A working hanzo-cli [installation](/hanzo-cli/getting-started).
 
 ### Setting up 
 
 ```bash
-cd ComfyUI/custom_nodes
+cd Hanzo Studio/custom_nodes
 comfy node scaffold
 ```
 
@@ -33,11 +33,11 @@ After answering a few questions, you'll have a new directory set up.
  ~  % comfy node scaffold
 You've downloaded .cookiecutters/cookiecutter-comfy-extension before. Is it okay to delete and re-download it? [y/n] (y): y
   [1/9] full_name (): Comfy
-  [2/9] email (you@gmail.com): me@comfy.org
+  [2/9] email (you@gmail.com): me@hanzo.ai
   [3/9] github_username (your_github_username): comfy
   [4/9] project_name (My Custom Nodepack): FirstComfyNode
   [5/9] project_slug (firstcomfynode): 
-  [6/9] project_short_description (A collection of custom nodes for ComfyUI): 
+  [6/9] project_short_description (A collection of custom nodes for Hanzo Studio): 
   [7/9] version (0.0.1): 
   [8/9] Select open_source_license
     1 - GNU General Public License v3
@@ -111,7 +111,7 @@ us `[B,H,W,C]` with `B=1`: a single image.
 
 ### Register the node
 
-To make Comfy recognize the new node, it must be available at the package level. Modify the `NODE_CLASS_MAPPINGS` variable at the end of `src/nodes.py`. You must restart ComfyUI to see any changes.  
+To make Comfy recognize the new node, it must be available at the package level. Modify the `NODE_CLASS_MAPPINGS` variable at the end of `src/nodes.py`. You must restart Hanzo Studio to see any changes.  
 
 ```Python src/nodes.py
 
@@ -127,7 +127,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 }
 ```
 
-<Info>For a detailed explanation of how ComfyUI discovers and loads custom nodes, see the [node lifecycle documentation](/custom-nodes/backend/lifecycle).</Info>
+<Info>For a detailed explanation of how Hanzo Studio discovers and loads custom nodes, see the [node lifecycle documentation](/custom-nodes/backend/lifecycle).</Info>
 
 ## Add some options
 
@@ -209,7 +209,7 @@ Stop the Comfy server, start it again, reload the webpage, and run your workflow
 
 ### The complete example
 
-The complete example is available [here](https://gist.github.com/robinjhuang/fbf54b7715091c7b478724fc4dffbd03). You can download the example workflow [JSON file](https://github.com/Comfy-Org/docs/blob/main/public/workflow.json) or view it below:
+The complete example is available [here](https://gist.github.com/robinjhuang/fbf54b7715091c7b478724fc4dffbd03). You can download the example workflow [JSON file](https://github.com/hanzoui/docs/blob/main/public/workflow.json) or view it below:
 
 <div align="center">
   <img src="/images/firstnodeworkflow.png" alt="Image Selector Workflow" width="100%" />

@@ -2,7 +2,7 @@
 title: "Sidebar Tabs"
 ---
 
-The Sidebar Tabs API allows extensions to add custom tabs to the sidebar of the ComfyUI interface. This is useful for adding features that require persistent visibility and quick access.
+The Sidebar Tabs API allows extensions to add custom tabs to the sidebar of the Hanzo Studio interface. This is useful for adding features that require persistent visibility and quick access.
 
 ## Basic Usage
 
@@ -67,14 +67,14 @@ app.extensionManager.registerSidebarTab({
     notepad.style.marginBottom = '10px';
     
     // Load saved content if available
-    const savedContent = localStorage.getItem('comfyui-notes');
+    const savedContent = localStorage.getItem('hanzo-studio-notes');
     if (savedContent) {
       notepad.value = savedContent;
     }
     
     // Auto-save content
     notepad.addEventListener('input', () => {
-      localStorage.setItem('comfyui-notes', notepad.value);
+      localStorage.setItem('hanzo-studio-notes', notepad.value);
     });
     
     // Assemble the UI
@@ -129,7 +129,7 @@ app.extensionManager.registerSidebarTab({
 });
 ```
 
-For a real-world example of a React application integrated as a sidebar tab, check out the [ComfyUI-Copilot project on GitHub](https://github.com/AIDC-AI/ComfyUI-Copilot).
+For a real-world example of a React application integrated as a sidebar tab, check out the [Hanzo Studio-Copilot project on GitHub](https://github.com/AIDC-AI/Hanzo Studio-Copilot).
 
 ## Dynamic Content Updates
 

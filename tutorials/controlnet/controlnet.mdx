@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI ControlNet Usage Example"
-description: "This guide will introduce you to the basic concepts of ControlNet and demonstrate how to generate corresponding images in ComfyUI"
+title: "Hanzo Studio ControlNet Usage Example"
+description: "This guide will introduce you to the basic concepts of ControlNet and demonstrate how to generate corresponding images in Hanzo Studio"
 sidebarTitle: "ControlNet"
 ---
 
@@ -17,16 +17,16 @@ These conditioning constraints make image generation more controllable, allowing
 
 Before ControlNet, we could only rely on the model to generate images repeatedly until we were satisfied with the results, which involved a lot of randomness.
 
-![Images generated with random seeds in ComfyUI](/images/tutorial/controlnet/generated_with_random_seed.jpg)
+![Images generated with random seeds in Hanzo Studio](/images/tutorial/controlnet/generated_with_random_seed.jpg)
 
 With the advent of ControlNet, we can control image generation by introducing additional conditions. 
 For example, we can use a simple sketch to guide the image generation process, producing images that closely align with our sketch.
 
-![Sketch-controlled image generation in ComfyUI](/images/tutorial/controlnet/scribble_example.jpg)
+![Sketch-controlled image generation in Hanzo Studio](/images/tutorial/controlnet/scribble_example.jpg)
 
-In this example, we will guide you through installing and using ControlNet models in [ComfyUI](https://github.com/comfyanonymous/ComfyUI), and complete a sketch-controlled image generation example.
+In this example, we will guide you through installing and using ControlNet models in [Hanzo Studio](https://github.com/hanzoai/studio), and complete a sketch-controlled image generation example.
 
-![ComfyUI ControlNet Workflow](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/scribble_controlnet.png)
+![Hanzo Studio ControlNet Workflow](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/scribble_controlnet.png)
 
 <Tip>
 The workflows for other types of ControlNet V1.1 models are similar to this example. You only need to select the appropriate model and upload the corresponding reference image based on your needs.
@@ -36,32 +36,32 @@ The workflows for other types of ControlNet V1.1 models are similar to this exam
 
 Different types of ControlNet models typically require different types of reference images:
 
-![Reference Images](https://github.com/Fannovel16/comfyui_controlnet_aux/blob/main/examples/CNAuxBanner.jpg?raw=true)
+![Reference Images](https://github.com/Fannovel16/hanzo_studio_controlnet_aux/blob/main/examples/CNAuxBanner.jpg?raw=true)
 
-> Image source: [ComfyUI ControlNet aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+> Image source: [Hanzo Studio ControlNet aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux)
 
 Since the current **Comfy Core** nodes do not include all types of **preprocessors**, in the actual examples in this documentation, we will provide pre-processed images.
 However, in practical use, you may need to use custom nodes to preprocess images to meet the requirements of different ControlNet models. Below are some relevant custom nodes:
 
-- [ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet)
-- [ComfyUI ControlNet aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+- [Hanzo Studio-Advanced-ControlNet](https://github.com/Kosinkadink/Hanzo Studio-Advanced-ControlNet)
+- [Hanzo Studio ControlNet aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux)
 
-## ComfyUI ControlNet Workflow Example Explanation
+## Hanzo Studio ControlNet Workflow Example Explanation
 
 ### 1. ControlNet Workflow Assets
 
-Please download the workflow image below and drag it into ComfyUI to load the workflow:
+Please download the workflow image below and drag it into Hanzo Studio to load the workflow:
 
-![ComfyUI Workflow - ControlNet](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/scribble_controlnet.png)
+![Hanzo Studio Workflow - ControlNet](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/scribble_controlnet.png)
 
 <Tip>
-Images with workflow JSON in their metadata can be directly dragged into ComfyUI or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
-This image already includes download links for the corresponding models, and dragging it into ComfyUI will automatically prompt for downloads.
+Images with workflow JSON in their metadata can be directly dragged into Hanzo Studio or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
+This image already includes download links for the corresponding models, and dragging it into Hanzo Studio will automatically prompt for downloads.
 </Tip>
 
 Please download the image below, which we will use as input:
 
-![ComfyUI Sketch Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/scribble_input.png)
+![Hanzo Studio Sketch Image](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/scribble_input.png)
 
 ### 2. Manual Model Installation
 
@@ -71,10 +71,10 @@ If your network cannot successfully complete the automatic download of the corre
 
 - [dreamCreationVirtual3DECommerce_v10.safetensors](https://civitai.com/api/download/models/731340?type=Model&format=SafeTensor&size=full&fp=fp16)
 - [vae-ft-mse-840000-ema-pruned.safetensors](https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors?download=true)
-- [control_v11p_sd15_scribble_fp16.safetensors](https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_scribble_fp16.safetensors?download=true)
+- [control_v11p_sd15_scribble_fp16.safetensors](https://huggingface.co/hanzoai/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_scribble_fp16.safetensors?download=true)
 
 ```
-ComfyUI/
+Hanzo Studio/
 ├── models/
 │   ├── checkpoints/
 │   │   └── dreamCreationVirtual3DECommerce_v10.safetensors
@@ -90,7 +90,7 @@ In this example, you could also use the VAE model embedded in dreamCreationVirtu
 
 ### 3. Step-by-Step Workflow Execution
 
-![ComfyUI Workflow - ControlNet Flow Diagram](/images/tutorial/controlnet/flow_diagram_scribble.png)
+![Hanzo Studio Workflow - ControlNet Flow Diagram](/images/tutorial/controlnet/flow_diagram_scribble.png)
 
 1. Ensure that `Load Checkpoint` can load **dreamCreationVirtual3DECommerce_v10.safetensors**
 2. Ensure that `Load VAE` can load **vae-ft-mse-840000-ema-pruned.safetensors**
@@ -103,7 +103,7 @@ In this example, you could also use the VAE model embedded in dreamCreationVirtu
 
 ![load controlnet](/images/comfy_core/loaders/load_controlnet_model.jpg)
 
-Models located in `ComfyUI\models\controlnet` will be detected by ComfyUI and can be loaded through this node.
+Models located in `Hanzo Studio\models\controlnet` will be detected by Hanzo Studio and can be loaded through this node.
 
 ### Apply ControlNet Node Explanation
 
@@ -144,4 +144,4 @@ To enable it, go to **Settings** --> **comfy** --> **Node** and enable the `Show
 
 1. Try creating similar sketches, or even draw your own, and use ControlNet models to generate images to experience the benefits of ControlNet.
 2. Adjust the `Control Strength` parameter in the Apply ControlNet node to control the influence of the ControlNet model on the generated image.
-3. Visit the [ControlNet-v1-1_fp16_safetensors](https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/tree/main) repository to download other types of ControlNet models and try using them to generate images.
+3. Visit the [ControlNet-v1-1_fp16_safetensors](https://huggingface.co/hanzoai/ControlNet-v1-1_fp16_safetensors/tree/main) repository to download other types of ControlNet models and try using them to generate images.

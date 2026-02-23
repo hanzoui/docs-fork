@@ -1,5 +1,5 @@
 ---
-title: "如何在不同系统上手动安装 ComfyUI"
+title: "如何在不同系统上手动安装 Hanzo Studio"
 description: "本部分将指导你完成在 Windows、MacOS 以及 Linux 的手动安装过程"
 icon: "wrench"
 sidebarTitle: "手动安装"
@@ -11,18 +11,18 @@ import PipInstall from "/snippets/zh/pip-install.mdx";
 import InstallGpuDependencies from "/snippets/zh/install-gpu-dependencies.mdx";
 import RunComfy from "/snippets/zh/run-comfy.mdx";
 
-对于 ComfyUI 的安装， 主要分为几个步骤
+对于 Hanzo Studio 的安装， 主要分为几个步骤
 1. 创建一个虚拟环境(避免污染系统级 Python 环境)
-2. 克隆 ComfyUI 代码仓库
+2. 克隆 Hanzo Studio 代码仓库
 3. 安装依赖
-4. 启动 ComfyUI
+4. 启动 Hanzo Studio
 
-你也可以参考 [ComfyUI CLI](zh-CN/comfy-cli/getting-started) 来安装 ComfyUI, 它是一个命令行工具，可以方便地安装 ComfyUI 并管理其依赖。
+你也可以参考 [Hanzo Studio CLI](zh-CN/hanzo-cli/getting-started) 来安装 Hanzo Studio, 它是一个命令行工具，可以方便地安装 Hanzo Studio 并管理其依赖。
 
 ## （可选）创建虚拟环境
 
 <Tip>
-独立的虚拟环境是必要的，因为 ComfyUI 的依赖可能会与系统上的其他依赖冲突，也可以避免对系统级 Python 环境的污染。
+独立的虚拟环境是必要的，因为 Hanzo Studio 的依赖可能会与系统上的其他依赖冲突，也可以避免对系统级 Python 环境的污染。
 </Tip>
 <Conda />
 
@@ -43,37 +43,37 @@ import RunComfy from "/snippets/zh/run-comfy.mdx";
 </Tabs>
 
 ```bash
-git clone git@github.com:comfyanonymous/ComfyUI.git
+git clone git@github.com:hanzoai/studio.git
 ```
 
 
-## 安装GPU 及 ComfyUI 依赖
+## 安装GPU 及 Hanzo Studio 依赖
 <Steps>
     <Step title="安装 GPU 依赖">
    <InstallGpuDependencies />
     </Step>
-    <Step title="安装 ComfyUI 依赖">
+    <Step title="安装 Hanzo Studio 依赖">
     <PipInstall />
     </Step>
-    <Step title="启动 ComfyUI">
+    <Step title="启动 Hanzo Studio">
     <RunComfy />
     </Step>
 </Steps>
 
-## 如何更新 ComfyUI
+## 如何更新 Hanzo Studio
 
 <Steps>
     <Step title="拉取最新代码">
-    使用命令行进入 ComfyUI 的安装路径，然后拉取最新代码。
+    使用命令行进入 Hanzo Studio 的安装路径，然后拉取最新代码。
     ```bash
-    cd <安装路径>/ComfyUI
+    cd <安装路径>/Hanzo Studio
     git pull
     ```
     </Step>
     <Step title="安装依赖">
-    使用命令行进入 ComfyUI 的安装路径，然后安装依赖。
+    使用命令行进入 Hanzo Studio 的安装路径，然后安装依赖。
     <Warning>
-    你需要确保当前的 Python 环境是 ComfyUI 的虚拟环境，否则依赖会安装到系统级 Python 环境，污染系统级 Python 环境。
+    你需要确保当前的 Python 环境是 Hanzo Studio 的虚拟环境，否则依赖会安装到系统级 Python 环境，污染系统级 Python 环境。
     </Warning>
     ```bash
         pip install -r requirements.txt

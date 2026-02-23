@@ -1,5 +1,5 @@
 ---
-title: "ComfyUI Flux.1 fill dev Example"
+title: "Hanzo Studio Flux.1 fill dev Example"
 description: "This guide demonstrates how to use Flux.1 fill dev to create Inpainting and Outpainting workflows."
 sidebarTitle: "Flux.1 fill dev"
 ---
@@ -19,7 +19,7 @@ Key features of Flux.1 fill dev:
 Open Source Repository: [FLUX.1 [dev]](https://huggingface.co/black-forest-labs/FLUX.1-dev)
 
 This guide will demonstrate inpainting and outpainting workflows based on the Flux.1 fill dev model.
-If you're not familiar with inpainting and outpainting workflows, you can refer to [ComfyUI Layout Inpainting Example](/tutorials/basic/inpaint) and [ComfyUI Image Extension Example](/tutorials/basic/outpaint) for some related explanations.
+If you're not familiar with inpainting and outpainting workflows, you can refer to [Hanzo Studio Layout Inpainting Example](/tutorials/basic/inpaint) and [Hanzo Studio Image Extension Example](/tutorials/basic/outpaint) for some related explanations.
 
 ## Flux.1 Fill dev and related models installation
 
@@ -31,14 +31,14 @@ However, since downloading the corresponding model requires agreeing to the corr
 ![Flux Agreement](/images/tutorial/flux/flux1_fill_dev_agreement.jpg)
 
 Complete model list:
-- [clip_l.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors?download=true)
-- [t5xxl_fp16.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors?download=true)
+- [clip_l.safetensors](https://huggingface.co/hanzoai/flux_text_encoders/resolve/main/clip_l.safetensors?download=true)
+- [t5xxl_fp16.safetensors](https://huggingface.co/hanzoai/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors?download=true)
 - [ae.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors?download=true)
 - [flux1-fill-dev.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev/resolve/main/flux1-fill-dev.safetensors?download=true)
 
 File storage location:
 ```
-ComfyUI/
+Hanzo Studio/
 ├── models/
 │   ├── text_encoders/
 │   │    ├── clip_l.safetensors
@@ -53,20 +53,20 @@ ComfyUI/
 
 ### 1. Inpainting workflow and asset
 
-Please download the image below and drag it into ComfyUI to load the corresponding workflow
-![ComfyUI Flux.1 inpaint](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint.png)
+Please download the image below and drag it into Hanzo Studio to load the corresponding workflow
+![Hanzo Studio Flux.1 inpaint](https://raw.githubusercontent.com/hanzoui/example-workflows/main/flux/inpaint/flux_fill_inpaint.png)
 
 Please download the image below, we will use it as the input image
-![ComfyUI Flux.1 inpaint input](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint_input.png)
+![Hanzo Studio Flux.1 inpaint input](https://raw.githubusercontent.com/hanzoui/example-workflows/main/flux/inpaint/flux_fill_inpaint_input.png)
 
 <Note>
 The corresponding image already contains an alpha channel, so you don't need to draw a mask separately.
-If you want to draw your own mask, please [click here](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint_input_original.png) to get the image without a mask, and refer to the MaskEditor usage section in the [ComfyUI Layout Inpainting Example](/tutorials/basic/inpaint#using-the-mask-editor) to learn how to draw a mask in the `Load Image` node.
+If you want to draw your own mask, please [click here](https://raw.githubusercontent.com/hanzoui/example-workflows/main/flux/inpaint/flux_fill_inpaint_input_original.png) to get the image without a mask, and refer to the MaskEditor usage section in the [Hanzo Studio Layout Inpainting Example](/tutorials/basic/inpaint#using-the-mask-editor) to learn how to draw a mask in the `Load Image` node.
 </Note>
 
 ### 2. Steps to run the workflow
 
-![ComfyUI Flux.1 Fill dev Inpainting Workflow](/images/tutorial/flux/flow_diagram_inpaint.jpg)
+![Hanzo Studio Flux.1 Fill dev Inpainting Workflow](/images/tutorial/flux/flow_diagram_inpaint.jpg)
 
 1. Ensure the `Load Diffusion Model` node has `flux1-fill-dev.safetensors` loaded.
 2. Ensure the `DualCLIPLoader` node has the following models loaded:
@@ -80,15 +80,15 @@ If you want to draw your own mask, please [click here](https://raw.githubusercon
 
 ### 1. Outpainting workflow and asset
 
-Please download the image below and drag it into ComfyUI to load the corresponding workflow
-![ComfyUI Flux.1 outpaint](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/outpaint/flux_fill_dev_outpaint.png)
+Please download the image below and drag it into Hanzo Studio to load the corresponding workflow
+![Hanzo Studio Flux.1 outpaint](https://raw.githubusercontent.com/hanzoui/example-workflows/main/flux/outpaint/flux_fill_dev_outpaint.png)
 
 Please download the image below, we will use it as the input image
-![ComfyUI Flux.1 outpaint input](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/outpaint/flux_fill_dev_outpaint_input.png)
+![Hanzo Studio Flux.1 outpaint input](https://raw.githubusercontent.com/hanzoui/example-workflows/main/flux/outpaint/flux_fill_dev_outpaint_input.png)
 
 ### 2. Steps to run the workflow
 
-![ComfyUI Flux.1 Fill dev Outpainting Workflow](/images/tutorial/flux/flow_diagram_outpaint.jpg)
+![Hanzo Studio Flux.1 Fill dev Outpainting Workflow](/images/tutorial/flux/flow_diagram_outpaint.jpg)
 
 1. Ensure the `Load Diffusion Model` node has `flux1-fill-dev.safetensors` loaded.
 2. Ensure the `DualCLIPLoader` node has the following models loaded:

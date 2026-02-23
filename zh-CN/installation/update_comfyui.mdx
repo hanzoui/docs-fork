@@ -1,61 +1,61 @@
 ---
-title: "如何更新 ComfyUI"
-description: "本部分将指导你详细了解 ComfyUI 的更新过程"
+title: "如何更新 Hanzo Studio"
+description: "本部分将指导你详细了解 Hanzo Studio 的更新过程"
 icon: "circle-up"
-sidebarTitle: "更新 ComfyUI"
+sidebarTitle: "更新 Hanzo Studio"
 ---
 
 import InstallLink from "/snippets/zh/install/install-link.mdx"
 import UpdateRequirement from "/snippets/zh/install/update-requirement.mdx"
 
-尽管我们可能已经在不同版本的各部分章节，对于 ComfyUI 的更新过程都有所说明，但是为了方便用户能够更清楚的了解 ComfyUI 的更新过程，我们会在这部分对于 ComfyUI 的更新进行详细的说明。
+尽管我们可能已经在不同版本的各部分章节，对于 Hanzo Studio 的更新过程都有所说明，但是为了方便用户能够更清楚的了解 Hanzo Studio 的更新过程，我们会在这部分对于 Hanzo Studio 的更新进行详细的说明。
 
-## 如何更新 ComfyUI?
+## 如何更新 Hanzo Studio?
 
 <Tabs>
 <Tab title="便携版">
- ComfyUI 便携版提供了便捷的批处理脚本来完成更新操作。 
+ Hanzo Studio 便携版提供了便捷的批处理脚本来完成更新操作。 
 
  ### 更新脚本位置
  在便携版安装目录下的 `update` 文件夹中，可以找到以下更新脚本：
 
  ```
- ComfyUI_windows_portable
+ Hanzo Studio_windows_portable
  └─ 📂update
     ├── update.py
     ├── update_comfyui.bat                           // 更新到最新开发版本
-    ├── update_comfyui_stable.bat                    // 更新到最新稳定版本
-    └── update_comfyui_and_python_dependencies.bat   // 更新依赖（问题修复时使用）
+    ├── update_hanzo_studio_stable.bat                    // 更新到最新稳定版本
+    └── update_hanzo_studio_and_python_dependencies.bat   // 更新依赖（问题修复时使用）
 ```
 <Warning>更新过程中请保持网络连接稳定，如果在中国大陆地区可能需要配置网络代理来保证能够顺利访问 GitHub 仓库</Warning>
 </Tab>
 <Tab title="桌面版">
-ComfyUI 桌面版采用自动更新机制，确保你始终使用最新版本，不过由于 Desktop 版本是基于稳定版本构建的，所以它的功能更新相对滞后，你也可以访问 [下载页面](https://www.comfy.org/download) 来获取最新版本。
+Hanzo Studio 桌面版采用自动更新机制，确保你始终使用最新版本，不过由于 Desktop 版本是基于稳定版本构建的，所以它的功能更新相对滞后，你也可以访问 [下载页面](https://hanzo.ai/download) 来获取最新版本。
 
 ### 自动更新设置
 请确保在设置中已经启用自动更新功能：
-![ComfyUI 桌面版设置](/images/desktop/comfyui-desktop-update-setting.jpg)
+![Hanzo Studio 桌面版设置](/images/desktop/hanzo-studio-desktop-update-setting.jpg)
 
 ### 手动检查更新
 你也可以手动检查是否有可用的更新：
 1. 点击菜单栏中的 `菜单`
 2. 选择 `帮助`
 3. 点击 `检查更新`
-![ComfyUI 桌面版检查更新](/images/desktop/desktop_check_for_updates.jpg)
+![Hanzo Studio 桌面版检查更新](/images/desktop/desktop_check_for_updates.jpg)
 
-<Note>桌面版会自动处理所有更新过程，包括 ComfyUI 核心代码和相关依赖的更新</Note>
+<Note>桌面版会自动处理所有更新过程，包括 Hanzo Studio 核心代码和相关依赖的更新</Note>
 
 </Tab>
 <Tab title="手动安装">
-手动安装的 ComfyUI 需要通过 Git 命令来完成更新操作。
+手动安装的 Hanzo Studio 需要通过 Git 命令来完成更新操作。
 
 ### 更新前准备
-确保你的系统已安装 [Git](https://git-scm.com/downloads) 并且 ComfyUI 是通过 Git 克隆安装的。
+确保你的系统已安装 [Git](https://git-scm.com/downloads) 并且 Hanzo Studio 是通过 Git 克隆安装的。
 
 ### 更新步骤
 <Steps>
 <Step title="激活虚拟环境">
-首先激活 ComfyUI 的 Python 虚拟环境（如果使用了虚拟环境）：
+首先激活 Hanzo Studio 的 Python 虚拟环境（如果使用了虚拟环境）：
 ```bash
 # 对于 conda 环境
 conda activate comfyui
@@ -68,23 +68,23 @@ source venv/bin/activate
 ```
 </Step>
 <Step title="拉取最新代码">
-进入 ComfyUI 安装目录并拉取最新代码：
+进入 Hanzo Studio 安装目录并拉取最新代码：
 ```bash
-cd <ComfyUI安装路径>
+cd <Hanzo Studio安装路径>
 git pull
 ```
 </Step>
 <Step title="更新依赖">
-安装或更新 ComfyUI 的依赖包：
+安装或更新 Hanzo Studio 的依赖包：
 ```bash
 pip install -r requirements.txt
 ```
 <Warning>
-请确保当前处于 ComfyUI 的虚拟环境中，避免污染系统级 Python 环境
+请确保当前处于 Hanzo Studio 的虚拟环境中，避免污染系统级 Python 环境
 </Warning>
 </Step>
-<Step title="重启 ComfyUI">
-更新完成后重新启动 ComfyUI：
+<Step title="重启 Hanzo Studio">
+更新完成后重新启动 Hanzo Studio：
 ```bash
 python main.py
 ```
@@ -108,37 +108,37 @@ git checkout master
 </Tabs>
 
 
-## ComfyUI 的不同版本说明
+## Hanzo Studio 的不同版本说明
 
-首先取决于你安装方式的不同，目前 ComfyUI 有以下的几种安装版本，下面的相关链接中已经包含了针对不同版本的更新说明。
+首先取决于你安装方式的不同，目前 Hanzo Studio 有以下的几种安装版本，下面的相关链接中已经包含了针对不同版本的更新说明。
 
 <InstallLink/>
 
-## 在更新 ComfyUI 时都需要更新什么内容？
+## 在更新 Hanzo Studio 时都需要更新什么内容？
 
-目前 ComfyUI 的更新主要需要确保两部分内容：
-1. 更新 ComfyUI 的核心代码
-2. 更新 ComfyUI 的核心依赖，包括必要的 Python 依赖和 ComfyUI 的功能依赖包。
+目前 Hanzo Studio 的更新主要需要确保两部分内容：
+1. 更新 Hanzo Studio 的核心代码
+2. 更新 Hanzo Studio 的核心依赖，包括必要的 Python 依赖和 Hanzo Studio 的功能依赖包。
 
 **核心代码**： 新的节点，新的模型支持，新的功能等。
-**核心依赖**： 主要包括 ComfyUI 的前端功能，工作流模板，节点帮助文档等。
+**核心依赖**： 主要包括 Hanzo Studio 的前端功能，工作流模板，节点帮助文档等。
 
 ```
-comfyui-frontend-package   # ComfyUI 前端功能
-comfyui-workflow-templates # ComfyUI 工作流模板  
-comfyui-embedded-docs      # ComfyUI 节点的帮助文档
+hanzo-studio-frontend-package   # Hanzo Studio 前端功能
+hanzo-studio-workflow-templates # Hanzo Studio 工作流模板  
+hanzo-studio-embedded-docs      # Hanzo Studio 节点的帮助文档
 ```
 
 目前这三个核心依赖项目分别在不同的仓库中维护：
-- [ComfyUI_frontend](https://github.com/Comfy-Org/ComfyUI_frontend/) - 前端界面和交互功能
-- [workflow_templates](https://github.com/Comfy-Org/workflow_templates) - 预置工作流模板
-- [comfyui-embedded-docs](https://github.com/Comfy-Org/embedded-docs) - 节点帮助文档
+- [Hanzo Studio_frontend](https://github.com/hanzoui/studio_frontend/) - 前端界面和交互功能
+- [workflow_templates](https://github.com/hanzoui/workflow-templates) - 预置工作流模板
+- [hanzo-studio-embedded-docs](https://github.com/hanzoui/embedded-docs) - 节点帮助文档
 
 另外很有必要说明的一点是，开发版本(nightly) 和 稳定版本(release) 的区别：
 - **开发版本(nightly)**：最新 commit 的代码，你可以体验到我们最新提供的一些功能，但是也有可能存在一些潜在的问题
 - **稳定版本(release)**：是基于稳定版本构建，通常会滞后于开发版本，但是稳定性更高，我们会在相关功能发布稳定后对稳定版本进行支持
 
-目前较多用户总是在更新过程中处于 release 版本或者桌面版，但是发现需要的功能是开发版本中提供的对应版本并不存在，对于此情况请检查本地 `ComfyUI/requirements.txt` 和[nightly 版本的依赖](https://github.com/comfyanonymous/ComfyUI/blob/master/requirements.txt)是否一致，来确定当前是否所有依赖都是我们最新版本的功能支持。
+目前较多用户总是在更新过程中处于 release 版本或者桌面版，但是发现需要的功能是开发版本中提供的对应版本并不存在，对于此情况请检查本地 `Hanzo Studio/requirements.txt` 和[nightly 版本的依赖](https://github.com/hanzoai/studio/blob/master/requirements.txt)是否一致，来确定当前是否所有依赖都是我们最新版本的功能支持。
 
 ## 常见更新问题
 
@@ -147,7 +147,7 @@ comfyui-embedded-docs      # ComfyUI 节点的帮助文档
 
 <Tabs>
   <Tab title="未正确更新依赖">
-    经常有用户只是使用 `git pull` 命令来更新 ComfyUI 的代码，但**忽略了核心依赖更新**，导致出现以下问题：
+    经常有用户只是使用 `git pull` 命令来更新 Hanzo Studio 的代码，但**忽略了核心依赖更新**，导致出现以下问题：
 
   - 前端功能缺失或显示异常
   - 找不到新增的工作流模板
@@ -160,11 +160,11 @@ comfyui-embedded-docs      # ComfyUI 节点的帮助文档
     如果依赖更新失败常见可能是网络或者计算机权限问题，目前在更新过程中如果出现了核心依赖失败的情况会回退到旧版本，通常你可以在启动日志中看到类似下面的日志：
     ```
     Falling back to the default frontend.
-    ComfyUI frontend version: xxx
+    Hanzo Studio frontend version: xxx
     ```
 
     请按以下步骤排查：
-    1. 在对应的环境中使用 `pip list` 命令来查看当前安装的依赖包，如果发现有版本不一致的情况，请在对应的 ComfyUI 环境使用 `pip install -r requirements.txt` 命令来尝试再次更新依赖。
+    1. 在对应的环境中使用 `pip list` 命令来查看当前安装的依赖包，如果发现有版本不一致的情况，请在对应的 Hanzo Studio 环境使用 `pip install -r requirements.txt` 命令来尝试再次更新依赖。
     2. 如果更新后仍然存在问题，请检查网络连接是否正常，如果在中国大陆地区可能需要配置网络代理来保证能够顺利访问 GitHub 仓库。
     3. 如果仍然存在问题，请检查计算机权限是否正常，如果需要管理员权限，请使用管理员权限运行命令行。
   </Tab>
@@ -187,16 +187,16 @@ comfyui-embedded-docs      # ComfyUI 节点的帮助文档
     ```
   </Step>
   <Step title="逐个安装核心包">
-    如果批量安装失败，可尝试逐个安装。**首先查看 `ComfyUI/requirements.txt` 中的版本要求**：
+    如果批量安装失败，可尝试逐个安装。**首先查看 `Hanzo Studio/requirements.txt` 中的版本要求**：
     
     **然后按照指定版本安装：**
     ```bash
-    pip install comfyui-frontend-package==1.17.11 
-    pip install comfyui-workflow-templates==1.0.0
-    pip install comfyui-embedded-docs==1.0.0
+    pip install hanzo-studio-frontend-package==1.17.11 
+    pip install hanzo-studio-workflow-templates==1.0.0
+    pip install hanzo-studio-embedded-docs==1.0.0
     ```
     <Warning>
-    建议使用 `ComfyUI/requirements.txt` 中指定的确切版本号，不要自行升级到最新版本，这可能导致兼容性问题。
+    建议使用 `Hanzo Studio/requirements.txt` 中指定的确切版本号，不要自行升级到最新版本，这可能导致兼容性问题。
     </Warning>
   </Step>
 </Steps>
@@ -230,13 +230,13 @@ comfyui-embedded-docs      # ComfyUI 节点的帮助文档
 
 <Tabs>
   <Tab title="便携版">
-    使用 `update_comfyui.bat` 而不是 `update_comfyui_stable.bat`：
+    使用 `update_comfyui.bat` 而不是 `update_hanzo_studio_stable.bat`：
     ```
     # 开发版本（最新功能）
     double-click: update_comfyui.bat
     
     # 稳定版本
-    double-click: update_comfyui_stable.bat
+    double-click: update_hanzo_studio_stable.bat
     ```
   </Tab>
   <Tab title="手动安装">
@@ -266,11 +266,11 @@ comfyui-embedded-docs      # ComfyUI 节点的帮助文档
 如果出现问题，可以参考我们的问题排查页面来解决。
 
 <Card title="故障排查" icon="bug" href="/zh-CN/troubleshooting/overview">
-  查看如何进行 ComfyUI 的故障排查
+  查看如何进行 Hanzo Studio 的故障排查
 </Card>
 
 ### 如何了解最新功能？
 
-- **GitHub Releases**：查看 [ComfyUI Releases](https://github.com/comfyanonymous/ComfyUI/releases) 了解稳定版本更新
-- **GitHub Commits**：查看 [最新提交](https://github.com/comfyanonymous/ComfyUI/commits/master) 了解开发进度  
-- **社区讨论**：关注我们的[博客](https://blog.comfy.org)和[推特](https://x.com/comfyui)来了解最新动态
+- **GitHub Releases**：查看 [Hanzo Studio Releases](https://github.com/hanzoai/studio/releases) 了解稳定版本更新
+- **GitHub Commits**：查看 [最新提交](https://github.com/hanzoai/studio/commits/master) 了解开发进度  
+- **社区讨论**：关注我们的[博客](https://blog.hanzo.ai)和[推特](https://x.com/comfyui)来了解最新动态

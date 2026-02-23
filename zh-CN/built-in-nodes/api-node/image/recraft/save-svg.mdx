@@ -1,11 +1,11 @@
 ---
-title: "Save SVG - ComfyUI 原生节点文档"
+title: "Save SVG - Hanzo Studio 原生节点文档"
 description: "将SVG矢量图形保存到文件的实用节点"
 sidebarTitle: "Save SVG"
 icon: "circle"
 ---
 
-![ComfyUI 原生 Save SVG 节点](/images/built-in-nodes/api_nodes/recraft/save-svg.jpg)
+![Hanzo Studio 原生 Save SVG 节点](/images/built-in-nodes/api_nodes/recraft/save-svg.jpg)
 
 Save SVG 节点允许你将从Recraft矢量生成节点获取的SVG数据保存为文件系统中的可用文件。这是处理和导出矢量图形的必要组件。
 
@@ -21,7 +21,7 @@ Save SVG 节点允许你将从Recraft矢量生成节点获取的SVG数据保存�
 |-----|-----|-------|------|
 | svg | SVG | - | 要保存的 SVG 矢量数据 |
 | filename_prefix | 字符串 | "recraft" | 文件名前缀 |
-| output_dir | 字符串 | - | 输出目录，默认为 ComfyUI 输出文件夹具体路径为 `ComfyUI/output/svg/` |
+| output_dir | 字符串 | - | 输出目录，默认为 Hanzo Studio 输出文件夹具体路径为 `Hanzo Studio/output/svg/` |
 | index | 整数 | -1 | 保存索引，-1 表示所有生成的 SVG |
 
 ### 输出
@@ -62,7 +62,7 @@ class SaveSVGNode:
         return {
             "required": {
                 "svg": (RecraftIO.SVG,),
-                "filename_prefix": ("STRING", {"default": "svg/ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+                "filename_prefix": ("STRING", {"default": "svg/Hanzo Studio", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
             },
             "hidden": {
                 "prompt": "PROMPT",
@@ -70,7 +70,7 @@ class SaveSVGNode:
             }
         }
 
-    def save_svg(self, svg: SVG, filename_prefix="svg/ComfyUI", prompt=None, extra_pnginfo=None):
+    def save_svg(self, svg: SVG, filename_prefix="svg/Hanzo Studio", prompt=None, extra_pnginfo=None):
         filename_prefix += self.prefix_append
         full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, self.output_dir)
         results = list()

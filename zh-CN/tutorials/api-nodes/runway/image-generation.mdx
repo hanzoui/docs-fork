@@ -1,13 +1,13 @@
 ---
-title: " Runway API 节点 图像生成 ComfyUI 官方示例"
-description: "本文将介绍如何在 ComfyUI 中使用 Runway 节点进行文生图和参考生图功能"
+title: " Runway API 节点 图像生成 Hanzo Studio 官方示例"
+description: "本文将介绍如何在 Hanzo Studio 中使用 Runway 节点进行文生图和参考生图功能"
 sidebarTitle: "Runway 图像生成"
 ---
 
 import ReqHint from "/snippets/zh/tutorials/api-nodes/req-hint.mdx";
 import UpdateReminder from "/snippets/zh/tutorials/update-reminder.mdx";
 
-Runway 是一家专注于生成式AI的科技公司，提供强大的图像生成功能。其模型支持风格迁移、图像扩展和细节控制等特性。目前 ComfyUI 已集成 Runway API，你可以直接在 ComfyUI 中使用相关节点进行图像生成。
+Runway 是一家专注于生成式AI的科技公司，提供强大的图像生成功能。其模型支持风格迁移、图像扩展和细节控制等特性。目前 Hanzo Studio 已集成 Runway API，你可以直接在 Hanzo Studio 中使用相关节点进行图像生成。
 
 本篇指南中，我们将引导你完成下面的工作流:
 - 文生图
@@ -20,39 +20,39 @@ Runway 是一家专注于生成式AI的科技公司，提供强大的图像生�
 
 ### 1. 工作流文件下载
 
-下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 ComfyUI 中加载对应工作流。
+下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 Hanzo Studio 中加载对应工作流。
 
-![ComfyUI Runway Image Text to Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/runway/image/text_to_image.png)
+![Hanzo Studio Runway Image Text to Image](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/runway/image/text_to_image.png)
 
 ### 2. 按步骤完成工作流的运行
 
-![ComfyUI Runway Image Text to Image Step Guide](/images/tutorial/api_nodes/runway/runway_text_to_image_step_guide.jpg)
+![Hanzo Studio Runway Image Text to Image Step Guide](/images/tutorial/api_nodes/runway/runway_text_to_image_step_guide.jpg)
 
 你可参考图片中的序号来完成最基础的文生图工作流运行：  
 1. 在 `Runway Text to Image` 的 `prompt` 中输入提示词
 2. (可选) 设置调整 `ratio` 来设置不同的输出比例
 3. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行图像的生成。
-4. 等待 API 返回结果后，你可在 `Save Image` 节点中查看生成的图像（右键可以保存），对应的图像也会被保存至 `ComfyUI/output/` 目录下。
+4. 等待 API 返回结果后，你可在 `Save Image` 节点中查看生成的图像（右键可以保存），对应的图像也会被保存至 `Hanzo Studio/output/` 目录下。
 
 ## Runway Image 参考生图 工作流
 
 ### 1. 工作流及输入图像下载
 
-下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 ComfyUI 中加载对应工作流。
+下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 Hanzo Studio 中加载对应工作流。
 
-![ComfyUI Runway Image Reference to Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/runway/image/reference_to_image/runway_reference_to_image.png)
+![Hanzo Studio Runway Image Reference to Image](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/runway/image/reference_to_image/runway_reference_to_image.png)
 
 下载下面的图像用于输入
 
-![ComfyUI Runway Image Reference to Image Input](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/runway/image/reference_to_image/input.png)
+![Hanzo Studio Runway Image Reference to Image Input](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/runway/image/reference_to_image/input.png)
 
 ### 2. 按步骤完成工作流的运行
 
-![ComfyUI Runway Image Reference to Image Step Guide](/images/tutorial/api_nodes/runway/runway_reference_to_image_step_guide.jpg)
+![Hanzo Studio Runway Image Reference to Image Step Guide](/images/tutorial/api_nodes/runway/runway_reference_to_image_step_guide.jpg)
 
 你可参考图片中的序号来完成最基础的参考生图工作流运行：  
 
 1. 在 `Load Image` 节点中加载提供的输入图像
 2. 在 `Runway Text to Image` 的 `prompt` 中输入提示词及进行尺寸调整
 3. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行图像的生成。
-4. 等待 API 返回结果后，你可在 `Save Image` 节点中查看生成的图像（右键可以保存），对应的图像也会被保存至 `ComfyUI/output/` 目录下。
+4. 等待 API 返回结果后，你可在 `Save Image` 节点中查看生成的图像（右键可以保存），对应的图像也会被保存至 `Hanzo Studio/output/` 目录下。

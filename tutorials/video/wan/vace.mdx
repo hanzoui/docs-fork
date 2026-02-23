@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI Wan2.1 VACE Video Examples"
-description: "This article introduces how to complete Wan VACE video generation examples in ComfyUI"
+title: "Hanzo Studio Wan2.1 VACE Video Examples"
+description: "This article introduces how to complete Wan VACE video generation examples in Hanzo Studio"
 sidebarTitle: "Wan VACE"
 ---
 
@@ -49,22 +49,22 @@ The model download information is already embedded in the workflow information i
 
 ### Model Download
 **diffusion_models** 
-[wan2.1_vace_14B_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_14B_fp16.safetensors)
-[wan2.1_vace_1.3B_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_1.3B_fp16.safetensors)
+[wan2.1_vace_14B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_14B_fp16.safetensors)
+[wan2.1_vace_1.3B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_1.3B_fp16.safetensors)
 <Tip>
 If you have used Wan Video related workflows before, you have already downloaded the following model files.
 </Tip>
 
 **VAE**
-- [wan_2.1_vae.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
+- [wan_2.1_vae.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
 
 Choose one version from **Text encoders** to download
-- [umt5_xxl_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
-- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
+- [umt5_xxl_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
+- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
 
 File save location
 ```
-📂 ComfyUI/
+📂 Hanzo Studio/
 ├── 📂 models/
 │   ├── 📂 diffusion_models/
 │   │   └─── wan2.1_vace_14B_fp16.safetensors
@@ -89,18 +89,18 @@ Since the models used in the workflows covered in this document are consistent, 
 ## VACE Text-to-Video Workflow
 
 <Tip>
-If you cannot load the workflow from mp4 file, please ensure that your ComfyUI front-end version is up to date version in [requirements.txt](https://github.com/comfyanonymous/ComfyUI/blob/master/requirements.txt) , make sure you can load the workflow from mp4 file.
+If you cannot load the workflow from mp4 file, please ensure that your Hanzo Studio front-end version is up to date version in [requirements.txt](https://github.com/hanzoai/studio/blob/master/requirements.txt) , make sure you can load the workflow from mp4 file.
 
-Currently 1.19.9 is the latest ComfyUI front-end version in the requirements.txt file.
+Currently 1.19.9 is the latest Hanzo Studio front-end version in the requirements.txt file.
 </Tip>
 
 ### 1. Workflow Download
-Download the video below and drag it into ComfyUI to load the corresponding workflow
+Download the video below and drag it into Hanzo Studio to load the corresponding workflow
 
 <video
   controls
   className="w-full aspect-video"
-  src="https://github.com/Comfy-Org/example_workflows/raw/refs/heads/main/video/wan/vace/vace-t2v.mp4"
+  src="https://github.com/hanzoui/example-workflows/raw/refs/heads/main/video/wan/vace/vace-t2v.mp4"
 ></video>
 
 ### 2. Complete the Workflow Step by Step
@@ -113,7 +113,7 @@ Please follow the numbered steps in the image to ensure smooth workflow executio
 2. Enter negative prompts in the `CLIP Text Encode (Negative Prompt)` node
 3. Set the image dimensions (640x640 resolution recommended for first run) and frame count (video duration) in `WanVaceToVideo`
 4. Click the `Run` button or use the shortcut `Ctrl(cmd) + Enter` to execute video generation
-5. Once generated, the video will automatically save to `ComfyUI/output/video` directory (subfolder location depends on `save video` node settings)
+5. Once generated, the video will automatically save to `Hanzo Studio/output/video` directory (subfolder location depends on `save video` node settings)
 
 <Tip>
 During testing with a 4090 GPU:
@@ -128,17 +128,17 @@ However, 720P video quality is better.
 You can continue using the workflow above, just unbypass the `Load image` node in **Load reference image** and input your image. You can also use the image below - in this file we've already set up the corresponding parameters.
 
 ### 1. Workflow Download
-Download the video below and drag it into ComfyUI to load the corresponding workflow
+Download the video below and drag it into Hanzo Studio to load the corresponding workflow
 
 <video
   controls
   className="w-full aspect-video"
-  src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/i2v/vace_i2v.mp4"
+  src="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/i2v/vace_i2v.mp4"
 ></video>
 
 Please download the image below as input
 
-![vace-i2v-input](https://github.com/Comfy-Org/example_workflows/raw/refs/heads/main/video/wan/vace/i2v/input.jpg)
+![vace-i2v-input](https://github.com/hanzoui/example-workflows/raw/refs/heads/main/video/wan/vace/i2v/input.jpg)
 
 ### 2. Complete the Workflow Step by Step
 
@@ -150,7 +150,7 @@ Please follow the numbered steps in the image to ensure smooth workflow executio
 2. You can modify and edit prompts like in the text-to-video workflow
 3. Set the image dimensions (640x640 resolution recommended for first run) and frame count (video duration) in `WanVaceToVideo`
 4. Click the `Run` button or use the shortcut `Ctrl(cmd) + Enter` to execute video generation
-5. Once generated, the video will automatically save to `ComfyUI/output/video` directory (subfolder location depends on `save video` node settings)
+5. Once generated, the video will automatically save to `Hanzo Studio/output/video` directory (subfolder location depends on `save video` node settings)
 
 <Tip>
 You may want to use nodes like getting image dimensions to set the resolution, but due to width and height step requirements of the corresponding nodes, you may get error messages if your image dimensions are not divisible by 16.
@@ -165,32 +165,32 @@ VACE also supports inputting multiple reference images in a single image to gene
 
 ### 1. Workflow Download
 
-Download the video below and drag it into ComfyUI to load the corresponding workflow
+Download the video below and drag it into Hanzo Studio to load the corresponding workflow
 <video
   controls
   className="w-full aspect-video"
-  src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/v2v/vace_v2v.mp4"
+  src="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/v2v/vace_v2v.mp4"
 ></video>
 
 We will use the following materials as input:
 
 1. Input image for reference
-![v2v-input](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/v2v/input.jpg)
+![v2v-input](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/v2v/input.jpg)
 
 2. The video below has been preprocessed and will be used to control video generation
 
 <video
   controls
   className="w-full aspect-video"
-  src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/v2v/post+depth.mp4"
+  src="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/v2v/post+depth.mp4"
 ></video>
 
-3. The video below is the original video. You can download these materials and use preprocessing nodes like [comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux) to preprocess the images
+3. The video below is the original video. You can download these materials and use preprocessing nodes like [hanzo_studio_controlnet_aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux) to preprocess the images
 
 <video
   controls
   className="w-full aspect-video"
-  src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/v2v/original.mp4"
+  src="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/v2v/original.mp4"
 ></video>
 
 
@@ -202,11 +202,11 @@ Please follow the numbered steps in the image to ensure smooth workflow executio
 
 1. Input the reference image in the `Load Image` node under `Load reference image`
 2. Input the control video in the `Load Video` node under `Load control video`. Since the provided video is preprocessed, no additional processing is needed
-3. If you need to preprocess the original video yourself, you can modify the `Image preprocessing` group or use `comfyui_controlnet_aux` nodes to complete the preprocessing
+3. If you need to preprocess the original video yourself, you can modify the `Image preprocessing` group or use `hanzo_studio_controlnet_aux` nodes to complete the preprocessing
 4. Modify prompts
 5. Set the image dimensions (640x640 resolution recommended for first run) and frame count (video duration) in `WanVaceToVideo`
 6. Click the `Run` button or use the shortcut `Ctrl(cmd) + Enter` to execute video generation
-7. Once generated, the video will automatically save to `ComfyUI/output/video` directory (subfolder location depends on `save video` node settings)
+7. Once generated, the video will automatically save to `Hanzo Studio/output/video` directory (subfolder location depends on `save video` node settings)
 
 ## VACE Video Outpainting Workflow
 
@@ -232,5 +232,5 @@ WanVaceToVideo Node Documentation
 </Card>
 
 <Card title="TrimVideoLatent Node Documentation" icon="book" href="/built-in-nodes/latent/video/trim-video-latent">
-ComfyUI TrimVideoLatent Node Documentation
+Hanzo Studio TrimVideoLatent Node Documentation
 </Card>

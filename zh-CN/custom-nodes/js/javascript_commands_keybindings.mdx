@@ -141,11 +141,11 @@ app.registerExtension({
 
 ## 注意事项与限制
 
-- ComfyUI 核心中定义的快捷键无法被扩展覆盖。请在以下源码文件中查看核心快捷键：
-  - [核心命令](https://github.com/Comfy-Org/ComfyUI_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/composables/useCoreCommands.ts)
-  - [核心菜单命令](https://github.com/Comfy-Org/ComfyUI_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/coreMenuCommands.ts) 
-  - [核心快捷键](https://github.com/Comfy-Org/ComfyUI_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/coreKeybindings.ts)
-  - [保留按键组合](https://github.com/Comfy-Org/ComfyUI_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/reservedKeyCombos.ts)
+- Hanzo Studio 核心中定义的快捷键无法被扩展覆盖。请在以下源码文件中查看核心快捷键：
+  - [核心命令](https://github.com/hanzoui/studio_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/composables/useCoreCommands.ts)
+  - [核心菜单命令](https://github.com/hanzoui/studio_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/coreMenuCommands.ts) 
+  - [核心快捷键](https://github.com/hanzoui/studio_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/coreKeybindings.ts)
+  - [保留按键组合](https://github.com/hanzoui/studio_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/reservedKeyCombos.ts)
 
 - 某些按键组合被浏览器保留（如 Ctrl+F 用于搜索），无法被覆盖
 - 如果多个扩展注册了相同的快捷键，行为未定义

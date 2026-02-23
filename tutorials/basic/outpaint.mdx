@@ -1,12 +1,12 @@
 ---
-title: "ComfyUI Outpainting Workflow Example"
-description: This guide will introduce you to the outpainting workflow in ComfyUI and walk you through an outpainting example
+title: "Hanzo Studio Outpainting Workflow Example"
+description: This guide will introduce you to the outpainting workflow in Hanzo Studio and walk you through an outpainting example
 sidebarTitle: "Outpaint"
 ---
 
-This guide will introduce you to the concept of outpainting in AI image generation and how to create an outpainting workflow in ComfyUI. We will cover:
+This guide will introduce you to the concept of outpainting in AI image generation and how to create an outpainting workflow in Hanzo Studio. We will cover:
 - Using outpainting workflow to extend an image
-- Understanding and using outpainting-related nodes in ComfyUI
+- Understanding and using outpainting-related nodes in Hanzo Studio
 - Mastering the basic outpainting process
 
 ## About Outpainting
@@ -20,34 +20,34 @@ Outpainting applications include:
 - **Composition Adjustment:** Optimize the overall composition by extending the canvas
 - **Content Addition:** Add more related scene elements to the original image
 
-## ComfyUI Outpainting Workflow Example Explanation
+## Hanzo Studio Outpainting Workflow Example Explanation
 
 ### Preparation
 
 #### 1. Model Installation
 
-Download the following model file and save it to `ComfyUI/models/checkpoints` directory:
+Download the following model file and save it to `Hanzo Studio/models/checkpoints` directory:
 - [512-inpainting-ema.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting/blob/main/512-inpainting-ema.safetensors)
 
 #### 2. Input Image
 
 Prepare an image you want to extend. In this example, we will use the following image:
 
-![ComfyUI Outpainting Input Image](/images/tutorial/basic/outpaint/input.png)
+![Hanzo Studio Outpainting Input Image](/images/tutorial/basic/outpaint/input.png)
 
 #### 3. Outpainting Workflow
 
-Download the image below and **drag it into ComfyUI** to load the workflow:
+Download the image below and **drag it into Hanzo Studio** to load the workflow:
 
-![ComfyUI Outpainting Workflow](/images/tutorial/basic/outpaint/outpaint.png)
+![Hanzo Studio Outpainting Workflow](/images/tutorial/basic/outpaint/outpaint.png)
 
 <Tip>
-Images containing workflow JSON in their metadata can be directly dragged into ComfyUI or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
+Images containing workflow JSON in their metadata can be directly dragged into Hanzo Studio or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
 </Tip>
 
 ### Outpainting Workflow Usage Explanation
 
-![ComfyUI Outpainting Workflow Diagram](/images/tutorial/basic/outpaint/outpainting_workflow.jpg)
+![Hanzo Studio Outpainting Workflow Diagram](/images/tutorial/basic/outpaint/outpainting_workflow.jpg)
 
 The key steps of the outpainting workflow are as follows:
 

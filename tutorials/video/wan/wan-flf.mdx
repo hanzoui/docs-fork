@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI Wan2.1 FLF2V Native Example"
-description: "This guide explains how to complete Wan2.1 FLF2V video generation examples in ComfyUI"
+title: "Hanzo Studio Wan2.1 FLF2V Native Example"
+description: "This guide explains how to complete Wan2.1 FLF2V video generation examples in Hanzo Studio"
 sidebarTitle: "First-Last Frame"
 ---
 
@@ -31,7 +31,7 @@ Users only need to provide two images as the starting and ending frames, and the
 
 <UpdateReminder/>
 
-## Wan2.1 FLF2V 720P ComfyUI Native Workflow Example
+## Wan2.1 FLF2V 720P Hanzo Studio Native Workflow Example
 
 ### 1. Download Workflow Files and Related Input Files
 <Tip>
@@ -39,44 +39,44 @@ Since this model is trained on high-resolution images, using smaller sizes may n
 If needed, please adjust the video generation size for testing. A small generation size may not produce good output with this model, please notice that.
 </Tip>
 
-Please download the WebP file below, and drag it into ComfyUI to load the corresponding workflow. The workflow has embedded the corresponding model download file information.
+Please download the WebP file below, and drag it into Hanzo Studio to load the corresponding workflow. The workflow has embedded the corresponding model download file information.
 
-![Wan2.1 FLF2V 720P f16 workflow](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/wan2.1_flf2v/wan2.1_flf2v_720_f16.webp)
+![Wan2.1 FLF2V 720P f16 workflow](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/wan2.1_flf2v/wan2.1_flf2v_720_f16.webp)
 
 
 Please download the two images below, which we will use as the starting and ending frames of the video
 
-![start_image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/wan2.1_flf2v/input/start_image.png)
-![end_image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/wan2.1_flf2v/input/end_image.png)
+![start_image](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/wan2.1_flf2v/input/start_image.png)
+![end_image](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/wan2.1_flf2v/input/end_image.png)
 
 ### 2. Manual Model Installation
 
 If corresponding
 
-All models involved in this guide can be found [here](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/tree/main/split_files).
+All models involved in this guide can be found [here](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/tree/main/split_files).
 
 **diffusion_models** Choose one version based on your hardware conditions
-- FP16:[wan2.1_flf2v_720p_14B_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_flf2v_720p_14B_fp16.safetensors?download=true)
-- FP8:[wan2.1_flf2v_720p_14B_fp8_e4m3fn.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_flf2v_720p_14B_fp8_e4m3fn.safetensors)
+- FP16:[wan2.1_flf2v_720p_14B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_flf2v_720p_14B_fp16.safetensors?download=true)
+- FP8:[wan2.1_flf2v_720p_14B_fp8_e4m3fn.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/blob/main/split_files/diffusion_models/wan2.1_flf2v_720p_14B_fp8_e4m3fn.safetensors)
 
 <Tip>
 If you have previously tried Wan Video related workflows, you may already have the following files.
 </Tip>
 
 Choose one version from **Text encoders** for download,
-- [umt5_xxl_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
-- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
+- [umt5_xxl_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
+- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
 
 **VAE**
-- [wan_2.1_vae.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
+- [wan_2.1_vae.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
 
 **CLIP Vision**
-- [clip_vision_h.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors?download=true)
+- [clip_vision_h.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors?download=true)
 
 
 File Storage Location
 ```
-ComfyUI/
+Hanzo Studio/
 ├── models/
 │   ├── diffusion_models/
 │   │   └─── wan2.1_flf2v_720p_14B_fp16.safetensors           # or FP8 version

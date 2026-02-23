@@ -1,6 +1,6 @@
 ---
-title: "Flux 1.1 Pro Ultra Image API Node ComfyUI Official Workflow Examples"
-description: "This guide covers how to use the Flux 1.1 Pro Ultra Image API node in ComfyUI"
+title: "Flux 1.1 Pro Ultra Image API Node Hanzo Studio Official Workflow Examples"
+description: "This guide covers how to use the Flux 1.1 Pro Ultra Image API node in Hanzo Studio"
 sidebarTitle: "Flux 1.1 Pro Ultra Image"
 ---
 
@@ -13,7 +13,7 @@ The tool offers two core modes:
 - **Ultra Mode**: Designed for high-resolution needs, perfect for advertising and e-commerce where detail magnification is important. It accurately reflects prompts while maintaining generation speed.
 - **Raw Mode**: Focuses on natural realism, optimizing skin tones, lighting, and landscape details. Reduces the "AI look" and is ideal for photography and realistic style creation.
 
-We now support the Flux 1.1 Pro Ultra Image node in ComfyUI. This guide will cover:
+We now support the Flux 1.1 Pro Ultra Image node in Hanzo Studio. This guide will cover:
 - Flux 1.1 Pro Text-to-Image
 - Flux 1.1 Pro Image-to-Image (Remix)
 
@@ -30,9 +30,9 @@ Check the following documentation for detailed node parameter settings:
 
 ### 1. Download Workflow File
 
-Download and drag the following file into ComfyUI to load the workflow:
+Download and drag the following file into Hanzo Studio to load the workflow:
 
-![Flux 1.1 pro Text-to-Image Workflow](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/bfl/flux_1_1_pro_t2i.png)
+![Flux 1.1 pro Text-to-Image Workflow](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/bfl/flux_1_1_pro_t2i.png)
 
 ### 2. Complete the Workflow Steps
 
@@ -43,7 +43,7 @@ Follow the numbered steps to complete the basic workflow:
 1. (Optional) Modify the prompt in the `Flux 1.1 [pro] Ultra Image` node
 2. (Optional) Set `raw` parameter to `false` for more realistic output
 3. Click `Run` or use shortcut `Ctrl(cmd) + Enter` to generate the image
-4. After the API returns results, view the generated image in the `Save Image` node. Images are saved to the `ComfyUI/output/` directory
+4. After the API returns results, view the generated image in the `Save Image` node. Images are saved to the `Hanzo Studio/output/` directory
 
 ## Flux 1.1[pro] Image-to-Image Tutorial
 
@@ -51,12 +51,12 @@ When adding an `image_prompt` to the node input, the output will blend features 
 
 ### 1. Download Workflow File
 
-Download and drag the following file into ComfyUI, or right-click the purple node in the Text-to-Image workflow and set `mode` to `always` to enable `image_prompt` input:
+Download and drag the following file into Hanzo Studio, or right-click the purple node in the Text-to-Image workflow and set `mode` to `always` to enable `image_prompt` input:
 
-![Flux 1.1 pro Image-to-Image Remix](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/bfl/flux_1_1_pro_i2i.png)
+![Flux 1.1 pro Image-to-Image Remix](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/bfl/flux_1_1_pro_i2i.png)
 
 We'll use this image as input:
-![Input Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/openai-dall-e-3/text2image.png)
+![Input Image](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/openai-dall-e-3/text2image.png)
 
 ### 2. Complete the Workflow Steps
 
@@ -66,7 +66,7 @@ Follow these numbered steps:
 1. Click **Upload** on the `Load Image` node to upload your input image
 2. (Optional) Adjust `image_prompt_strength` in `Flux 1.1 [pro] Ultra Image` to change the blend ratio
 3. Click `Run` or use shortcut `Ctrl(cmd) + Enter` to generate the image
-4. After the API returns results, view the generated image in the `Save Image` node. Images are saved to the `ComfyUI/output/` directory
+4. After the API returns results, view the generated image in the `Save Image` node. Images are saved to the `Hanzo Studio/output/` directory
 
 Here's a comparison of outputs with different `image_prompt_strength` values:
 ![Comparison](/images/tutorial/api_nodes/bfl/flux_1_1_pro_image_prompt_strength.jpg)

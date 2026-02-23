@@ -1,12 +1,12 @@
 ---
-title: ComfyUI Inpainting Workflow
-description: This guide will introduce you to the inpainting workflow in ComfyUI, walk you through an inpainting example, and cover topics like using the mask editor
+title: Hanzo Studio Inpainting Workflow
+description: This guide will introduce you to the inpainting workflow in Hanzo Studio, walk you through an inpainting example, and cover topics like using the mask editor
 sidebarTitle: "Inpaint"
 ---
 
-This article will introduce the concept of inpainting in AI image generation and guide you through creating an inpainting workflow in ComfyUI. We'll cover:
+This article will introduce the concept of inpainting in AI image generation and guide you through creating an inpainting workflow in Hanzo Studio. We'll cover:
 - Using inpainting workflows to modify images
-- Using the ComfyUI mask editor to draw masks
+- Using the Hanzo Studio mask editor to draw masks
 - `VAE Encoder (for Inpainting)` node
 
 ## About Inpainting
@@ -20,37 +20,37 @@ Common inpainting scenarios include:
 - **Detail Optimization:** Precisely adjusting local elements (like modifying clothing textures, adjusting facial expressions)
 - And other scenarios
 
-## ComfyUI Inpainting Workflow Example
+## Hanzo Studio Inpainting Workflow Example
 
 ### Model and Resource Preparation
 
 #### 1. Model Installation
 
-Download the [512-inpainting-ema.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting/blob/main/512-inpainting-ema.safetensors)  file and put it in your `ComfyUI/models/checkpoints` folder:
+Download the [512-inpainting-ema.safetensors](https://huggingface.co/stabilityai/stable-diffusion-2-inpainting/blob/main/512-inpainting-ema.safetensors)  file and put it in your `Hanzo Studio/models/checkpoints` folder:
 
 #### 2. Inpainting Asset
 
 Please download the following image which we'll use as input:
 
-![ComfyUI Inpainting Input Image](/images/tutorial/basic/inpaint/input.png)
+![Hanzo Studio Inpainting Input Image](/images/tutorial/basic/inpaint/input.png)
 
 <Note>This image already contains an alpha channel (transparency mask), so you don't need to manually draw a mask. This tutorial will also cover how to use the mask editor to draw masks.</Note>
 
 #### 3. Inpainting Workflow
 
-Download the image below and **drag it into ComfyUI** to load the workflow:
+Download the image below and **drag it into Hanzo Studio** to load the workflow:
 
-![ComfyUI Inpainting Workflow](/images/tutorial/basic/inpaint/sd1.5_inpaint.png)
+![Hanzo Studio Inpainting Workflow](/images/tutorial/basic/inpaint/sd1.5_inpaint.png)
 
 <Tip>
-Images containing workflow JSON in their metadata can be directly dragged into ComfyUI or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
+Images containing workflow JSON in their metadata can be directly dragged into Hanzo Studio or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
 </Tip>
 
-### ComfyUI Inpainting Workflow Example Explanation
+### Hanzo Studio Inpainting Workflow Example Explanation
 
 Follow the steps in the diagram below to ensure the workflow runs correctly.
 
-![ComfyUI Inpainting Workflow](/images/tutorial/basic/inpaint/inpaint_workflow.png)
+![Hanzo Studio Inpainting Workflow](/images/tutorial/basic/inpaint/inpaint_workflow.png)
 
 1. Ensure `Load Checkpoint` loads `512-inpainting-ema.safetensors`
 2. Upload the input image to the `Load Image` node
@@ -58,7 +58,7 @@ Follow the steps in the diagram below to ensure the workflow runs correctly.
 
 ![Inpainting Comparison](/images/tutorial/basic/inpaint/sd1.5_inpaint.png)
 
-For comparison, here's the result using the [v1-5-pruned-emaonly-fp16.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors) model:
+For comparison, here's the result using the [v1-5-pruned-emaonly-fp16.safetensors](https://huggingface.co/hanzoui/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors) model:
 
 ![SD1.5 Inpainting Result](/images/tutorial/basic/inpaint/inpaint_sd1.5_pruned_emaonly.png)
 

@@ -1,5 +1,5 @@
 ---
-title: "如何解决和排查 ComfyUI 中自定义节点导致的问题"
+title: "如何解决和排查 Hanzo Studio 中自定义节点导致的问题"
 description: "故障排除和修复由自定义节点和扩展引起的问题"
 icon: "puzzle-piece"
 sidebarTitle: "自定义节点问题"
@@ -8,7 +8,7 @@ sidebarTitle: "自定义节点问题"
 ## 快速问题诊断
 
 如果你遇到以下任何问题，很可能是由自定义节点引起的：
-- ComfyUI 崩溃或无法启动
+- Hanzo Studio 崩溃或无法启动
 - 控制台/日志中出现"Failed to import"（导入失败）错误
 - UI 完全损坏或显示空白屏幕
 - "Prompt execution failed"（提示执行失败）错误
@@ -16,15 +16,15 @@ sidebarTitle: "自定义节点问题"
 
 ## 这是自定义节点问题吗？
 
-大多数 ComfyUI 问题都是由自定义节点（扩展）引起的。让我们检查是否是这种情况。
+大多数 Hanzo Studio 问题都是由自定义节点（扩展）引起的。让我们检查是否是这种情况。
 
 ### 步骤 1：禁用所有自定义节点后测试
 
-在禁用所有自定义节点的情况下运行 ComfyUI：
+在禁用所有自定义节点的情况下运行 Hanzo Studio：
 
 <Tabs>
 <Tab title="桌面版">
-从设置菜单中启动禁用自定义节点的 ComfyUI 桌面版
+从设置菜单中启动禁用自定义节点的 Hanzo Studio 桌面版
 
 ![设置菜单-禁用自定义节点](/images/zh/troubleshooting/desktop-diable-custom-node.jpg)
 
@@ -37,7 +37,7 @@ python main.py --disable-all-custom-nodes
 </Tab>
 <Tab title="手动安装">
 ```bash
-cd ComfyUI
+cd Hanzo Studio
 python main.py --disable-all-custom-nodes
 ```
 </Tab>
@@ -53,23 +53,23 @@ python main.py --disable-all-custom-nodes
    3. 在文件中添加 `--disable-all-custom-nodes` 参数，或者复制下面的参数保存到 txt 文件中后将文件后缀名改为 `.bat`
 
    ```bash
-   .\python_embeded\python.exe -s ComfyUI\main.py --disable-all-custom-nodes  --windows-standalone-build
+   .\python_embeded\python.exe -s Hanzo Studio\main.py --disable-all-custom-nodes  --windows-standalone-build
    pause
    ```
    4. 保存文件并关闭
-   5. 双击运行文件，如果一切正常，你应该会看到 ComfyUI 启动，并且自定义节点被禁用
+   5. 双击运行文件，如果一切正常，你应该会看到 Hanzo Studio 启动，并且自定义节点被禁用
    </Tab>
    <Tab title="通过命令行">
-   ![ComfyUI troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-1.jpg)
+   ![Hanzo Studio troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-1.jpg)
    1. 进入便携版所在的文件夹
    2. 通过右键菜单 → 打开终端 来打开命令行
   
-  ![ComfyUI troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-2.jpg)
+  ![Hanzo Studio troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-2.jpg)
 
    3. 确保在命令行中文件夹名称是当前便携版所在的文件目录
-   4. 输入以下命令,来通过便携版的 python 来启动 ComfyUI 并禁用自定义节点
+   4. 输入以下命令,来通过便携版的 python 来启动 Hanzo Studio 并禁用自定义节点
    ```
-   .\python_embeded\python.exe -s ComfyUI\main.py --disable-all-custom-nodes
+   .\python_embeded\python.exe -s Hanzo Studio\main.py --disable-all-custom-nodes
    ```
    </Tab>
  </Tabs>
@@ -86,20 +86,20 @@ python main.py --disable-all-custom-nodes
 
 ### 选项 A：使用 Comfy CLI（推荐）
 
-如果你已安装 [Comfy CLI](/zh-CN/comfy-cli/getting-started)，可以使用自动化的二分工具来找到有问题的节点：
+如果你已安装 [Comfy CLI](/zh-CN/hanzo-cli/getting-started)，可以使用自动化的二分工具来找到有问题的节点：
 
 ```bash
 # 开始二分会话
-comfy-cli node bisect start
+hanzo-cli node bisect start
 
 # 按照提示操作：
-# - 使用当前启用的节点集测试 ComfyUI
-# - 如果问题消失，标记为 'good'：comfy-cli node bisect good
-# - 如果问题仍然存在，标记为 'bad'：comfy-cli node bisect bad
+# - 使用当前启用的节点集测试 Hanzo Studio
+# - 如果问题消失，标记为 'good'：hanzo-cli node bisect good
+# - 如果问题仍然存在，标记为 'bad'：hanzo-cli node bisect bad
 # - 重复直到识别出有问题的节点
 
 # 完成后重置
-comfy-cli node bisect reset
+hanzo-cli node bisect reset
 ```
 
 二分工具将自动启用/禁用节点并引导你完成整个过程。
@@ -159,7 +159,7 @@ mkdir /content/custom_nodes_backup
 mkdir /content/custom_nodes_temp
 
 # 首先备份所有内容
-cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
+cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
 ```
 </Tab>
 </Tabs>
@@ -180,7 +180,7 @@ cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
    </Tab>
    <Tab title="云端/Colab">
    ```bash
-   ls /content/ComfyUI/custom_nodes/
+   ls /content/Hanzo Studio/custom_nodes/
    ```
    </Tab>
    </Tabs>
@@ -211,15 +211,15 @@ cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
    <Tab title="云端/Colab">
    ```bash
    # 将前一半（节点 1-4）移动到临时文件夹
-   mv /content/ComfyUI/custom_nodes/node1 /content/custom_nodes_temp/
-   mv /content/ComfyUI/custom_nodes/node2 /content/custom_nodes_temp/
-   mv /content/ComfyUI/custom_nodes/node3 /content/custom_nodes_temp/
-   mv /content/ComfyUI/custom_nodes/node4 /content/custom_nodes_temp/
+   mv /content/Hanzo Studio/custom_nodes/node1 /content/custom_nodes_temp/
+   mv /content/Hanzo Studio/custom_nodes/node2 /content/custom_nodes_temp/
+   mv /content/Hanzo Studio/custom_nodes/node3 /content/custom_nodes_temp/
+   mv /content/Hanzo Studio/custom_nodes/node4 /content/custom_nodes_temp/
    ```
    </Tab>
    </Tabs>
 
-3. **测试 ComfyUI：**
+3. **测试 Hanzo Studio：**
    ```bash
    python main.py
    ```
@@ -240,45 +240,45 @@ cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
 
 ```
 📁 custom_nodes/
-├── 🔧 ComfyUI-Manager
-├── 🎨 ComfyUI-Custom-Scripts  
-├── 🖼️ ComfyUI-Impact-Pack
-├── 🔄 ComfyUI-Workflow-Component
-├── 📊 ComfyUI-AnimateDiff-Evolved
-├── 🎭 ComfyUI-FaceRestore
-├── ⚡ ComfyUI-Advanced-ControlNet
-└── 🛠️ ComfyUI-Inspire-Pack
+├── 🔧 Hanzo Manager
+├── 🎨 Hanzo Studio-Custom-Scripts  
+├── 🖼️ Hanzo Studio-Impact-Pack
+├── 🔄 Hanzo Studio-Workflow-Component
+├── 📊 Hanzo Studio-AnimateDiff-Evolved
+├── 🎭 Hanzo Studio-FaceRestore
+├── ⚡ Hanzo Studio-Advanced-ControlNet
+└── 🛠️ Hanzo Studio-Inspire-Pack
 ```
 
 **第 1 轮：** 将前 4 个移动到临时文件夹
 - 测试 → 问题仍然存在 ✓
-- 问题在：ComfyUI-AnimateDiff-Evolved、ComfyUI-FaceRestore、ComfyUI-Advanced-ControlNet、ComfyUI-Inspire-Pack
+- 问题在：Hanzo Studio-AnimateDiff-Evolved、Hanzo Studio-FaceRestore、Hanzo Studio-Advanced-ControlNet、Hanzo Studio-Inspire-Pack
 
 **第 2 轮：** 将剩余 4 个中的 2 个移动到临时文件夹
 - 测试 → 问题消失 ✓
-- 问题在：ComfyUI-Advanced-ControlNet、ComfyUI-Inspire-Pack
+- 问题在：Hanzo Studio-Advanced-ControlNet、Hanzo Studio-Inspire-Pack
 
 **第 3 轮：** 将剩余 2 个中的 1 个移动到临时文件夹
 - 测试 → 问题仍然存在 ✓
-- **找到了！** ComfyUI-Inspire-Pack 是有问题的节点
+- **找到了！** Hanzo Studio-Inspire-Pack 是有问题的节点
 
 ## 步骤 3：修复问题
 
 一旦你识别出有问题的自定义节点：
 
 ### 选项 1：更新节点
-1. 检查 ComfyUI 管理器中是否有可用更新
+1. 检查 Hanzo Studio 管理器中是否有可用更新
 2. 更新节点并再次测试
 
 ### 选项 2：替换节点
 1. 寻找具有类似功能的替代自定义节点
-2. 查看 [ComfyUI 注册表](https://registry.comfy.org) 寻找替代方案
+2. 查看 [Hanzo Studio 注册表](https://registry.hanzo.ai) 寻找替代方案
 
 ### 选项 3：报告问题
 联系自定义节点开发者：
 1. 找到节点的 GitHub 仓库
 2. 创建问题并包含：
-   - 你的 ComfyUI 版本
+   - 你的 Hanzo Studio 版本
    - 错误消息/日志
    - 重现步骤
    - 你的操作系统
@@ -286,7 +286,7 @@ cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
 ### 选项 4：移除节点
 如果没有修复可用且你不需要该功能：
 1. 从 `custom_nodes/` 中移除有问题的节点
-2. 重启 ComfyUI
+2. 重启 Hanzo Studio
 
 ## 报告问题
 
@@ -295,18 +295,18 @@ cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
 ### 自定义节点特定问题
 联系自定义节点开发者：
 - 找到节点的 GitHub 仓库
-- 创建问题并包含你的 ComfyUI 版本、错误消息、重现步骤和操作系统
+- 创建问题并包含你的 Hanzo Studio 版本、错误消息、重现步骤和操作系统
 - 查看节点文档了解已知问题
 
-### ComfyUI 核心问题
-- **GitHub**：[ComfyUI Issues](https://github.com/comfyanonymous/ComfyUI/issues)
-- **论坛**：[官方 ComfyUI 论坛](https://forum.comfy.org/)
+### Hanzo Studio 核心问题
+- **GitHub**：[Hanzo Studio Issues](https://github.com/hanzoai/studio/issues)
+- **论坛**：[官方 Hanzo Studio 论坛](https://forum.hanzo.ai/)
 
 ### 桌面应用问题  
-- **GitHub**：[ComfyUI 桌面问题](https://github.com/Comfy-Org/desktop/issues)
+- **GitHub**：[Hanzo Studio 桌面问题](https://github.com/hanzoui/desktop/issues)
 
 ### 前端问题
-- **GitHub**：[ComfyUI 前端问题](https://github.com/Comfy-Org/ComfyUI_frontend/issues)
+- **GitHub**：[Hanzo Studio 前端问题](https://github.com/hanzoui/studio_frontend/issues)
 
 <Note>
 对于一般安装、模型或性能问题，请参见我们的[故障排除概述](/zh-CN/troubleshooting/overview)和[模型问题](/zh-CN/troubleshooting/model-issues)页面。

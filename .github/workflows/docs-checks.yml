@@ -25,5 +25,5 @@ jobs:
         run: mint broken-links 
       
       - name: Run OpenAPI Schema Check
-        run: mint openapi-check https://api.comfy.org/openapi
+        run: mint openapi-check https://api.hanzo.ai/openapi
         

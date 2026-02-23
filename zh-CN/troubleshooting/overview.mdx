@@ -1,12 +1,12 @@
 ---
-title: "如何排查和解决 ComfyUI 中出现的错误"
-description: "常见 ComfyUI 问题、解决方案和如何有效报告错误"
+title: "如何排查和解决 Hanzo Studio 中出现的错误"
+description: "常见 Hanzo Studio 问题、解决方案和如何有效报告错误"
 icon: "lightbulb"
 sidebarTitle: "概述"
 ---
 
 <Tip>
-   我们日常收到的诸多反馈问题，我们发现绝大部分的问题提交都与自定义节点有关,所以在提交对应的错误反馈之前，请你确保详细阅读了 [自定义节点故障排除](/zh-CN/troubleshooting/custom-node-issues) 部分的指南，来确保对应的问题并不是由 ComfyUI 核心问题导致的。
+   我们日常收到的诸多反馈问题，我们发现绝大部分的问题提交都与自定义节点有关,所以在提交对应的错误反馈之前，请你确保详细阅读了 [自定义节点故障排除](/zh-CN/troubleshooting/custom-node-issues) 部分的指南，来确保对应的问题并不是由 Hanzo Studio 核心问题导致的。
 </Tip>
 
 <Card title="自定义节点故障排除指南" icon="puzzle-piece" href="/zh-CN/troubleshooting/custom-node-issues">
@@ -17,7 +17,7 @@ sidebarTitle: "概述"
 
 在深入详细故障排除之前，请尝试这些常见解决方案：
 
-### ComfyUI 无法启动
+### Hanzo Studio 无法启动
 
 **症状：** 应用程序在启动时崩溃、黑屏或无法加载
 
@@ -126,9 +126,9 @@ python main.py --cache-lru 10  # 缓存 10 个结果
 python --version
 
 # 使用虚拟环境（推荐）
-python -m venv comfyui_env
-source comfyui_env/bin/activate  # Linux/Mac
-comfyui_env\Scripts\activate     # Windows
+python -m venv hanzo_studio_env
+source hanzo_studio_env/bin/activate  # Linux/Mac
+hanzo_studio_env\Scripts\activate     # Windows
 ```
 
 **包安装失败：**
@@ -237,7 +237,7 @@ python -c "import torch; print('CUDA available:', torch.cuda.is_available()); pr
 **症状：** "无法连接到服务器"、超时错误
 
 **解决方案：**
-1. **检查防火墙设置** - 允许 ComfyUI 通过防火墙
+1. **检查防火墙设置** - 允许 Hanzo Studio 通过防火墙
 2. **尝试不同端口** - 默认是 8188，尝试 8189 或 8190
 3. **临时禁用 VPN** - VPN 可能阻止连接
 4. **检查代理设置** - 如果不需要，禁用代理
@@ -282,9 +282,9 @@ python main.py --force-fp16 --cpu
 ### 报告错误之前
 
 1. **检查是否是已知问题：**
-   - 搜索 [GitHub Issues](https://github.com/comfyanonymous/ComfyUI/issues)
-   - 检查 [ComfyUI 论坛](https://forum.comfy.org/)
-   - 查看 [Discord 讨论](https://discord.com/invite/comfyorg)
+   - 搜索 [GitHub Issues](https://github.com/hanzoai/studio/issues)
+   - 检查 [Hanzo Studio 论坛](https://forum.hanzo.ai/)
+   - 查看 [Discord 讨论](https://discord.com/invite/hanzoai)
 
 2. **尝试基本故障排除：**
    - 使用[默认工作流](/zh-CN/get_started/first_generation)进行测试
@@ -293,14 +293,14 @@ python main.py --force-fp16 --cpu
 
 ### 如何有效报告错误
 
-#### 对于 ComfyUI 核心问题
-**问题提交：** [GitHub Issues](https://github.com/comfyanonymous/ComfyUI/issues)
+#### 对于 Hanzo Studio 核心问题
+**问题提交：** [GitHub Issues](https://github.com/hanzoai/studio/issues)
 
 #### 对于桌面应用问题
-**问题提交：** [桌面 GitHub Issues](https://github.com/Comfy-Org/desktop/issues)
+**问题提交：** [桌面 GitHub Issues](https://github.com/hanzoui/desktop/issues)
 
 #### 对于前端问题
-**问题提交：** [前端 GitHub Issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)
+**问题提交：** [前端 GitHub Issues](https://github.com/hanzoui/studio_frontend/issues)
 
 #### 对于自定义节点问题
 **问题提交：** 请到对应的自定义节点仓库中提交问题
@@ -313,9 +313,9 @@ python main.py --force-fp16 --cpu
    <Step title="系统信息">
 
    <Tabs>
-   <Tab title="从 ComfyUI 中获取">
+   <Tab title="从 Hanzo Studio 中获取">
    - 操作系统（Windows 11、macOS 14.1、Ubuntu 22.04 等）
-   - ComfyUI 版本（检查设置中的关于页面）
+   - Hanzo Studio 版本（检查设置中的关于页面）
    - Python 版本：`python --version`
    - PyTorch 版本：`python -c "import torch; print(torch.__version__)"`
    - GPU 型号和驱动程序版本
@@ -377,11 +377,11 @@ python main.py --force-fp16 --cpu
 
 ## 社区资源
 
-- **官方论坛：** [forum.comfy.org](https://forum.comfy.org/)
-- **Discord：** [ComfyUI Discord 服务器](https://discord.com/invite/comfyorg)
+- **官方论坛：** [forum.hanzo.ai](https://forum.hanzo.ai/)
+- **Discord：** [Hanzo Studio Discord 服务器](https://discord.com/invite/hanzoai)
 - **Reddit：** [r/comfyui](https://reddit.com/r/comfyui)
-- **YouTube：** [ComfyUI 教程](https://www.youtube.com/@comfyorg)
+- **YouTube：** [Hanzo Studio 教程](https://www.youtube.com/@comfyorg)
 
 <Note>
-对于影响许多用户的紧急问题，请查看我们的[状态页面](https://status.comfy.org)和[官方 Twitter](https://x.com/ComfyUI)以获取公告。
+对于影响许多用户的紧急问题，请查看我们的[状态页面](https://status.hanzo.ai)和[官方 Twitter](https://x.com/Hanzo Studio)以获取公告。
 </Note>

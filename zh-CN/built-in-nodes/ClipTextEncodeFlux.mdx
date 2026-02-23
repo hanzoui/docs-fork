@@ -1,11 +1,11 @@
 ---
-title: "CLIP文本编码Flux - ComfyUI 原生节点文档"
-description: "CLIP文本编码Flux 节点是 ComfyUI 中专为 Flux 架构设计的高级文本编码节点。"
+title: "CLIP文本编码Flux - Hanzo Studio 原生节点文档"
+description: "CLIP文本编码Flux 节点是 Hanzo Studio 中专为 Flux 架构设计的高级文本编码节点。"
 sidebarTitle: "CLIP文本编码Flux"
 icon: "circle"
 ---
 
-`CLIP文本编码Flux` 是 ComfyUI 中专为 Flux 架构设计的高级文本编码节点。它采用双文本编码器（CLIP-L 与 T5XXL）协同机制，能够同时处理结构化关键词和详细自然语言描述，为 Flux 模型提供更精准、更丰富的文本理解能力，提升文本到图像的生成质量。
+`CLIP文本编码Flux` 是 Hanzo Studio 中专为 Flux 架构设计的高级文本编码节点。它采用双文本编码器（CLIP-L 与 T5XXL）协同机制，能够同时处理结构化关键词和详细自然语言描述，为 Flux 模型提供更精准、更丰富的文本理解能力，提升文本到图像的生成质量。
 
 该节点基于双编码器协作机制：
 1. `clip_l` 输入会被 CLIP-L 编码器处理，提取风格、主题等关键词特征，适合简洁描述。

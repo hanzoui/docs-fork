@@ -1,10 +1,10 @@
 ---
-title: 'Integration of API Key to use ComfyUI API nodes'
-description: 'This article explains how to use ComfyUI API Key to call ComfyUI API nodes in headless mode'
+title: 'Integration of API Key to use Hanzo Studio API nodes'
+description: 'This article explains how to use Hanzo Studio API Key to call Hanzo Studio API nodes in headless mode'
 sidebarTitle: 'API Key Integration'
 ---
 
-Starting from [PR #8041](https://github.com/comfyanonymous/ComfyUI/pull/8041), ComfyUI supports directly using built-in API nodes through API Keys, without requiring a specific frontend interface (you can even run without a frontend).
+Starting from [PR #8041](https://github.com/hanzoai/studio/pull/8041), Hanzo Studio supports directly using built-in API nodes through API Keys, without requiring a specific frontend interface (you can even run without a frontend).
 
 This means you can create workflows that combine:
 - local OS models
@@ -17,17 +17,17 @@ This is helpful for users who want to use Comfy as a backend service, via the co
 
 ## Prerequisites
 
-Using API Key to call ComfyUI's built-in API nodes requires:
+Using API Key to call Hanzo Studio's built-in API nodes requires:
 - API Key for the corresponding account
 - Sufficient account credits
 
-To use API Key to call ComfyUI's built-in API nodes, you need to first register an account on [ComfyUI Platform](https://platform.comfy.org/login) and create an API key
+To use API Key to call Hanzo Studio's built-in API nodes, you need to first register an account on [Hanzo Studio Platform](https://platform.hanzo.ai/login) and create an API key
 
 <Card title="Login with API Key" icon="link" href="/interface/user#logging-in-with-an-api-key">
 Please refer to the User Interface section to learn how to login with API Key
 </Card>
 
-You need to ensure your ComfyUI account has sufficient credits to test the corresponding features.
+You need to ensure your Hanzo Studio account has sufficient credits to test the corresponding features.
 
 <Card title="Credits" icon="link" href="/interface/credits">
 Please refer to the Credits section to learn how to purchase credits for your account
@@ -36,19 +36,19 @@ Please refer to the Credits section to learn how to purchase credits for your ac
 
 ## Python Example
 
-Here is an example of how to send a workflow containing API nodes to the ComfyUI API using Python code:
+Here is an example of how to send a workflow containing API nodes to the Hanzo Studio API using Python code:
 
 ```python
-"""Using API nodes when running ComfyUI headless or with alternative frontend
+"""Using API nodes when running Hanzo Studio headless or with alternative frontend
 
-You can execute a ComfyUI workflow that contains API nodes by including an API key in the prompt.
+You can execute a Hanzo Studio workflow that contains API nodes by including an API key in the prompt.
 The API key should be added to the `extra_data` field of the payload.
 Below we show an example of how to do this.
 
 See more:
 
-- API nodes overview: https://docs.comfy.org/tutorials/api-nodes/overview
-- To generate an API key, login here: https://platform.comfy.org/login
+- API nodes overview: https://docs.hanzo.ai/tutorials/api-nodes/overview
+- To generate an API key, login here: https://platform.hanzo.ai/login
 """
 
 import json
@@ -78,7 +78,7 @@ workflow_with_api_nodes = """{
   },
   "12": {
     "inputs": {
-      "filename_prefix": "ComfyUI",
+      "filename_prefix": "Hanzo Studio",
       "images": [
         "11",
         0
@@ -107,7 +107,7 @@ payload = {
     # Add the `api_key_comfy_org` to the payload.
     # You can first get the key from the associated user if handling multiple clients.
     "extra_data": {
-        "api_key_comfy_org": "comfyui-87d01e28d*******************************************************"  # replace with actual key
+        "api_key_comfy_org": "hanzo-studio-87d01e28d*******************************************************"  # replace with actual key
     },
 }
 data = json.dumps(payload).encode("utf-8")
@@ -118,6 +118,6 @@ request.urlopen(req)
 
 ## Related Documentation
 
-- [API nodes overview](https://docs.comfy.org/tutorials/api-nodes/overview)
-- [Account management](https://docs.comfy.org/interface/user)
-- [Credits](https://docs.comfy.org/interface/credits)
+- [API nodes overview](https://docs.hanzo.ai/tutorials/api-nodes/overview)
+- [Account management](https://docs.hanzo.ai/interface/user)
+- [Credits](https://docs.hanzo.ai/interface/credits)

@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI Wan2.1 Fun InP 视频示例"
-description: "本文介绍了如何在 ComfyUI 中完成 Wan2.1 Fun InP 视频首尾帧视频生成示例"
+title: "Hanzo Studio Wan2.1 Fun InP 视频示例"
+description: "本文介绍了如何在 Hanzo Studio 中完成 Wan2.1 Fun InP 视频首尾帧视频生成示例"
 sidebarTitle: "Wan2.1 Fun InP"
 ---
 
@@ -28,14 +28,14 @@ Wan-Fun InP 是阿里巴巴推出的开源视频生成模型，属于 ​​Wan2
 <UpdateReminder/>
 
 <Tip>
-目前 ComfyUI 已原生支持了 Wan2.1 Fun InP 模型，在开始本篇教程前，请更新你的 ComfyUI 保证你的版本在[这个提交](https://github.com/comfyanonymous/ComfyUI/commit/0a1f8869c9998bbfcfeb2e97aa96a6d3e0a2b5df)版本之后
+目前 Hanzo Studio 已原生支持了 Wan2.1 Fun InP 模型，在开始本篇教程前，请更新你的 Hanzo Studio 保证你的版本在[这个提交](https://github.com/hanzoai/studio/commit/0a1f8869c9998bbfcfeb2e97aa96a6d3e0a2b5df)版本之后
 </Tip>
 
 ## Wan2.1 Fun Control 工作流
 
-下载下面的图片，并拖入 ComfyUI 中以加载对应的工作流
+下载下面的图片，并拖入 Hanzo Studio 中以加载对应的工作流
 
-![工作流文件](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/wan2.1_fun_inp/wan2.1_fun_inp.webp)
+![工作流文件](https://raw.githubusercontent.com/hanzoui/example-workflows/main/wan2.1_fun_inp/wan2.1_fun_inp.webp)
 
 ### 1. 工作流文件下载
 
@@ -43,25 +43,25 @@ Wan-Fun InP 是阿里巴巴推出的开源视频生成模型，属于 ​​Wan2
 
 如果对应的自动模型下载无效，请手动进行模型下载，并保存到对应的文件夹
 
-下面的模型你可以在 [Wan_2.1_ComfyUI_repackaged](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged) 和 [Wan2.1-Fun](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334) 找到
+下面的模型你可以在 [Wan_2.1_Hanzo Studio_repackaged](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged) 和 [Wan2.1-Fun](https://huggingface.co/collections/alibaba-pai/wan21-fun-67e4fb3b76ca01241eb7e334) 找到
 
 **Diffusion models** 选择 1.3B 或 14B, 14B 的文件体积更大（32GB）但是对于运行显存要求也较高，
-- [wan2.1_fun_inp_1.3B_bf16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_fun_inp_1.3B_bf16.safetensors?download=true)
+- [wan2.1_fun_inp_1.3B_bf16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_fun_inp_1.3B_bf16.safetensors?download=true)
 - [Wan2.1-Fun-14B-InP](https://huggingface.co/alibaba-pai/Wan2.1-Fun-14B-InP/resolve/main/diffusion_pytorch_model.safetensors?download=true)： 建议下载后重命名为 `Wan2.1-Fun-14B-InP.safetensors`
 
 **Text encoders** 选择下面两个模型中的一个，fp16 精度体积较大对性能要求高
-- [umt5_xxl_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
-- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
+- [umt5_xxl_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
+- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
 
 **VAE**
-- [wan_2.1_vae.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
+- [wan_2.1_vae.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
 
 **CLIP Vision** 
-- [clip_vision_h.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors?download=true)
+- [clip_vision_h.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors?download=true)
 
 文件保存位置
 ```
-📂 ComfyUI/
+📂 Hanzo Studio/
 ├── 📂 models/
 │   ├── 📂 diffusion_models/
 │   │   └── wan2.1_fun_inp_1.3B_bf16.safetensors
@@ -75,7 +75,7 @@ Wan-Fun InP 是阿里巴巴推出的开源视频生成模型，属于 ​​Wan2
 
 ### 3. 按步骤完成工作流
 
-![ComfyUI Wan2.1 Fun Control 视频生成工作流步骤图](/images/tutorial/video/wan/fun_inp_flow_diagram.png)
+![Hanzo Studio Wan2.1 Fun Control 视频生成工作流步骤图](/images/tutorial/video/wan/fun_inp_flow_diagram.png)
 
 1. 确保 `Load Diffusion Model` 节点加载了 `wan2.1_fun_inp_1.3B_bf16.safetensors`
 2. 确保 `Load CLIP` 节点加载了 `umt5_xxl_fp8_e4m3fn_scaled.safetensors`
@@ -97,6 +97,6 @@ Wan-Fun InP 是阿里巴巴推出的开源视频生成模型，属于 ​​Wan2
 
 ## 其它 Wan2.1 Fun Inp 或者视频相关自定义节点
 
-- [ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite) 
-- [ComfyUI-WanVideoWrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
-- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
+- [Hanzo Studio-VideoHelperSuite](https://github.com/Kosinkadink/Hanzo Studio-VideoHelperSuite) 
+- [Hanzo Studio-WanVideoWrapper](https://github.com/kijai/Hanzo Studio-WanVideoWrapper)
+- [Hanzo Studio-KJNodes](https://github.com/kijai/Hanzo Studio-KJNodes)

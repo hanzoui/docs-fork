@@ -1,6 +1,6 @@
 ---
-title: "Luma Text to Image API 节点 ComfyUI 官方示例"
-description: "本文将介绍如何在 ComfyUI 中使用 Luma Text to Image API 节点的相关功能"
+title: "Luma Text to Image API 节点 Hanzo Studio 官方示例"
+description: "本文将介绍如何在 Hanzo Studio 中使用 Luma Text to Image API 节点的相关功能"
 sidebarTitle: "Luma Text to Image"
 ---
 
@@ -33,14 +33,14 @@ Luma Reference API 节点说明文档
 
 ### 1. 工作流文件下载
 
-下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 ComfyUI 中加载对应工作流。
+下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 Hanzo Studio 中加载对应工作流。
 
-![Luma 文本生图工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/luma/t2i/luma_t2i.png)
+![Luma 文本生图工作流](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/luma/t2i/luma_t2i.png)
 
 请下载下面的图片，我们将会用作输入：
 
-![输入图片-参考](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/luma/t2i/input_ref.png)
-![输入图片-风格](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/luma/t2i/input_style.png)
+![输入图片-参考](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/luma/t2i/input_ref.png)
+![输入图片-风格](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/luma/t2i/input_style.png)
 
 ### 2. 按步骤完成工作流的运行
 
@@ -52,7 +52,7 @@ Luma Reference API 节点说明文档
 3. （可选）修改 `Luma Text to Image` 节点的提示词
 4. （可选）修改 `style_image_weight` 的权重，来调整风格参考图像的权重
 5. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行图片的生成
-6. 等待 API 返回结果后，你可在`Save Image`节点中查看生成的图像, 对应的图片也会被保存至`ComfyUI/output/` 目录下
+6. 等待 API 返回结果后，你可在`Save Image`节点中查看生成的图像, 对应的图片也会被保存至`Hanzo Studio/output/` 目录下
 
 
 ![不同 style_image_weight 效果对比](/images/tutorial/api_nodes/luma/t2i_style_image_weight.jpg)

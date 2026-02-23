@@ -6,7 +6,7 @@ icon: "file"
 import ExternalModels from "/snippets/install/add-external-models.mdx"
 
 {/*
-description: "了解AI模型及其在ComfyUI中的作用"
+description: "了解AI模型及其在Hanzo Studio中的作用"
 */}
 
 ## 模型是必不可少的
@@ -15,18 +15,18 @@ description: "了解AI模型及其在ComfyUI中的作用"
 
 **_模型_** 这个词有许多不同的含义。在这里，它指的是一个数据文件，携带节点图执行其工作所需的信息。具体来说，它是一个数据结构，_模型_ 某种功能。作为动词，建模某物意味着表示它或提供一个示例。
 
-在ComfyUI中，模型数据文件的主要示例是AI **_扩散模型_**。这是一组大型数据，表示文本字符串和图像之间复杂的关系，使得将单词翻译成图片或反之成为可能。其他用于图像生成的常见模型示例包括语言模型，如CLIP，以及图像放大模型，如RealESRGAN。
+在Hanzo Studio中，模型数据文件的主要示例是AI **_扩散模型_**。这是一组大型数据，表示文本字符串和图像之间复杂的关系，使得将单词翻译成图片或反之成为可能。其他用于图像生成的常见模型示例包括语言模型，如CLIP，以及图像放大模型，如RealESRGAN。
 
 ## 模型文件
 
-模型文件对于生成媒体制作是绝对必要的。如果找不到模型文件，工作流程中将无法进行任何操作。模型不包含在ComfyUI安装中，但ComfyUI通常可以自动下载和安装缺失的模型文件。许多模型可以从**ComfyUI管理器**窗口下载和安装。模型也可以在以下网站找到：[huggingface.co](https://huggingface.co)、[civitai.green](https://civitai.green)和[github.com](https://github.com)。
+模型文件对于生成媒体制作是绝对必要的。如果找不到模型文件，工作流程中将无法进行任何操作。模型不包含在Hanzo Studio安装中，但Hanzo Studio通常可以自动下载和安装缺失的模型文件。许多模型可以从**Hanzo Studio管理器**窗口下载和安装。模型也可以在以下网站找到：[huggingface.co](https://huggingface.co)、[civitai.green](https://civitai.green)和[github.com](https://github.com)。
 
-### 在ComfyUI中使用模型
+### 在Hanzo Studio中使用模型
 
-1. 下载并将其放置在ComfyUI程序目录中
+1. 下载并将其放置在Hanzo Studio程序目录中
     1. 在**models**文件夹中，您会找到各种类型模型的子文件夹，例如**checkpoints**
-    2. **ComfyUI管理器**帮助自动化搜索、下载和安装的过程
-    3. 如果ComfyUI正在运行，请重启它
+    2. **Hanzo Studio管理器**帮助自动化搜索、下载和安装的过程
+    3. 如果Hanzo Studio正在运行，请重启它
 2. 在您的工作流程中，创建适合模型类型的节点，例如**Load Checkpoints**、**Load LoRA**、**Load VAE**
 3. 在加载节点中，选择您希望使用的模型
 4. 将加载节点连接到工作流程中的其他节点

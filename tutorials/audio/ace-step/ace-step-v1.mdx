@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI ACE-Step Native Example"
-description: "This guide will help you create dynamic music using the ACE-Step model in ComfyUI"
+title: "Hanzo Studio ACE-Step Native Example"
+description: "This guide will help you create dynamic music using the ACE-Step model in Hanzo Studio"
 sidebarTitle: "ACE-Step Music Generation"
 ---
 
@@ -19,19 +19,19 @@ You can visit their [Github](https://github.com/ace-step/ACE-Step?tab=readme-ov-
 
 <UpdateReminder/>
 
-## ACE-Step ComfyUI Text-to-Audio Generation Workflow Example
+## ACE-Step Hanzo Studio Text-to-Audio Generation Workflow Example
 
 ### 1. Download Workflow and Related Models
 
-Click the button below to download the corresponding workflow file. Drag it into ComfyUI to load the workflow information. The workflow includes model download information.
+Click the button below to download the corresponding workflow file. Drag it into Hanzo Studio to load the workflow information. The workflow includes model download information.
 
-Click the button below to download the corresponding workflow file. Drag it into ComfyUI to load the workflow information. The workflow includes model download information.
+Click the button below to download the corresponding workflow file. Drag it into Hanzo Studio to load the workflow information. The workflow includes model download information.
 
-<a className="prose"  target='_blank' href="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/audio/ace-step/ace_step_1_t2m.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
+<a className="prose"  target='_blank' href="https://raw.githubusercontent.com/hanzoui/example-workflows/main/audio/ace-step/ace_step_1_t2m.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
     <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Download Json Format Workflow File</p>
 </a>
 
-You can also manually download [ace_step_v1_3.5b.safetensors](https://huggingface.co/Comfy-Org/ACE-Step_ComfyUI_repackaged/blob/main/all_in_one/ace_step_v1_3.5b.safetensors) and save it to the `ComfyUI/models/checkpoints` folder
+You can also manually download [ace_step_v1_3.5b.safetensors](https://huggingface.co/hanzoui/ACE-Step_Hanzo Studio_repackaged/blob/main/all_in_one/ace_step_v1_3.5b.safetensors) and save it to the `Hanzo Studio/models/checkpoints` folder
 
 ### 2. Complete the Workflow Step by Step
 
@@ -42,23 +42,23 @@ You can also manually download [ace_step_v1_3.5b.safetensors](https://huggingfac
 4. (Optional) Input corresponding music styles etc. in the `tags` field of `TextEncodeAceStepAudio`
 5. (Optional) Input corresponding lyrics in the `lyrics` field of `TextEncodeAceStepAudio`
 6. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute the audio generation
-7. After the workflow completes,, you can preview the generated audio in the `Save Audio` node. You can click to play and listen to it, and the audio will also be saved to `ComfyUI/output/audio` (subdirectory determined by the `Save Audio` node).
+7. After the workflow completes,, you can preview the generated audio in the `Save Audio` node. You can click to play and listen to it, and the audio will also be saved to `Hanzo Studio/output/audio` (subdirectory determined by the `Save Audio` node).
 
-## ACE-Step ComfyUI Audio-to-Audio Workflow
+## ACE-Step Hanzo Studio Audio-to-Audio Workflow
 
 Similar to image-to-image workflows, you can input a piece of music and use the workflow below to resample and generate music. You can also adjust the difference from the original audio by controlling the `denoise` parameter in the `Ksampler`.
  
 ### 1. Download Workflow File
 
-Click the button below to download the corresponding workflow file. Drag it into ComfyUI to load the workflow information.
+Click the button below to download the corresponding workflow file. Drag it into Hanzo Studio to load the workflow information.
 
-<a className="prose"  target='_blank' href="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/audio/ace-step/ace_step_1_m2m_editing.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
+<a className="prose"  target='_blank' href="https://raw.githubusercontent.com/hanzoui/example-workflows/main/audio/ace-step/ace_step_1_m2m_editing.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
     <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Download Json Format Workflow File</p>
 </a>
 
 Download the following audio file as the input audio:
 
-<a className="prose"   target='_blank' href="https://github.com/Comfy-Org/example_workflows/raw/refs/heads/main/audio/ace-step/input.mp3" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
+<a className="prose"   target='_blank' href="https://github.com/hanzoui/example-workflows/raw/refs/heads/main/audio/ace-step/input.mp3" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
     <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Download Example Audio File for Input</p>
 </a>
 
@@ -72,7 +72,7 @@ Download the following audio file as the input audio:
 3. (Optional) Input corresponding music styles and lyrics in the `tags` and `lyrics` fields of `TextEncodeAceStepAudio`. Providing lyrics is very important for audio editing
 4. (Optional) Modify the `denoise` parameter in the `Ksampler` node to adjust the noise added during sampling to control similarity with the original audio (smaller values result in more similarity to the original audio; setting it to `1.00` is approximately equivalent to having no audio input)
 5. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute the audio generation
-6. After the workflow completes, you can preview the generated audio in the `Save Audio` node. You can click to play and listen to it, and the audio will also be saved to `ComfyUI/output/audio` (subdirectory determined by the `Save Audio` node).
+6. After the workflow completes, you can preview the generated audio in the `Save Audio` node. You can click to play and listen to it, and the audio will also be saved to `Hanzo Studio/output/audio` (subdirectory determined by the `Save Audio` node).
 
 You can also implement the lyrics modification and editing functionality from the ACE-Step project page, modifying the original lyrics to change the audio effect.
 
@@ -157,7 +157,7 @@ Use some professional terms commonly used in music to precisely control music ef
 #### Multilingual Support
 
 - ACE-Step V1 supports multiple languages. When used, ACE-Step converts different languages into English letters and then generates music.
-- In ComfyUI, we haven't fully implemented the conversion of all languages to English letters. Currently, only [Japanese hiragana and katakana characters](https://github.com/comfyanonymous/ComfyUI/commit/5d3cc85e13833aeb6ef9242cdae243083e30c6fc) are implemented.
+- In Hanzo Studio, we haven't fully implemented the conversion of all languages to English letters. Currently, only [Japanese hiragana and katakana characters](https://github.com/hanzoai/studio/commit/5d3cc85e13833aeb6ef9242cdae243083e30c6fc) are implemented.
 So if you need to use multiple languages for music generation, you need to first convert the corresponding language to English letters, and then input the language code abbreviation at the beginning of the `lyrics`, such as Chinese `[zh]`, Korean `[ko]`, etc.
 
 For example:
@@ -204,7 +204,7 @@ Currently, ACE-Step supports 19 languages, but the following ten languages have 
 - Korean: [ko]
 
 <Note>
-The language tags above have not been fully tested at the time of writing this documentation. If any language tag is incorrect, please [submit an issue to our documentation repository](https://github.com/Comfy-Org/docs/issues) and we will make timely corrections.
+The language tags above have not been fully tested at the time of writing this documentation. If any language tag is incorrect, please [submit an issue to our documentation repository](https://github.com/hanzoui/docs/issues) and we will make timely corrections.
 </Note>
 
 ## ACE-Step Related Resources

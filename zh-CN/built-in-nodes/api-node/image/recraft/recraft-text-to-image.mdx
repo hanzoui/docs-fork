@@ -1,11 +1,11 @@
 ---
-title: "Recraft Text to Image - ComfyUI 原生节点文档"
+title: "Recraft Text to Image - Hanzo Studio 原生节点文档"
 description: "通过文本描述生成高质量图像的 Recraft API 节点"
 sidebarTitle: "Recraft Text to Image"
 icon: "circle"
 ---
 
-![ComfyUI 原生 Recraft Text to Image 节点](/images/built-in-nodes/api_nodes/recraft/recraft-text-to-image.jpg)
+![Hanzo Studio 原生 Recraft Text to Image 节点](/images/built-in-nodes/api_nodes/recraft/recraft-text-to-image.jpg)
 
 Recraft Text to Image 节点允许你通过文本提示词生成高质量图像，直接连接 Recraft AI 的图像生成 API，创建各种风格的图像作品。
 
@@ -45,7 +45,7 @@ Recraft Text to Image 节点允许你通过文本提示词生成高质量图像�
 2. 如有连接，合并风格设置和控制参数
 3. 构建API请求并发送到Recraft服务器
 4. 接收返回的图像URL并下载图像数据
-5. 将图像数据转换为ComfyUI可用的tensor格式并输出
+5. 将图像数据转换为Hanzo Studio可用的tensor格式并输出
 
 节点使用同步操作模式，会在处理完成前阻塞工作流执行，直到所有请求的图像都生成完毕。该节点利用Recraft的V3模型进行图像生成，能支持各种详细的文本描述和风格变化。
 

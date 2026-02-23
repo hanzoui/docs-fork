@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI Wan2.1 VACE 视频示例"
-description: "本文介绍了如何在 ComfyUI 中完成 Wan2.1 VACE 视频生成示例"
+title: "Hanzo Studio Wan2.1 VACE 视频示例"
+description: "本文介绍了如何在 Hanzo Studio 中完成 Wan2.1 VACE 视频生成示例"
 sidebarTitle: "Wan2.1 VACE"
 ---
 
@@ -48,24 +48,24 @@ VACE 14B 是阿里通义万相团队推出的开源视频编辑统一模型。�
 
 ### 模型下载
 **diffusion_models** 
-[wan2.1_vace_14B_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_14B_fp16.safetensors)
-[wan2.1_vace_1.3B_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_1.3B_fp16.safetensors)
+[wan2.1_vace_14B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_14B_fp16.safetensors)
+[wan2.1_vace_1.3B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_vace_1.3B_fp16.safetensors)
 
 <Tip>
 如果你之前使用过 Wan Video 相关的工作流，下面的模型文件你已经下载过了。
 </Tip>
 
 **VAE**
-- [wan_2.1_vae.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
+- [wan_2.1_vae.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
 
 从**Text encoders** 选择一个版本进行下载
-- [umt5_xxl_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
-- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
+- [umt5_xxl_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
+- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
 
 
 文件保存位置
 ```
-📂 ComfyUI/
+📂 Hanzo Studio/
 ├── 📂 models/
 │   ├── 📂 diffusion_models/
 │   │   └─── wan2.1_vace_14B_fp16.safetensors # 或 wan2.1_vace_1.3B_fp16.safetensors
@@ -91,19 +91,19 @@ VACE 14B 是阿里通义万相团队推出的开源视频编辑统一模型。�
 ## VACE 文生视频工作流
 
 <Tip>
-如果无法从 mp4 文件加载工作流，请确保你的 ComfyUI 前端版本是最新的版本，请参考 [requirements.txt](https://github.com/comfyanonymous/ComfyUI/blob/master/requirements.txt) ，确保你能够从 mp4 文件加载工作流。
+如果无法从 mp4 文件加载工作流，请确保你的 Hanzo Studio 前端版本是最新的版本，请参考 [requirements.txt](https://github.com/hanzoai/studio/blob/master/requirements.txt) ，确保你能够从 mp4 文件加载工作流。
 
-目前 1.19.9 是 requirements.txt 文件中的最新 ComfyUI 前端版本。
+目前 1.19.9 是 requirements.txt 文件中的最新 Hanzo Studio 前端版本。
 </Tip>
 
 
 ### 1. 工作流下载 
-下载下面视频，并拖入 ComfyUI 中，以加载对应的工作流
+下载下面视频，并拖入 Hanzo Studio 中，以加载对应的工作流
 
 <video
   controls
   className="w-full aspect-video"
-  src="https://github.com/Comfy-Org/example_workflows/raw/refs/heads/main/video/wan/vace/vace-t2v.mp4"
+  src="https://github.com/hanzoui/example-workflows/raw/refs/heads/main/video/wan/vace/vace-t2v.mp4"
 ></video>
 
 ### 2. 按步骤完成工作流的运行
@@ -116,7 +116,7 @@ VACE 14B 是阿里通义万相团队推出的开源视频编辑统一模型。�
 2. 在 `CLIP Text Encode (Negative Prompt)` 节点中输入负向提示词
 3. 在 `WanVaceToVideo` 设置对应图像的尺寸（首次运行建议设置 640*640 的分辨率），帧数（视频的时长）
 4. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行视频生成
-5. 生成完成后对应的视频会自动保存到 `ComfyUI/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
+5. 生成完成后对应的视频会自动保存到 `Hanzo Studio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
 
 <Tip>
 在测试过程中，使用 4090 显卡：
@@ -131,17 +131,17 @@ VACE 14B 是阿里通义万相团队推出的开源视频编辑统一模型。�
 你可以继续使用上面的工作流文件，只需要将 **Load reference image** 的 `Load image` 节点的 Bypass 取消，并输入对应的图片，你也可以使用下面的图片，在这个文件里，我们已经完成了对应的参数设置。
 
 ### 1. 工作流下载 
-下载下面的视频，并拖入 ComfyUI 中，以加载对应的工作流
+下载下面的视频，并拖入 Hanzo Studio 中，以加载对应的工作流
 
 <video
   controls
   className="w-full aspect-video"
-  src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/i2v/vace_i2v.mp4"
+  src="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/i2v/vace_i2v.mp4"
 ></video>
 
 请下载下面图片作为输入图片
 
-![vace-i2v-input](https://github.com/Comfy-Org/example_workflows/raw/refs/heads/main/video/wan/vace/i2v/input.jpg)
+![vace-i2v-input](https://github.com/hanzoui/example-workflows/raw/refs/heads/main/video/wan/vace/i2v/input.jpg)
 
 ### 2. 按步骤完成工作流的运行
 
@@ -153,7 +153,7 @@ VACE 14B 是阿里通义万相团队推出的开源视频编辑统一模型。�
 2. 你可以像文生图工作流一样完成来进行提示词的修改和编辑
 3. 在 `WanVaceToVideo` 设置对应图像的尺寸（首次运行建议设置 640*640 的分辨率），帧数（视频的时长）
 4. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行视频生成
-5. 生成完成后对应的视频会自动保存到 `ComfyUI/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
+5. 生成完成后对应的视频会自动保存到 `Hanzo Studio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
 
 <Tip>
 你可能会使用类似获取图片尺寸一点的节点来设置对应的分辨率，但是由于对应节点有宽度和高度的步长要求，会导致如果你的图片尺寸无法被 16 整除时，可能会出现报错提示。
@@ -167,32 +167,32 @@ VACE 还支持在一张图像中输入多个参考图像，来生成对应的视
 
 ### 1. 工作流下载 
 
-下载下面的视频并拖入 ComfyUI 中，以加载对应的工作流
+下载下面的视频并拖入 Hanzo Studio 中，以加载对应的工作流
 <video
   controls
   className="w-full aspect-video"
-  src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/v2v/vace_v2v.mp4"
+  src="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/v2v/vace_v2v.mp4"
 ></video>
 
 我们将使用下面的素材作为输入:
 
 1. 用于参考图像的输入图片
-![v2v-input](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/v2v/input.jpg)
+![v2v-input](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/v2v/input.jpg)
 
 2. 下面的视频已经经过预处理，我们将用于控制视频的生成
 
 <video
   controls
   className="w-full aspect-video"
-  src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/v2v/post+depth.mp4"
+  src="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/v2v/post+depth.mp4"
 ></video>
 
-3. 下面的视频是原始视频，你可以下载下面的素材来使用类似 [comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux) 这样的预处理节点来对图像进行预处理
+3. 下面的视频是原始视频，你可以下载下面的素材来使用类似 [hanzo_studio_controlnet_aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux) 这样的预处理节点来对图像进行预处理
 
 <video
   controls
   className="w-full aspect-video"
-  src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/video/wan/vace/v2v/original.mp4"
+  src="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/video/wan/vace/v2v/original.mp4"
 ></video>
 
 
@@ -204,11 +204,11 @@ VACE 还支持在一张图像中输入多个参考图像，来生成对应的视
 
 1. 在 `Load reference image` 中的 `Load Image` 节点输入参考图片
 2. 在 `Load control video` 中的 `Load Video` 节点输入控制视频，由于提供的视频是经过预处理的，所以你不需要进行额外的处理
-3. 如果你需要自己针对原始视频进行预处理，可以修改 `Image preprocessing` 分组，或者使用 `comfyui_controlnet_aux` 节点来完成对应的节点预处理
+3. 如果你需要自己针对原始视频进行预处理，可以修改 `Image preprocessing` 分组，或者使用 `hanzo_studio_controlnet_aux` 节点来完成对应的节点预处理
 4. 修改提示词
 5. 在 `WanVaceToVideo` 设置对应图像的尺寸（首次运行建议设置 640*640 的分辨率），帧数（视频的时长）
 6. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行视频生成
-7. 生成完成后对应的视频会自动保存到 `ComfyUI/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
+7. 生成完成后对应的视频会自动保存到 `Hanzo Studio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
 
 ## VACE 视频扩展工作流
 
@@ -232,5 +232,5 @@ WanVaceToVideo 节点文档
 </Card>
 
 <Card title="TrimVideoLatent 节点文档" icon="book" href="/zh-CN/built-in-nodes/latent/video/trim-video-latent">
-ComfyUI TrimVideoLatent 节点文档
+Hanzo Studio TrimVideoLatent 节点文档
 </Card>

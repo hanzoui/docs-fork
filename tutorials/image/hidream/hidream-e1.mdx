@@ -1,7 +1,7 @@
 ---
-title: "ComfyUI Native HiDream-e1 Workflow Example"
+title: "Hanzo Studio Native HiDream-e1 Workflow Example"
 sidebarTitle: "HiDream-e1"
-description: "This guide will help you understand and complete the ComfyUI native HiDream-I1 text-to-image workflow example"
+description: "This guide will help you understand and complete the Hanzo Studio native HiDream-I1 text-to-image workflow example"
 ---
 
 ![HiDream-E1 Demo](https://raw.githubusercontent.com/HiDream-ai/HiDream-E1/refs/heads/main/assets/demo.jpg)
@@ -11,7 +11,7 @@ HiDream-E1 is an interactive image editing large model officially open-sourced b
 It allows you to edit images using natural language. The model is released under the [MIT License](https://github.com/HiDream-ai/HiDream-E1?tab=MIT-1-ov-file), supporting use in personal projects, scientific research, and commercial applications.
 In combination with the previously released [hidream-i1](/tutorials/image/hidream/hidream-i1), it enables **creative capabilities from image generation to editing**.
 
-**ComfyUI now natively supports HiDream E1**. In this guide, we will help you complete the workflow example of using HiDream E1 in ComfyUI.
+**Hanzo Studio now natively supports HiDream E1**. In this guide, we will help you complete the workflow example of using HiDream E1 in Hanzo Studio.
 
 <Note>
 For reference, this workflow takes about 500s for the first run and 370s for the second run with 28 sampling steps on Google Colab L4 with 22.5GB VRAM.
@@ -29,48 +29,48 @@ Currently, HiDream provides a full version. Here is the model information:
 
 -[Github](https://github.com/HiDream-ai/HiDream-E1)
 
-## ComfyUI Native HiDream-e1 Workflow Example
+## Hanzo Studio Native HiDream-e1 Workflow Example
 
 <Tip>
-Please upgrade your ComfyUI to the latest version (latest commit) before starting to ensure your ComfyUI has the relevant support.
+Please upgrade your Hanzo Studio to the latest version (latest commit) before starting to ensure your Hanzo Studio has the relevant support.
 </Tip>
 
 ### 1. Download HiDream-e1 Workflow and Related Files
 
 #### 1.1 Download Workflow File
 
-Please download the image below and drag it into ComfyUI. The workflow already contains model download information, and after loading, it will prompt you to download the corresponding models.
+Please download the image below and drag it into Hanzo Studio. The workflow already contains model download information, and after loading, it will prompt you to download the corresponding models.
 
-![ComfyUI Native HiDream-e1 Workflow](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/hidream_e1/hidream_e1_full.png)
+![Hanzo Studio Native HiDream-e1 Workflow](https://raw.githubusercontent.com/hanzoui/example-workflows/main/hidream_e1/hidream_e1_full.png)
 
 #### 1.2 Download Input Image
 
 Please download the image below, which we will use as input
 
-![ComfyUI Native HiDream-e1 Workflow Input Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/hidream_e1/input.webp)
+![Hanzo Studio Native HiDream-e1 Workflow Input Image](https://raw.githubusercontent.com/hanzoui/example-workflows/main/hidream_e1/input.webp)
 
 ### 2. Manual Model Installation for HiDream-e1 Related Models
 
-All models mentioned in this guide can be found [here](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/tree/main/split_files). Please download the corresponding files and save them to the appropriate folders.
+All models mentioned in this guide can be found [here](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/tree/main/split_files). Please download the corresponding files and save them to the appropriate folders.
 
 The following model files are shared models that we will use. Please click the corresponding links to download and save according to the model file storage location. We will guide you to download the corresponding **diffusion models** in the workflow.
 
 **text_encoders**:
 
-- [clip_l_hidream.safetensors](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/clip_l_hidream.safetensors)
-- [clip_g_hidream.safetensors](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/clip_g_hidream.safetensors)
-- [t5xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/t5xxl_fp8_e4m3fn_scaled.safetensors) This model has been used in many workflows, you may have already downloaded this file.
-- [llama_3.1_8b_instruct_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/llama_3.1_8b_instruct_fp8_scaled.safetensors)
+- [clip_l_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/clip_l_hidream.safetensors)
+- [clip_g_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/clip_g_hidream.safetensors)
+- [t5xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/t5xxl_fp8_e4m3fn_scaled.safetensors) This model has been used in many workflows, you may have already downloaded this file.
+- [llama_3.1_8b_instruct_fp8_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/llama_3.1_8b_instruct_fp8_scaled.safetensors)
 
 **VAE**
--  [ae.safetensors](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/vae/ae.safetensors) This is Flux's VAE model. If you have used Flux workflows before, you may have already downloaded this file.
+-  [ae.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/vae/ae.safetensors) This is Flux's VAE model. If you have used Flux workflows before, you may have already downloaded this file.
 
 **diffusion models**
-- [hidream_e1_full_bf16.safetensors](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/resolve/main/split_files/diffusion_models/hidream_e1_full_bf16.safetensors)
+- [hidream_e1_full_bf16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/resolve/main/split_files/diffusion_models/hidream_e1_full_bf16.safetensors)
 
 Model file storage location
 ```
-📂 ComfyUI/
+📂 Hanzo Studio/
 ├── 📂 models/
 │   ├── 📂 text_encoders/
 │   │   ├─── clip_l_hidream.safetensors
@@ -99,7 +99,7 @@ Follow these steps to complete the workflow:
 6. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to generate the image
 
 
-### Additional Notes on ComfyUI HiDream-e1 Workflow
+### Additional Notes on Hanzo Studio HiDream-e1 Workflow
 
 - You may need to modify the prompt multiple times or generate multiple times to get better results
 - This model has difficulty maintaining consistency when changing image styles, so try to make your prompts as complete as possible

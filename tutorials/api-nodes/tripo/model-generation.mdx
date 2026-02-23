@@ -1,6 +1,6 @@
 ---
-title: "Tripo API Node Model Generation ComfyUI Official Example"
-description: "This article will introduce how to use Tripo node's API in ComfyUI for model generation"
+title: "Tripo API Node Model Generation Hanzo Studio Official Example"
+description: "This article will introduce how to use Tripo node's API in Hanzo Studio for model generation"
 sidebarTitle: "Model Generation"
 ---
 
@@ -8,9 +8,9 @@ import ReqHint from "/snippets/tutorials/api-nodes/req-hint.mdx";
 import UpdateReminder from "/snippets/tutorials/update-reminder.mdx";
 
 Tripo AI is a company focused on generative AI 3D modeling. It provides user-friendly platforms and API services that can quickly convert text prompts or 2D images (single or multiple) into high-quality 3D models.
-ComfyUI has now natively integrated the corresponding Tripo API, allowing you to conveniently use the related nodes in ComfyUI for model generation.
+Hanzo Studio has now natively integrated the corresponding Tripo API, allowing you to conveniently use the related nodes in Hanzo Studio for model generation.
 
-Currently, ComfyUI's API nodes support the following Tripo model generation capabilities:
+Currently, Hanzo Studio's API nodes support the following Tripo model generation capabilities:
 - Text-to-model
 - Image-to-model
 - Multi-view model generation
@@ -24,22 +24,22 @@ Currently, ComfyUI's API nodes support the following Tripo model generation capa
 
 ### 1. Workflow File Download
 
-Download the file below and drag it into ComfyUI to load the corresponding workflow.
+Download the file below and drag it into Hanzo Studio to load the corresponding workflow.
 
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/tripo/api_tripo_text_to_model.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
+<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/tripo/api_tripo_text_to_model.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
     <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Download Json Format Workflow File</p>
 </a>
 
 ### 2. Complete the Workflow Execution Step by Step
 
-![ComfyUI Tripo Text to Model Step Guide](/images/tutorial/api_nodes/tripo/tripo_text_to_model_step_guide.jpg)
+![Hanzo Studio Tripo Text to Model Step Guide](/images/tutorial/api_nodes/tripo/tripo_text_to_model_step_guide.jpg)
 
 You can refer to the numbers in the image to complete the basic text-to-model workflow execution:  
 1. In the `Tripo: Text to Model` node, input your prompt in the `prompt` field
    - model: You can select different models, currently only v1.4 model supports subsequent optimization with `Tripo: Refine Draft model`
    - style: You can set different styles
    - texture_quality: You can set different texture qualities
-2. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute model generation. After the workflow completes, the corresponding model will be automatically saved to the `ComfyUI/output/` directory
+2. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute model generation. After the workflow completes, the corresponding model will be automatically saved to the `Hanzo Studio/output/` directory
 3. In the `Preview 3D` node, click to expand the menu
 4. Select `Export` to directly export the corresponding model
 
@@ -47,19 +47,19 @@ You can refer to the numbers in the image to complete the basic text-to-model wo
 
 ### 1. Workflow File Download
 
-Download the file below and drag it into ComfyUI to load the corresponding workflow.
+Download the file below and drag it into Hanzo Studio to load the corresponding workflow.
 
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/tripo/image_to_model/api_tripo_image_to_model.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
+<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/tripo/image_to_model/api_tripo_image_to_model.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
     <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Download Json Format Workflow File</p>
 </a>
 
 
 Download the image below as input image
 
-![Input Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/tripo/image_to_model/panda.jpg)
+![Input Image](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/tripo/image_to_model/panda.jpg)
 ### 2. Complete the Workflow Execution Step by Step
 
-![ComfyUI Tripo Text to Model Step Guide](/images/tutorial/api_nodes/tripo/tripo_image_to_model_step_guide.jpg)
+![Hanzo Studio Tripo Text to Model Step Guide](/images/tutorial/api_nodes/tripo/tripo_image_to_model_step_guide.jpg)
 
 You can refer to the numbers in the image to complete the basic image-to-model workflow execution:  
 1. In the `Load Image` node, load the provided input image
@@ -67,7 +67,7 @@ You can refer to the numbers in the image to complete the basic image-to-model w
    - model: You can select different models, currently only v1.4 model supports subsequent optimization with `Tripo: Refine Draft model`
    - style: You can set different styles
    - texture_quality: You can set different texture qualities
-3. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute model generation. After the workflow completes, the corresponding model will be automatically saved to the `ComfyUI/output/` directory
+3. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute model generation. After the workflow completes, the corresponding model will be automatically saved to the `Hanzo Studio/output/` directory
 4. For model download, please refer to the instructions in the text-to-model section
 
 
@@ -75,21 +75,21 @@ You can refer to the numbers in the image to complete the basic image-to-model w
 
 ### 1. Workflow File Download
 
-Download the file below and drag it into ComfyUI to load the corresponding workflow.
+Download the file below and drag it into Hanzo Studio to load the corresponding workflow.
 
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/tripo/multiview_to_image/api_tripo_multiview_to_model.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
+<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/tripo/multiview_to_image/api_tripo_multiview_to_model.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
     <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Download Json Format Workflow File</p>
 </a>
 
 
 Download the images below as input images
 
-![Front View](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/tripo/multiview_to_image/front.jpg)
-![Back View](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/api_nodes/tripo/multiview_to_image/back.jpg)
+![Front View](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/tripo/multiview_to_image/front.jpg)
+![Back View](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/api_nodes/tripo/multiview_to_image/back.jpg)
 
 ### 2. Complete the Workflow Execution Step by Step
 
-![ComfyUI Tripo Text to Model Step Guide](/images/tutorial/api_nodes/tripo/tripo_multiview_to_model_step_guide.jpg)
+![Hanzo Studio Tripo Text to Model Step Guide](/images/tutorial/api_nodes/tripo/tripo_multiview_to_model_step_guide.jpg)
 
 You can refer to the numbers in the image to complete the basic multi-view to model workflow execution:  
 1. In the `Load Image` nodes, load the provided input images respectively
@@ -97,7 +97,7 @@ You can refer to the numbers in the image to complete the basic multi-view to mo
    - model: You can select different models, currently only v1.4 model supports subsequent optimization with `Tripo: Refine Draft model`
    - style: You can set different styles
    - texture_quality: You can set different texture qualities
-3. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute model generation. After the workflow completes, the corresponding model will be automatically saved to the `ComfyUI/output/` directory
+3. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute model generation. After the workflow completes, the corresponding model will be automatically saved to the `Hanzo Studio/output/` directory
 4. For other view inputs, you can refer to the step diagram and set the corresponding node mode to `Always` to enable it
 5. For model download, please refer to the instructions in the text-to-model section
 

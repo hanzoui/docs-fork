@@ -1,10 +1,10 @@
 ---
-title: "ComfyUI Text to Image Workflow"
-description: "This guide will help you understand the concept of text-to-image in AI art generation and complete a text-to-image workflow in ComfyUI"
+title: "Hanzo Studio Text to Image Workflow"
+description: "This guide will help you understand the concept of text-to-image in AI art generation and complete a text-to-image workflow in Hanzo Studio"
 sidebarTitle: "Text to Image"
 ---
 
-This guide aims to introduce you to ComfyUI's text-to-image workflow and help you understand the functionality and usage of various ComfyUI nodes.
+This guide aims to introduce you to Hanzo Studio's text-to-image workflow and help you understand the functionality and usage of various Hanzo Studio nodes.
 
 In this document, we will:
 - Complete a text-to-image workflow
@@ -25,22 +25,22 @@ The text-to-image process requires the following elements:
 
 This text-to-image generation process can be simply understood as telling your requirements (positive and negative prompts) to an **artist (the image model)**, who then creates what you want based on these requirements.
 
-## ComfyUI Text to Image Workflow Example Guide
+## Hanzo Studio Text to Image Workflow Example Guide
 
 ### 1. Preparation
 
-Ensure you have at least one SD1.5 model file in your `ComfyUI/models/checkpoints` folder, such as [v1-5-pruned-emaonly-fp16.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors)
+Ensure you have at least one SD1.5 model file in your `Hanzo Studio/models/checkpoints` folder, such as [v1-5-pruned-emaonly-fp16.safetensors](https://huggingface.co/hanzoui/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors)
 
-If you haven't installed it yet, please refer to the model installation section in [Getting Started with ComfyUI AI Art Generation](/get_started/first_generation).
+If you haven't installed it yet, please refer to the model installation section in [Getting Started with Hanzo Studio AI Art Generation](/get_started/first_generation).
 
 ### 2. Loading the Text to Image Workflow
 
-Download the image below and **drag it into ComfyUI** to load the workflow:
+Download the image below and **drag it into Hanzo Studio** to load the workflow:
 
-<img src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/text-to-image-workflow.png" alt="ComfyUI-Text to Image Workflow" />
+<img src="https://raw.githubusercontent.com/hanzoui/example-workflows/main/text-to-image-workflow.png" alt="Hanzo Studio-Text to Image Workflow" />
 
 <Tip>
-Images containing workflow JSON in their metadata can be directly dragged into ComfyUI or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
+Images containing workflow JSON in their metadata can be directly dragged into Hanzo Studio or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
 </Tip>
 
 ### 3. Loading the Model and Generating Your First Image
@@ -55,7 +55,7 @@ Follow these steps according to the image numbers:
 
 After the process completes, you should see the resulting image in the **Save Image** node interface, which you can right-click to save locally
 
-![ComfyUI First Image Generation Result](/images/tutorial/gettingstarted/first-image-generation-8-result.jpg)
+![Hanzo Studio First Image Generation Result](/images/tutorial/gettingstarted/first-image-generation-8-result.jpg)
 
 <Tip>If you're not satisfied with the result, try running the generation multiple times. Each time you run it, **KSampler** will use a different random seed based on the `seed` parameter, so each generation will produce different results</Tip>
 
@@ -121,7 +121,7 @@ blurry, low detail, cartoonish, unrealistic anatomy, out of focus, cluttered, fl
 
 ## Text to Image Working Principles
 
-The entire text-to-image process can be understood as a **reverse diffusion process**. The [v1-5-pruned-emaonly-fp16.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors) we downloaded is a pre-trained model that can **generate target images from pure Gaussian noise**. We only need to input our prompts, and it can generate target images through denoising random noise.
+The entire text-to-image process can be understood as a **reverse diffusion process**. The [v1-5-pruned-emaonly-fp16.safetensors](https://huggingface.co/hanzoui/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors) we downloaded is a pre-trained model that can **generate target images from pure Gaussian noise**. We only need to input our prompts, and it can generate target images through denoising random noise.
 
 ```mermaid
 graph LR
@@ -142,9 +142,9 @@ If you want to learn more about diffusion models, you can read these papers:
 - [Denoising Diffusion Implicit Models (DDIM)](https://arxiv.org/pdf/2010.02502)
 - [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/pdf/2112.10752)
 
-## ComfyUI Text to Image Workflow Node Explanation
+## Hanzo Studio Text to Image Workflow Node Explanation
 
-![ComfyUI Text to Image Workflow Explanation](/images/tutorial/basic/text-image-workflow.jpg)
+![Hanzo Studio Text to Image Workflow Explanation](/images/tutorial/basic/text-image-workflow.jpg)
 
 ### A. Load Checkpoint Node
 
@@ -218,7 +218,7 @@ Converts the latent space image output from the **KSampler** into a pixel space 
 
 ![Save Image](/images/comfy_core/image/save_image.jpg)
 
-Previews and saves the decoded image from latent space to the local `ComfyUI/output` folder
+Previews and saves the decoded image from latent space to the local `Hanzo Studio/output` folder
 
 ## Introduction to SD1.5 Model
 

@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI Official Documentation"
-description: "ComfyUI Official Documentation"
+title: "Hanzo Studio Official Documentation"
+description: "Hanzo Studio Official Documentation"
 icon: "book-open"
 mode: "custom"
 sidebarTitle: "Introduction"
@@ -12,17 +12,17 @@ export const HeroCard = ({ filename, darkFilename, title, description, href }) =
       {darkFilename ? (
         <>
           <img
-            src={`https://raw.githubusercontent.com/Comfy-Org/docs/refs/heads/main/images/index/${filename}`}
+            src={`https://raw.githubusercontent.com/hanzoui/docs/refs/heads/main/images/index/${filename}`}
             className="block dark:hidden pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl"
           />
           <img
-            src={`https://raw.githubusercontent.com/Comfy-Org/docs/refs/heads/main/images/index/${darkFilename}`}
+            src={`https://raw.githubusercontent.com/hanzoui/docs/refs/heads/main/images/index/${darkFilename}`}
             className="pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out hidden dark:block rounded-xl"
           />
         </>
       ) : (
         <img
-          src={`https://raw.githubusercontent.com/Comfy-Org/docs/refs/heads/main/images/index/${filename}`}
+          src={`https://raw.githubusercontent.com/hanzoui/docs/refs/heads/main/images/index/${filename}`}
           className="pointer-events-none group-hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl"
         />
       )}
@@ -41,23 +41,23 @@ export const HeroCard = ({ filename, darkFilename, title, description, href }) =
         <img src="/logo/light.svg" className="block dark:hidden pointer-events-none mx-auto" />
         <img src="/logo/dark.svg" className="hidden dark:block pointer-events-none mx-auto"/>
 </div>
-<h1 style={{ fontSize: "18px", fontWeight: "bold", marginTop: "10px" }}>ComfyUI Official Documentation</h1>
+<h1 style={{ fontSize: "18px", fontWeight: "bold", marginTop: "10px" }}>Hanzo Studio Official Documentation</h1>
 </div>
 {/* header end */}
 
 {/* social start */}
 <div className="text-center">
 <div className="flex gap-4 justify-center items-center">
-  <a href="https://github.com/comfyanonymous/ComfyUI/" target="_blank" className="hover:opacity-80">
+  <a href="https://github.com/hanzoai/studio/" target="_blank" className="hover:opacity-80">
     <Icon icon="github" iconType="solid" size={32}/>
   </a>
-  <a href="https://x.com/ComfyUI" target="_blank" className="hover:opacity-80">
+  <a href="https://x.com/Hanzo Studio" target="_blank" className="hover:opacity-80">
     <Icon icon="x-twitter" iconType="solid" size={32}/>
   </a>
-  <a href="https://discord.com/invite/comfyorg" target="_blank" className="hover:opacity-80">
+  <a href="https://discord.com/invite/hanzoai" target="_blank" className="hover:opacity-80">
     <Icon icon="discord" iconType="solid" size={32}/>
   </a>
-  <a href="https://raw.githubusercontent.com/Comfy-Org/docs/refs/heads/main/images/index/qrcode.jpg" target="_blank" className="hover:opacity-80">
+  <a href="https://raw.githubusercontent.com/hanzoui/docs/refs/heads/main/images/index/qrcode.jpg" target="_blank" className="hover:opacity-80">
     <Icon icon="weixin" iconType="solid" size={32}/>
   </a>
   <a href="https://www.youtube.com/@comfyorg" target="_blank" className="hover:opacity-80">
@@ -76,26 +76,26 @@ The most powerful open source node-based application for generative AI
 {/* card  start */}
 
 <div className="px-6 lg:px-0 mt-12 lg:mt-24 grid sm:grid-cols-2 gap-x-6 gap-y-4">
-<HeroCard filename="light.jpg" darkFilename="dark.jpg" title="Installation" description="Install ComfyUI on your system" href="/installation/system_requirements" />
+<HeroCard filename="light.jpg" darkFilename="dark.jpg" title="Installation" description="Install Hanzo Studio on your system" href="/installation/system_requirements" />
 
-<HeroCard filename="example.jpg" darkFilename="example-dark.jpg" title="Tutorial" description="Use ComfyUI to realize your creative ideas" href="/get_started/first_generation" />
+<HeroCard filename="example.jpg" darkFilename="example-dark.jpg" title="Tutorial" description="Use Hanzo Studio to realize your creative ideas" href="/get_started/first_generation" />
 
-<HeroCard filename="node.jpg" darkFilename="node-dark.jpg" title="Built-in Nodes" description="Learn about each node in ComfyUI" href="/built-in-nodes/overview" />
+<HeroCard filename="node.jpg" darkFilename="node-dark.jpg" title="Built-in Nodes" description="Learn about each node in Hanzo Studio" href="/built-in-nodes/overview" />
 
-<HeroCard filename="development.jpg" title="Development" description="Contribute to the millions of ComfyUI users" href="/development/overview" />
+<HeroCard filename="development.jpg" title="Development" description="Contribute to the millions of Hanzo Studio users" href="/development/overview" />
 </div>
 
 {/* card end */}
 <div className="text-center">
-<h2 className="text-2xl font-bold mb-4">About ComfyUI</h2>
+<h2 className="text-2xl font-bold mb-4">About Hanzo Studio</h2>
 <p className="mb-4">
-Written by <a href="https://github.com/comfyanonymous" className="text-blue-500 dark:text-blue-400 underline hover:text-blue-600 dark:hover:text-blue-500">comfyanonymous</a> and other <a href="https://github.com/comfyanonymous/ComfyUI/graphs/contributors" className="text-blue-500 dark:text-blue-400 underline hover:text-blue-600 dark:hover:text-blue-500">contributors</a>.
+Written by <a href="https://github.com/hanzoai" className="text-blue-500 dark:text-blue-400 underline hover:text-blue-600 dark:hover:text-blue-500">hanzoai</a> and other <a href="https://github.com/hanzoai/studio/graphs/contributors" className="text-blue-500 dark:text-blue-400 underline hover:text-blue-600 dark:hover:text-blue-500">contributors</a>.
 </p>
 
 <ul className="list-none space-y-2">
-  <li><strong>ComfyUI</strong> is a node-based interface and inference engine for generative AI</li>
+  <li><strong>Hanzo Studio</strong> is a node-based interface and inference engine for generative AI</li>
   <li>Users can combine various AI models and operations through nodes to achieve highly customizable and controllable content generation</li>
-  <li>ComfyUI is completely open source and can run on your local device</li>
+  <li>Hanzo Studio is completely open source and can run on your local device</li>
 </ul>
 </div>
 

@@ -1,6 +1,6 @@
 ---
-title: "Stability AI Stable Diffusion 3.5 API 节点 ComfyUI 官方示例"
-description: "本文将介绍如何在 ComfyUI 中使用 Stability AI Stable Diffusion 3.5 API 节点的文生图和图生图功能"
+title: "Stability AI Stable Diffusion 3.5 API 节点 Hanzo Studio 官方示例"
+description: "本文将介绍如何在 Hanzo Studio 中使用 Stability AI Stable Diffusion 3.5 API 节点的文生图和图生图功能"
 sidebarTitle: "Stable Diffusion 3.5 Image"
 ---
 
@@ -18,9 +18,9 @@ import UpdateReminder from "/snippets/zh/tutorials/update-reminder.mdx";
 
 ### 1. 工作流文件下载
 
-下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 ComfyUI 中加载对应工作流。
+下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 Hanzo Studio 中加载对应工作流。
 
-![Stability AI Stable Diffusion 3.5 文生图工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/stability_ai/stable_diffusion_3-5-t2i.png)
+![Stability AI Stable Diffusion 3.5 文生图工作流](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/stability_ai/stable_diffusion_3-5-t2i.png)
 
 ### 2. 按步骤完成工作流的运行
 
@@ -32,7 +32,7 @@ import UpdateReminder from "/snippets/zh/tutorials/update-reminder.mdx";
 3. (可选)选择 `style_preset` 参数来控制图像的视觉风格。不同的预设风格会产生不同风格特点的图像，如"cinematic"（电影感）、"anime"（动漫风格）等。选择"None"则不应用任何特定风格。
 4. (可选)编辑 `String(Multiline)` 来修改负向提示词，用于指定不希望在生成图像中出现的元素。
 5. 点击 `Run（运行）` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行图像的生成。
-6. 等待 API 返回结果后，你可在 `Save Image` 节点中查看生成的图像，对应的图像也会被保存至 `ComfyUI/output/` 目录下。
+6. 等待 API 返回结果后，你可在 `Save Image` 节点中查看生成的图像，对应的图像也会被保存至 `Hanzo Studio/output/` 目录下。
 
 ### 3. 补充说明
 
@@ -48,12 +48,12 @@ import UpdateReminder from "/snippets/zh/tutorials/update-reminder.mdx";
 
 ### 1. 工作流文件下载
 
-下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 ComfyUI 中加载对应工作流。
+下面的图片的`metadata`中已经包含工作流信息，请下载并拖入 Hanzo Studio 中加载对应工作流。
 
-![Stability AI Stable Diffusion 3.5 图生图工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/stability_ai/sd3-5-i2i/stable_diffusion_3_5-i2i.png)
+![Stability AI Stable Diffusion 3.5 图生图工作流](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/stability_ai/sd3-5-i2i/stable_diffusion_3_5-i2i.png)
 
 下载下面的图片我们将用于输入图片
-![Stability AI Stable Diffusion 3.5 图生图工作流输入图片](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/stability_ai/sd3-5-i2i/input.jpg)
+![Stability AI Stable Diffusion 3.5 图生图工作流输入图片](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/stability_ai/sd3-5-i2i/input.jpg)
 
 ### 2. 按步骤完成工作流的运行
 
@@ -68,7 +68,7 @@ import UpdateReminder from "/snippets/zh/tutorials/update-reminder.mdx";
    - 值越接近1.0，生成的图像越接近纯文本生成的效果（当 1.0 时，相当于没有提供参考图像）
 5. (可选)编辑 `String(Multiline)` 来修改负向提示词，用于指定不希望在生成图像中出现的元素。
 6. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行图像的生成。
-8. 等待 API 返回结果后，你可在 `Save Image` 节点中查看生成的图像，对应的图像也会被保存至 `ComfyUI/output/` 目录下。
+8. 等待 API 返回结果后，你可在 `Save Image` 节点中查看生成的图像，对应的图像也会被保存至 `Hanzo Studio/output/` 目录下。
 
 ### 3. 补充说明
 

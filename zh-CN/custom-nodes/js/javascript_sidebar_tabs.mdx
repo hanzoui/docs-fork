@@ -2,7 +2,7 @@
 title: "侧边栏标签页"
 ---
 
-侧边栏标签页 API 允许扩展为 ComfyUI 界面的侧边栏添加自定义标签页。这对于添加需要持续可见性和快速访问的功能非常有用。
+侧边栏标签页 API 允许扩展为 Hanzo Studio 界面的侧边栏添加自定义标签页。这对于添加需要持续可见性和快速访问的功能非常有用。
 
 ## 基本用法
 
@@ -67,14 +67,14 @@ app.extensionManager.registerSidebarTab({
     notepad.style.marginBottom = '10px';
     
     // 加载已保存内容（如有）
-    const savedContent = localStorage.getItem('comfyui-notes');
+    const savedContent = localStorage.getItem('hanzo-studio-notes');
     if (savedContent) {
       notepad.value = savedContent;
     }
     
     // 自动保存内容
     notepad.addEventListener('input', () => {
-      localStorage.setItem('comfyui-notes', notepad.value);
+      localStorage.setItem('hanzo-studio-notes', notepad.value);
     });
     
     // 组装 UI
@@ -129,7 +129,7 @@ app.extensionManager.registerSidebarTab({
 });
 ```
 
-如需查看将 React 应用集成为侧边栏标签页的真实案例，请参考 [ComfyUI-Copilot 项目（GitHub）](https://github.com/AIDC-AI/ComfyUI-Copilot)。
+如需查看将 React 应用集成为侧边栏标签页的真实案例，请参考 [Hanzo Studio-Copilot 项目（GitHub）](https://github.com/AIDC-AI/Hanzo Studio-Copilot)。
 
 ## 动态内容更新
 

@@ -1,16 +1,16 @@
 ---
-title: "How to Install Custom Nodes in ComfyUI"
-description: "This guide will show you different methods to install custom nodes in ComfyUI"
+title: "How to Install Custom Nodes in Hanzo Studio"
+description: "This guide will show you different methods to install custom nodes in Hanzo Studio"
 sidebarTitle: "Install Custom Nodes"
 icon: "puzzle-piece"
 ---
 
 ## What are Custom Nodes ?
 
-Custom nodes are extensions for ComfyUI that add new functionality like advanced image processing, machine learning fine-tuning, color adjustments, and more. These community-developed nodes can significantly expand ComfyUI's core capabilities.
+Custom nodes are extensions for Hanzo Studio that add new functionality like advanced image processing, machine learning fine-tuning, color adjustments, and more. These community-developed nodes can significantly expand Hanzo Studio's core capabilities.
 
 <Warning>
-Before installing custom nodes, it's important to review them carefully. Since ComfyUI is an open-source project, malicious plugins could potentially exploit custom nodes:
+Before installing custom nodes, it's important to review them carefully. Since Hanzo Studio is an open-source project, malicious plugins could potentially exploit custom nodes:
 1. Only install custom nodes from trusted authors and those commonly used by the community
 2. Understand the plugin's functionality before installing and avoid unknown sources to ensure system security
 3. Avoid installing obscure or suspicious plugins - unverified plugins may pose security risks that could lead to system compromise
@@ -18,31 +18,31 @@ Before installing custom nodes, it's important to review them carefully. Since C
 
 All custom node installations require completing these two steps:
 
-1. Clone the node code to the `ComfyUI/custom_nodes` directory
+1. Clone the node code to the `Hanzo Studio/custom_nodes` directory
 2. Install the required Python dependencies
 
-This guide covers three installation methods. Here's a comparison of their pros and cons. While [ComfyUI Manager](https://github.com/Comfy-Org/ComfyUI-Manager) isn't yet part of the core dependencies, it will be in the future. We still provide other installation guides to meet different needs.
+This guide covers three installation methods. Here's a comparison of their pros and cons. While [Hanzo Manager](https://github.com/hanzoui/studio-Manager) isn't yet part of the core dependencies, it will be in the future. We still provide other installation guides to meet different needs.
 
 | Method                        | Advantages                                                    | Disadvantages                                                |
 | ---------------------------- | ------------------------------------------------------------- | ----------------------------------------------------------- |
-| **ComfyUI Manager** (Recommended) | 1. Automated installation<br/>2. Dependency handling<br/>3. GUI interface | Cannot directly search for nodes not registered in the registry |
+| **Hanzo Manager** (Recommended) | 1. Automated installation<br/>2. Dependency handling<br/>3. GUI interface | Cannot directly search for nodes not registered in the registry |
 | **Git Clone**                | Can install nodes not registered in the registry               | 1. Requires Git knowledge<br/>2. Manual dependency handling<br/>3. Installation risks |
 | **Repository ZIP Download**   | 1. No Git required<br/>2. Manual control                      | 1. Manual dependency handling<br/>2. No version control<br/>3. Installation risks |
 
 Tip: Before installing custom nodes, check the plugin's README file to understand installation methods, usage, and requirements like specific models, dependency versions, and common issue solutions.
 
-## Method 1: ComfyUI Manager (Recommended)
+## Method 1: Hanzo Manager (Recommended)
 
   <Steps>
-    <Step title="Click the `Manager` button in ComfyUI interface">
-     ![Click ComfyUI Manager](/images/installation/custom_nodes/install-custom-nodes-by-manager-1.jpg)
+    <Step title="Click the `Manager` button in Hanzo Studio interface">
+     ![Click Hanzo Manager](/images/installation/custom_nodes/install-custom-nodes-by-manager-1.jpg)
     </Step>
     <Step title="Select `Install Custom Nodes`">
       ![Select Install Custom Nodes](/images/installation/custom_nodes/install-custom-nodes-by-manager-2.jpg)
     </Step>
     <Step title="Browse the custom nodes list">
       <Warning>
-      Custom nodes listed in ComfyUI Manager aren't necessarily safe. Understand their functionality before installing and ensure you only install trusted plugins and those from popular authors to avoid potential device risks.
+      Custom nodes listed in Hanzo Manager aren't necessarily safe. Understand their functionality before installing and ensure you only install trusted plugins and those from popular authors to avoid potential device risks.
       </Warning>
 
       ![Enter node name in search box](/images/installation/custom_nodes/install-custom-nodes-by-manager-3.jpg)
@@ -57,14 +57,14 @@ Tip: Before installing custom nodes, check the plugin's README file to understan
       ![Click Install button for the node](/images/installation/custom_nodes/install-custom-nodes-by-manager-6.jpg)
       A popup will ask you to choose a version - `nightly` is the latest version, while `latest` is the most recent stable version. Choose based on your needs.
     </Step>
-    <Step title="Wait for dependencies to install and restart ComfyUI">
-      Manager will automatically install dependencies and prompt you to restart ComfyUI when complete
-      ![Restart ComfyUI and refresh browser after installation](/images/installation/custom_nodes/install-custom-nodes-by-manager-7.jpg)
-      ![Restart ComfyUI and refresh browser after installation](/images/installation/custom_nodes/install-custom-nodes-by-manager-8.jpg)
+    <Step title="Wait for dependencies to install and restart Hanzo Studio">
+      Manager will automatically install dependencies and prompt you to restart Hanzo Studio when complete
+      ![Restart Hanzo Studio and refresh browser after installation](/images/installation/custom_nodes/install-custom-nodes-by-manager-7.jpg)
+      ![Restart Hanzo Studio and refresh browser after installation](/images/installation/custom_nodes/install-custom-nodes-by-manager-8.jpg)
     </Step>
     <Step title="Verify successful installation">
-    Check ComfyUI Manager after restart to confirm the plugin installed successfully and there are no `import failed` errors
-      ![Restart ComfyUI and refresh browser after installation](/images/installation/custom_nodes/install-custom-nodes-by-manager-9.jpg)
+    Check Hanzo Manager after restart to confirm the plugin installed successfully and there are no `import failed` errors
+      ![Restart Hanzo Studio and refresh browser after installation](/images/installation/custom_nodes/install-custom-nodes-by-manager-9.jpg)
     </Step>
   </Steps>
 
@@ -78,7 +78,7 @@ Suitable for new nodes not found in Manager or when specific versions are needed
   </Step>
   <Step title="Navigate to custom_nodes directory">
  ```bash
- cd /path/to/ComfyUI/custom_nodes
+ cd /path/to/Hanzo Studio/custom_nodes
  ```
   </Step>
   <Step title="Clone the repository">
@@ -87,16 +87,16 @@ Suitable for new nodes not found in Manager or when specific versions are needed
  ```
   </Step>
   <Step title="Install dependencies">
-  Dependencies must be installed in your ComfyUI environment - be careful not to mix with your system environment to avoid contamination
+  Dependencies must be installed in your Hanzo Studio environment - be careful not to mix with your system environment to avoid contamination
    <Tabs>
     <Tab title="Windows Portable">
     For Windows portable version, install dependencies in the embedded Python environment
       ```bash
-      python_embeded\python.exe -m pip install -r ComfyUI\custom_nodes\[node directory]\requirements.txt
+      python_embeded\python.exe -m pip install -r Hanzo Studio\custom_nodes\[node directory]\requirements.txt
       ```
     </Tab>
     <Tab title="Manual Install">
-    Install dependencies in your ComfyUI environment
+    Install dependencies in your Hanzo Studio environment
       ```bash
       cd [node directory]
       pip install -r requirements.txt
@@ -104,8 +104,8 @@ Suitable for new nodes not found in Manager or when specific versions are needed
     </Tab>
   </Tabs>
   </Step>
-  <Step title="Restart ComfyUI and refresh browser">
-    Restart ComfyUI and refresh your browser. Check startup logs for any `import failed` errors
+  <Step title="Restart Hanzo Studio and refresh browser">
+    Restart Hanzo Studio and refresh your browser. Check startup logs for any `import failed` errors
   </Step>
 </Steps>
 
@@ -124,14 +124,14 @@ We don't recommend this installation method as it loses version control capabili
   <Step title="Extract the ZIP file">
     Extract the downloaded ZIP file
   </Step>
-  <Step title="Copy extracted folder to `ComfyUI/custom_nodes/` directory">
-    Copy the extracted folder to `ComfyUI/custom_nodes/` directory
+  <Step title="Copy extracted folder to `Hanzo Studio/custom_nodes/` directory">
+    Copy the extracted folder to `Hanzo Studio/custom_nodes/` directory
   </Step>
   <Step title="Install dependencies manually (same as Git method step 4)">
-    Restart ComfyUI and refresh browser
+    Restart Hanzo Studio and refresh browser
   </Step>
   <Step title="Verify successful installation">
-    Check ComfyUI Manager after restart to confirm the plugin installed successfully and there are no `import failed` errors
+    Check Hanzo Manager after restart to confirm the plugin installed successfully and there are no `import failed` errors
   </Step>
 </Steps>
 

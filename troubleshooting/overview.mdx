@@ -1,12 +1,12 @@
 ---
-title: "How to Troubleshoot and Solve ComfyUI Issues"
-description: "Common ComfyUI issues, solutions, and how to report bugs effectively"
+title: "How to Troubleshoot and Solve Hanzo Studio Issues"
+description: "Common Hanzo Studio issues, solutions, and how to report bugs effectively"
 icon: "lightbulb"
 sidebarTitle: "Overview"
 ---
 
 <Tip>
-   We receive a lot of feedback issues, and we find that most of the issues submitted are related to custom nodes. So please ensure that you have read the [custom node troubleshooting guide](/troubleshooting/custom-node-issues) before submitting an error report to ensure that the issue is not caused by ComfyUI core issues.
+   We receive a lot of feedback issues, and we find that most of the issues submitted are related to custom nodes. So please ensure that you have read the [custom node troubleshooting guide](/troubleshooting/custom-node-issues) before submitting an error report to ensure that the issue is not caused by Hanzo Studio core issues.
 </Tip>
 
 <Card title="Custom Node Troubleshooting Guide" icon="puzzle-piece" href="/troubleshooting/custom-node-issues">
@@ -17,7 +17,7 @@ sidebarTitle: "Overview"
 
 Before diving into detailed troubleshooting, try these common solutions:
 
-### ComfyUI Won't Start
+### Hanzo Studio Won't Start
 
 **Symptoms:** Application crashes on startup, black screen, or fails to load
 
@@ -91,7 +91,7 @@ For comprehensive desktop installation troubleshooting, see the [Desktop Install
 
 <Tabs>
 <Tab title="Windows">
-- **Unsupported device**: ComfyUI Desktop Windows only supports NVIDIA GPUs with CUDA. Use [ComfyUI Portable](/installation/comfyui_portable_windows) or [manual installation](/installation/manual_install) for other GPUs
+- **Unsupported device**: Hanzo Desktop Windows only supports NVIDIA GPUs with CUDA. Use [Hanzo Studio Portable](/installation/hanzo_studio_portable_windows) or [manual installation](/installation/manual_install) for other GPUs
 - **Installation fails**: Run installer as administrator, ensure at least 15GB disk space
 - **Maintenance page**: Check [mirror settings](/installation/desktop/windows#mirror-settings) if downloads fail
 - **Missing models**: Models are not copied during migration, only linked. Verify model paths
@@ -119,9 +119,9 @@ The documentation may be slightly out of date. If an issue occurs, please manual
 python --version
 
 # Use virtual environment (recommended)
-python -m venv comfyui_env
-source comfyui_env/bin/activate  # Linux/Mac
-comfyui_env\Scripts\activate     # Windows
+python -m venv hanzo_studio_env
+source hanzo_studio_env/bin/activate  # Linux/Mac
+hanzo_studio_env\Scripts\activate     # Windows
 ```
 
 **Package installation failures:**
@@ -230,7 +230,7 @@ For comprehensive model troubleshooting including architecture mismatches, missi
 **Symptoms:** "Failed to connect to server", timeout errors
 
 **Solutions:**
-1. **Check firewall settings** - Allow ComfyUI through firewall
+1. **Check firewall settings** - Allow Hanzo Studio through firewall
 2. **Try different port** - Default is 8188, try 8189 or 8190
 3. **Disable VPN temporarily** - VPN may be blocking connections
 4. **Check proxy settings** - Disable proxy if not required
@@ -239,20 +239,20 @@ For comprehensive model troubleshooting including architecture mismatches, missi
 
 **"Frontend or Templates Package Not Updated":**
 ```bash
-# After updating ComfyUI via Git, update frontend dependencies
+# After updating Hanzo Studio via Git, update frontend dependencies
 pip install -r requirements.txt
 ```
 
 **"Can't Find Custom Node":**
-- Disable node validation in ComfyUI settings
+- Disable node validation in Hanzo Studio settings
 
 **"Error Toast About Workflow Failing Validation":**
 - Disable workflow validation in settings temporarily
-- Report the issue to the ComfyUI team
+- Report the issue to the Hanzo Studio team
 
 **Login Issues When Not on Localhost:**
 - Normal login only works when accessing from localhost
-- For LAN/remote access: Generate API key at [platform.comfy.org/login](https://platform.comfy.org/login)
+- For LAN/remote access: Generate API key at [platform.hanzo.ai/login](https://platform.hanzo.ai/login)
 - Use API key in login dialog or with `--api-key` command line argument
 
 ## Hardware-Specific Issues
@@ -323,7 +323,7 @@ PYTORCH_TUNABLEOP_ENABLED=1 python main.py
 # Check MPS availability
 python -c "import torch; print(torch.backends.mps.is_available())"
 
-# Launch ComfyUI
+# Launch Hanzo Studio
 python main.py
 ```
 
@@ -343,7 +343,7 @@ python main.py --force-fp16 --cpu
 # Install PyTorch nightly with XPU support
 pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/xpu
 
-# Launch ComfyUI
+# Launch Hanzo Studio
 python main.py
 ```
 
@@ -359,26 +359,26 @@ pip install torch==2.3.1.post0+cxx11.abi torchvision==0.18.1.post0+cxx11.abi tor
 ### Before Reporting a Bug
 
 1. **Check if it's a known issue:**
-   - Search [GitHub Issues](https://github.com/comfyanonymous/ComfyUI/issues)
-   - Check [ComfyUI Forum](https://forum.comfy.org/)
-   - Review [Discord discussions](https://discord.com/invite/comfyorg)
+   - Search [GitHub Issues](https://github.com/hanzoai/studio/issues)
+   - Check [Hanzo Studio Forum](https://forum.hanzo.ai/)
+   - Review [Discord discussions](https://discord.com/invite/hanzoai)
 
 2. **Try basic troubleshooting:**
    - Test with [default workflow](/get_started/first_generation)
    - Disable all custom nodes (see [custom node troubleshooting](/troubleshooting/custom-node-issues))
    - Check console/terminal for error messages
-   - If using comfy-cli, try updating: `comfy node update all`
+   - If using hanzo-cli, try updating: `comfy node update all`
 
 ### How to Report Bugs Effectively
 
-#### For ComfyUI Core Issues
-**Where to report:** [GitHub Issues](https://github.com/comfyanonymous/ComfyUI/issues)
+#### For Hanzo Studio Core Issues
+**Where to report:** [GitHub Issues](https://github.com/hanzoai/studio/issues)
 
 #### For Desktop App Issues
-**Where to report:** [Desktop GitHub Issues](https://github.com/Comfy-Org/desktop/issues)
+**Where to report:** [Desktop GitHub Issues](https://github.com/hanzoui/desktop/issues)
 
 #### For Frontend Issues
-**Where to report:** [Frontend GitHub Issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)
+**Where to report:** [Frontend GitHub Issues](https://github.com/hanzoui/studio_frontend/issues)
 
 #### For Custom Node Issues
 **Where to report:** Contact the specific custom node developer
@@ -391,14 +391,14 @@ When reporting any issue, include:
 <Step title="System Information">
 
 <Tabs>
-<Tab title="From ComfyUI Interface">
+<Tab title="From Hanzo Studio Interface">
 **System Information (can be found in the About page in settings):**
 - Operating System (Windows 11, macOS 14.1, Ubuntu 22.04, etc.)
-- ComfyUI version (check About page in settings)
+- Hanzo Studio version (check About page in settings)
 - Python version: `python --version`
 - PyTorch version: `python -c "import torch; print(torch.__version__)"`
 - GPU model and driver version
-- Installation method (Desktop, Portable, Manual, comfy-cli)
+- Installation method (Desktop, Portable, Manual, hanzo-cli)
 
 ![About page in settings](/images/troubleshooting/menu-about.jpg)
 </Tab>
@@ -439,8 +439,8 @@ When reporting any issue, include:
 
 <Step title="Desktop App issues">
 **For Desktop App issues, also include:**
-- Log files from: `C:\Users\<username>\AppData\Roaming\ComfyUI\logs` (Windows)
-- Config files from: `C:\Users\<username>\AppData\Roaming\ComfyUI` (Windows)
+- Log files from: `C:\Users\<username>\AppData\Roaming\Hanzo Studio\logs` (Windows)
+- Config files from: `C:\Users\<username>\AppData\Roaming\Hanzo Studio` (Windows)
 </Step>
 
 <Step title="Problem Details">
@@ -466,7 +466,7 @@ When reporting any issue, include:
 
 ## Community Resources
 
-- **Official Forum:** [forum.comfy.org](https://forum.comfy.org/)
-- **Discord:** [ComfyUI Discord Server](https://discord.com/invite/comfyorg)
+- **Official Forum:** [forum.hanzo.ai](https://forum.hanzo.ai/)
+- **Discord:** [Hanzo Studio Discord Server](https://discord.com/invite/hanzoai)
 - **Reddit:** [r/comfyui](https://reddit.com/r/comfyui)
-- **YouTube:** [ComfyUI Tutorials](https://www.youtube.com/@comfyorg)
+- **YouTube:** [Hanzo Studio Tutorials](https://www.youtube.com/@comfyorg)

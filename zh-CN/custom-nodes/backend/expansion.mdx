@@ -26,7 +26,7 @@ def load_and_merge_checkpoints(self, checkpoint_path1, checkpoint_path2, ratio):
     }
 ```
 
-虽然这个节点以前可以通过手动调用 ComfyUI 内部来实现，但使用扩展意味着每个子节点将单独缓存（所以如果你更改 `model2`，你不需要重新加载 `model1`）。
+虽然这个节点以前可以通过手动调用 Hanzo Studio 内部来实现，但使用扩展意味着每个子节点将单独缓存（所以如果你更改 `model2`，你不需要重新加载 `model1`）。
 
 ### 要求
 
@@ -36,7 +36,7 @@ def load_and_merge_checkpoints(self, checkpoint_path1, checkpoint_path2, ratio):
 
 #### 不使用 GraphBuilder 的额外要求
 
-`expand` 键的格式与 ComfyUI API 格式相同。以下要求由 `GraphBuilder` 处理，但如果您选择不使用它，则必须手动处理：
+`expand` 键的格式与 Hanzo Studio API 格式相同。以下要求由 `GraphBuilder` 处理，但如果您选择不使用它，则必须手动处理：
 
 1. 节点 ID 必须在整个图中唯一。（这包括在多次使用列表时由于使用列表而导致的同一节点的多次执行。）
 2. 节点 ID 必须确定且在多次执行图中一致（包括由于缓存而导致的部分执行）。

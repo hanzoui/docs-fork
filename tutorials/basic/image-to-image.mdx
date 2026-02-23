@@ -1,12 +1,12 @@
 ---
-title: "ComfyUI Image to Image Workflow"
+title: "Hanzo Studio Image to Image Workflow"
 sidebarTitle: "Image to Image"
 description: "This guide will help you understand and complete an image to image workflow"
 ---
 
 ## What is Image to Image
 
-Image to Image is a workflow in ComfyUI that allows users to input an image and generate a new image based on it.
+Image to Image is a workflow in Hanzo Studio that allows users to input an image and generate a new image based on it.
 
 Image to Image can be used in scenarios such as:
 - Converting original image styles, like transforming realistic photos into artistic styles
@@ -23,18 +23,18 @@ you'll notice that the Image to Image process is very similar to Text to Image,
 just with an additional input reference image as a condition. In Text to Image, we let the artist (image model) create freely based on our prompts,
  while in Image to Image, we let the artist create based on both our reference image and prompts.
 
-## ComfyUI Image to Image Workflow Example Guide
+## Hanzo Studio Image to Image Workflow Example Guide
 
 ### Model Installation
-Download the [v1-5-pruned-emaonly-fp16.safetensors](https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors) file and put it in your `ComfyUI/models/checkpoints` folder.
+Download the [v1-5-pruned-emaonly-fp16.safetensors](https://huggingface.co/hanzoui/stable-diffusion-v1-5-archive/blob/main/v1-5-pruned-emaonly-fp16.safetensors) file and put it in your `Hanzo Studio/models/checkpoints` folder.
 
 ### Image to Image Workflow and Input Image
 
-Download the image below and **drag it into ComfyUI** to load the workflow:
+Download the image below and **drag it into Hanzo Studio** to load the workflow:
 ![Image to Image Workflow](/images/tutorial/basic/img2img/image_to_image.png)
 
 <Tip>
-Images containing workflow JSON in their metadata can be directly dragged into ComfyUI or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
+Images containing workflow JSON in their metadata can be directly dragged into Hanzo Studio or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
 </Tip>
 
 Download the image below and we will use it as the input image:
@@ -44,7 +44,7 @@ Download the image below and we will use it as the input image:
 
 Follow the steps in the diagram below to ensure the workflow runs correctly.
 
-![ComfyUI Image to Image Workflow - Steps](/images/tutorial/basic/img2img/image-to-image-02-guide.jpg)
+![Hanzo Studio Image to Image Workflow - Steps](/images/tutorial/basic/img2img/image-to-image-02-guide.jpg)
 
 1. Ensure `Load Checkpoint` loads  **v1-5-pruned-emaonly-fp16.safetensors**
 2. Upload the input image to the `Load Image` node

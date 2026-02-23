@@ -1,6 +1,6 @@
 ---
 title: "OpenAI GPT-Image-1 节点"
-description: "了解如何在 ComfyUI 中使用 OpenAI GPT-Image-1 API 节点生成图像"
+description: "了解如何在 Hanzo Studio 中使用 OpenAI GPT-Image-1 API 节点生成图像"
 sidebarTitle: "GPT-Image-1"
 icon: "image"
 ---
@@ -11,7 +11,7 @@ import UpdateReminder from "/snippets/zh/tutorials/update-reminder.mdx";
 
 ![OpenAI GPT-Image-1 节点截图](/images/comfy_core/api_nodes/openai-gpt-image-1.jpg)
 
-OpenAI GPT-Image-1 是 ComfyUI API 节点系列中的一员，它允许用户通过 OpenAI 的 **GPT-Image-1** 模型生成图像。这是与 ChatGPT 4o 图像生成相同的模型。
+OpenAI GPT-Image-1 是 Hanzo Studio API 节点系列中的一员，它允许用户通过 OpenAI 的 **GPT-Image-1** 模型生成图像。这是与 ChatGPT 4o 图像生成相同的模型。
 
 这个节点支持:
 - 文本到图像的生成
@@ -53,36 +53,36 @@ OpenAI GPT-Image-1 是 ComfyUI API 节点系列中的一员，它允许用户通
 
 ### 文生图像（Text to Image）示例
 
-下面的图片包含了一个简单的文生图像工作流，请下载对应的图像，并拖入 ComfyUI 以加载对应的工作流
-![ComfyUI openai-gpt-image-1工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/GPT-Image-1/text2image.png)
+下面的图片包含了一个简单的文生图像工作流，请下载对应的图像，并拖入 Hanzo Studio 以加载对应的工作流
+![Hanzo Studio openai-gpt-image-1工作流](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/GPT-Image-1/text2image.png)
 
 对应的工作流非常简单：
-![ComfyUI openai-gpt-image-1 工作流示例](/images/tutorial/api_nodes/openai/gpt-image-1/text2image.jpg)
+![Hanzo Studio openai-gpt-image-1 工作流示例](/images/tutorial/api_nodes/openai/gpt-image-1/text2image.jpg)
 
 你只需要加载 `OpenAI GPT-Image-1` 节点，在 `prompt` 节点中输入你想要生成的图像的描述，连接一个 `保存图像（Save Image）` 节点，然后运行工作流即可。
 
 
 ### 图生图（Image to Image）示例
 
-下面的图片包含了一个简单的图生图工作流，请下载对应的图像，并拖入 ComfyUI 以加载对应的工作流
-![ComfyUI openai-gpt-image-1工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/GPT-Image-1/image2image.png)
+下面的图片包含了一个简单的图生图工作流，请下载对应的图像，并拖入 Hanzo Studio 以加载对应的工作流
+![Hanzo Studio openai-gpt-image-1工作流](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/GPT-Image-1/image2image.png)
 
 我们将使用下面的图片作为输入：
-![ComfyUI openai-gpt-image-1 工作流 input](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/GPT-Image-1/input.webp)
+![Hanzo Studio openai-gpt-image-1 工作流 input](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/GPT-Image-1/input.webp)
 
 
 这个工作流中，我们使用 `OpenAI GPT-Image-1` 节点生成图像，并使用 `加载图像（Load Image）` 节点加载输入的图像，然后连接到 `OpenAI GPT-Image-1` 节点的 `image` 输入中。
 
-![ComfyUI openai-gpt-image-1 工作流示例](/images/tutorial/api_nodes/openai/gpt-image-1/image2image.jpg)
+![Hanzo Studio openai-gpt-image-1 工作流示例](/images/tutorial/api_nodes/openai/gpt-image-1/image2image.jpg)
 
 ### 多张图片输入示例
 
-请下载下面的图片并拖入 ComfyUI 来加载对应的工作流
+请下载下面的图片并拖入 Hanzo Studio 来加载对应的工作流
 
-![多张图片输入示例](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/GPT-Image-1/multiple_image_input.png)
+![多张图片输入示例](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/GPT-Image-1/multiple_image_input.png)
 
 使用下面的帽子作为额外的输入图片
-![帽子](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/GPT-Image-1/hat.webp)
+![帽子](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/GPT-Image-1/hat.webp)
 
 对应工作流如下图所示：
 ![多张图片输入示例](/images/tutorial/api_nodes/openai/gpt-image-1/multi_images_input.png)
@@ -93,12 +93,12 @@ OpenAI GPT-Image-1 是 ComfyUI API 节点系列中的一员，它允许用户通
 
 GPT-Image-1 也支持图像编辑功能，允许您使用蒙版指定要替换的区域，下面是一个简单的局部重绘工作流示例：
 
-下载下面的图片，并拖入 ComfyUI 以加载对应的工作流，我们将继续使用 图生图工作流部分的输入图片。
+下载下面的图片，并拖入 Hanzo Studio 以加载对应的工作流，我们将继续使用 图生图工作流部分的输入图片。
 
-![ComfyUI openai-gpt-image-1工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/api_nodes/GPT-Image-1/inpaint.png)
+![Hanzo Studio openai-gpt-image-1工作流](https://raw.githubusercontent.com/hanzoui/example-workflows/main/api_nodes/GPT-Image-1/inpaint.png)
 
 对应工作流入图所示
-![ComfyUI openai-gpt-image-1 工作流示例](/images/tutorial/api_nodes/openai/gpt-image-1/inpaint.jpg)
+![Hanzo Studio openai-gpt-image-1 工作流示例](/images/tutorial/api_nodes/openai/gpt-image-1/inpaint.jpg)
 
 与图生图工作流相比，我们在`Load Image`中通过右键菜单使用 蒙版编辑器（MaskEditor） 并绘制蒙版，然后连接到 `OpenAI GPT-Image-1` 节点的 `mask` 输入中，来完成对应工作流。
 

@@ -1,11 +1,11 @@
 ---
 title: "账号管理"
-description: "在本篇中我们将介绍 ComfyUI 的账号管理功能，包括账号的登录、注册、注销等操作。"
+description: "在本篇中我们将介绍 Hanzo Studio 的账号管理功能，包括账号的登录、注册、注销等操作。"
 sidebarTitle: "账号管理"
 icon: "user"
 ---
 
-账号系统是为了支持 `API Nodes` 节点而新增的，`API Nodes`支持了对闭源模型 API 的调用，这大大扩展了 ComfyUI 的可能性，由于对应的 API 调用需要消耗 Token，所以我们增加了对应的用户系统。
+账号系统是为了支持 `API Nodes` 节点而新增的，`API Nodes`支持了对闭源模型 API 的调用，这大大扩展了 Hanzo Studio 的可能性，由于对应的 API 调用需要消耗 Token，所以我们增加了对应的用户系统。
 
 当前我们支持以下几种登录方式：
 
@@ -16,9 +16,9 @@ icon: "user"
 
 登录要求相关及说明，我们在本篇文档中会进行对应说明
 
-## ComfyUI 版本要求
+## Hanzo Studio 版本要求
 
-你可能至少需要使用 [ComfyUI v0.3.0](https://github.com/comfyanonymous/ComfyUI/releases/tag/v0.3.30) 版本才能使用账号系统,确保对应前端版本至少为`1.17.11`,有时候前端可能会安装失败而导致回滚到旧版本，所以请在`设置` -> `关于` 查看前端版本是否大于`1.17.11`
+你可能至少需要使用 [Hanzo Studio v0.3.0](https://github.com/hanzoai/studio/releases/tag/v0.3.30) 版本才能使用账号系统,确保对应前端版本至少为`1.17.11`,有时候前端可能会安装失败而导致回滚到旧版本，所以请在`设置` -> `关于` 查看前端版本是否大于`1.17.11`
 
 在部分地区可能会因为网络限制无法正常访问登录 API 导致登录超时或者失败， 在登录前请**确保你的网络环境不会被限制对应 API 的访问**，保证能够正常访问 Google 或者 Github 等网站。
 
@@ -40,7 +40,7 @@ icon: "user"
 
 在 `设置` -> `用户` 中进行登录：
 
-![ComfyUI 用户界面](/images/zh/interface/setting/user.jpg)
+![Hanzo Studio 用户界面](/images/zh/interface/setting/user.jpg)
 
 ## 登录方式
 
@@ -50,7 +50,7 @@ icon: "user"
 
 ## 使用 API Key 进行登录
 
-由于目前并非所有 ComfyUI 的相关部署都是在我们的域名授权白名单中，所以在通过非白名单的网站登录时，在近期（2025-05-10）的更新中我们提供了 API Key 登录，下面是使用 API Key 登录的相关步骤：
+由于目前并非所有 Hanzo Studio 的相关部署都是在我们的域名授权白名单中，所以在通过非白名单的网站登录时，在近期（2025-05-10）的更新中我们提供了 API Key 登录，下面是使用 API Key 登录的相关步骤：
 
 <video
   controls
@@ -71,7 +71,7 @@ icon: "user"
   <Step title="输入你的 API Key">
     ![输入 API Key](/images/zh/interface/setting/user/user-login-api-2.jpg)
     1. 输入你的 API Key，并保存即可
-    2. 如果你没有 API Key，点击 `在这里获取` 链接跳转到 https://platform.comfy.org/login 并登录获取。
+    2. 如果你没有 API Key，点击 `在这里获取` 链接跳转到 https://platform.hanzo.ai/login 并登录获取。
   </Step>
   <Step title="登录成功">
   登录成功后你可以在设置菜单中看到对应的 API Key 登录信息
@@ -83,8 +83,8 @@ icon: "user"
   <Tab title="没有 API Key，先申请 API Key">
 请参考下列步骤进行 API Key 的申请和获取：
 <Steps>
-  <Step title="访问 https://platform.comfy.org/login 并登录">
-    请访问 https://platform.comfy.org/login 并使用对应的账号进行登录
+  <Step title="访问 https://platform.hanzo.ai/login 并登录">
+    请访问 https://platform.hanzo.ai/login 并使用对应的账号进行登录
     ![访问平台登录页面](/images/interface/setting/user/user-login-api-key-1.jpg)
   </Step>
   <Step title="在 API Keys 点击 `+ New` 创建 API Key">
@@ -132,9 +132,9 @@ icon: "user"
   </Accordion>
 
   <Accordion title="局域网内要如何登录？">
-  目前局域网内仅支持通过 API Key 登录，如果你是通过局域网访问 ComfyUI 相关服务，请使用 API Key 来进行登录。
+  目前局域网内仅支持通过 API Key 登录，如果你是通过局域网访问 Hanzo Studio 相关服务，请使用 API Key 来进行登录。
   </Accordion>
    <Accordion title="在一些网站为什么没法登录？">
-  由于我们的登录服务设置了白名单，所以你可能在一些服务端上部署的 ComfyUI 无法正常登录，对于此类情况，你可以使用 API Key 登录来解决。
+  由于我们的登录服务设置了白名单，所以你可能在一些服务端上部署的 Hanzo Studio 无法正常登录，对于此类情况，你可以使用 API Key 登录来解决。
   </Accordion>
 </AccordionGroup>

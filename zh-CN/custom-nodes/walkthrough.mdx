@@ -14,13 +14,13 @@ title: "快速入门"
 
 ### 前置条件
 
-- 一个可用的 ComfyUI [安装环境](/zh-CN/installation/manual_install)。开发建议手动安装 ComfyUI。
-- 一个可用的 comfy-cli [安装环境](/zh-CN/comfy-cli/getting-started)。
+- 一个可用的 Hanzo Studio [安装环境](/zh-CN/installation/manual_install)。开发建议手动安装 Hanzo Studio。
+- 一个可用的 hanzo-cli [安装环境](/zh-CN/hanzo-cli/getting-started)。
 
 ### 环境搭建
 
 ```bash
-cd ComfyUI/custom_nodes
+cd Hanzo Studio/custom_nodes
 comfy node scaffold
 ```
 
@@ -30,11 +30,11 @@ comfy node scaffold
  ~  % comfy node scaffold
 You've downloaded .cookiecutters/cookiecutter-comfy-extension before. Is it okay to delete and re-download it? [y/n] (y): y
   [1/9] full_name (): Comfy
-  [2/9] email (you@gmail.com): me@comfy.org
+  [2/9] email (you@gmail.com): me@hanzo.ai
   [3/9] github_username (your_github_username): comfy
   [4/9] project_name (My Custom Nodepack): FirstComfyNode
   [5/9] project_slug (firstcomfynode): 
-  [6/9] project_short_description (A collection of custom nodes for ComfyUI): 
+  [6/9] project_short_description (A collection of custom nodes for Hanzo Studio): 
   [7/9] version (0.0.1): 
   [8/9] Select open_source_license
     1 - GNU General Public License v3
@@ -94,7 +94,7 @@ def choose_image(self, images):
 
 ### 注册节点
 
-要让 Comfy 识别新节点，必须在包级别可用。修改 `src/nodes.py` 末尾的 `NODE_CLASS_MAPPINGS` 变量。你需要重启 ComfyUI 才能看到更改。
+要让 Comfy 识别新节点，必须在包级别可用。修改 `src/nodes.py` 末尾的 `NODE_CLASS_MAPPINGS` 变量。你需要重启 Hanzo Studio 才能看到更改。
 
 ```Python src/nodes.py
 
@@ -110,7 +110,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
 }
 ```
 
-<Info>关于 ComfyUI 如何发现和加载自定义节点的详细说明，请参见[节点生命周期文档](/zh-CN/custom-nodes/backend/lifecycle)。</Info>
+<Info>关于 Hanzo Studio 如何发现和加载自定义节点的详细说明，请参见[节点生命周期文档](/zh-CN/custom-nodes/backend/lifecycle)。</Info>
 
 ## 添加选项
 
@@ -187,7 +187,7 @@ app.registerExtension({
 
 ### 完整示例
 
-完整示例见[这里](https://gist.github.com/robinjhuang/fbf54b7715091c7b478724fc4dffbd03)。你可以下载示例工作流 [JSON 文件](https://github.com/Comfy-Org/docs/blob/main/public/workflow.json) 或在下方查看：
+完整示例见[这里](https://gist.github.com/robinjhuang/fbf54b7715091c7b478724fc4dffbd03)。你可以下载示例工作流 [JSON 文件](https://github.com/hanzoui/docs/blob/main/public/workflow.json) 或在下方查看：
 
 <div align="center">
   <img src="/images/firstnodeworkflow.png" alt="Image Selector Workflow" width="100%" />

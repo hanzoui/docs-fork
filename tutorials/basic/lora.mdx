@@ -1,5 +1,5 @@
 ---
-title: "ComfyUI LoRA Example"
+title: "Hanzo Studio LoRA Example"
 sidebarTitle: "LoRA"
 description: "This guide will help you understand and use a single LoRA model"
 ---
@@ -16,7 +16,7 @@ As you can see, by using a LoRA model, we can generate images in different style
 
 We will demonstrate how to use a LoRA model. All LoRA variants: Lycoris, loha, lokr, locon, etc... are used in the same way.
 
-In this example, we will learn how to load and use a LoRA model in [ComfyUI](https://github.com/comfyanonymous/ComfyUI), covering the following topics:
+In this example, we will learn how to load and use a LoRA model in [Hanzo Studio](https://github.com/hanzoai/studio), covering the following topics:
 
 1. Installing a LoRA model
 2. Generating images using a LoRA model
@@ -24,24 +24,24 @@ In this example, we will learn how to load and use a LoRA model in [ComfyUI](htt
 
 ## Required Model Installation
 
-Download the [dreamshaper_8.safetensors](https://civitai.com/api/download/models/128713?type=Model&format=SafeTensor&size=pruned&fp=fp16) file and put it in your `ComfyUI/models/checkpoints` folder.
+Download the [dreamshaper_8.safetensors](https://civitai.com/api/download/models/128713?type=Model&format=SafeTensor&size=pruned&fp=fp16) file and put it in your `Hanzo Studio/models/checkpoints` folder.
 
-Download the [blindbox_V1Mix.safetensors](https://civitai.com/api/download/models/32988?type=Model&format=SafeTensor&size=full&fp=fp16) file and put it in your `ComfyUI/models/loras` folder.
+Download the [blindbox_V1Mix.safetensors](https://civitai.com/api/download/models/32988?type=Model&format=SafeTensor&size=full&fp=fp16) file and put it in your `Hanzo Studio/models/loras` folder.
 
 ## LoRA Workflow File
 
-Download the image below and **drag it into ComfyUI** to load the workflow.
-![ComfyUI Workflow - LoRA](/images/tutorial/basic/lora/lora.png)
+Download the image below and **drag it into Hanzo Studio** to load the workflow.
+![Hanzo Studio Workflow - LoRA](/images/tutorial/basic/lora/lora.png)
 
 <Tip>
-Images containing workflow JSON in their metadata can be directly dragged into ComfyUI or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
+Images containing workflow JSON in their metadata can be directly dragged into Hanzo Studio or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
 </Tip>
 
 ## Complete the Workflow Step by Step
 
 Follow the steps in the diagram below to ensure the workflow runs correctly.
 
-![ComfyUI Workflow - LoRA Flow Diagram](/images/tutorial/basic/lora/flow_diagram.png)
+![Hanzo Studio Workflow - LoRA Flow Diagram](/images/tutorial/basic/lora/flow_diagram.png)
 
 1. Ensure `Load Checkpoint` loads `dreamshaper_8.safetensors`
 2. Ensure `Load LoRA` loads `blindbox_V1Mix.safetensors`
@@ -51,7 +51,7 @@ Follow the steps in the diagram below to ensure the workflow runs correctly.
 
 ![Load LoRA Node](/images/comfy_core/loaders/load_lora.jpg)
 
-Models in the `ComfyUI\models\loras` folder will be detected by ComfyUI and can be loaded using this node.
+Models in the `Hanzo Studio\models\loras` folder will be detected by Hanzo Studio and can be loaded using this node.
 
 ### Input Types
 
@@ -70,7 +70,7 @@ Models in the `ComfyUI\models\loras` folder will be detected by ComfyUI and can 
 | `model`        | Outputs the model with LoRA adjustments applied      |
 | `clip`         | Outputs the CLIP model with LoRA adjustments applied |
 
-This node supports chain connections, allowing multiple `Load LoRA` nodes to be linked in series to apply multiple LoRA models. For more details, please refer to [ComfyUI Multiple LoRAs Example](/tutorials/basic/multiple-loras)
+This node supports chain connections, allowing multiple `Load LoRA` nodes to be linked in series to apply multiple LoRA models. For more details, please refer to [Hanzo Studio Multiple LoRAs Example](/tutorials/basic/multiple-loras)
 
 ![LoRA Node Chain Connection](/images/tutorial/basic/lora/chain_link.png)
 

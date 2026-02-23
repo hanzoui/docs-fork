@@ -1,5 +1,5 @@
 ---
-title: "ComfyUI Mixing ControlNet Examples"
+title: "Hanzo Studio Mixing ControlNet Examples"
 description: "In this example, we will demonstrate how to mix multiple ControlNets and learn to use multiple ControlNet models to control image generation"
 sidebarTitle: "Mixing ControlNet"
 ---
@@ -14,30 +14,30 @@ In certain scenarios, mixing ControlNets can leverage the characteristics of dif
 
 ### How to Mix ControlNets
 
-When mixing multiple ControlNets, each ControlNet influences the image generation process according to its applied area. ComfyUI enables multiple ControlNet conditions to be applied sequentially in a layered manner through chain connections in the `Apply ControlNet` node:
+When mixing multiple ControlNets, each ControlNet influences the image generation process according to its applied area. Hanzo Studio enables multiple ControlNet conditions to be applied sequentially in a layered manner through chain connections in the `Apply ControlNet` node:
 
 ![apply controlnet chain link](/images/tutorial/controlnet/apply_controlnet_chain_link.jpg)
 
-## ComfyUI ControlNet Regional Division Mixing Example
+## Hanzo Studio ControlNet Regional Division Mixing Example
 
 In this example, we will use a combination of **Pose ControlNet** and **Scribble ControlNet** to generate a scene containing multiple elements: a character on the left controlled by Pose ControlNet and a cat on a scooter on the right controlled by Scribble ControlNet.
 
 ### 1. ControlNet Mixing Workflow Assets
 
-Please download the workflow image below and drag it into ComfyUI to load the workflow:
-![ComfyUI Workflow - Mixing ControlNet](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/mixing_controlnets.png)
+Please download the workflow image below and drag it into Hanzo Studio to load the workflow:
+![Hanzo Studio Workflow - Mixing ControlNet](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/mixing_controlnets.png)
 
 <Tip>
-This workflow image contains Metadata, and can be directly dragged into ComfyUI or loaded using the menu `Workflows` -> `Open (ctrl+o)`. The system will automatically detect and prompt to download the required models.
+This workflow image contains Metadata, and can be directly dragged into Hanzo Studio or loaded using the menu `Workflows` -> `Open (ctrl+o)`. The system will automatically detect and prompt to download the required models.
 </Tip>
 
 Input pose image (controls the character pose on the left):
 
-![ComfyUI Workflow - Mixing ControlNet Input Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/mixing_controlnets_input.png)
+![Hanzo Studio Workflow - Mixing ControlNet Input Image](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/mixing_controlnets_input.png)
 
 Input scribble image (controls the cat and scooter on the right):
 
-![ComfyUI Workflow - Mixing ControlNet Input Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/mixing_controlnets_input_scribble.png)
+![Hanzo Studio Workflow - Mixing ControlNet Input Image](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/mixing_controlnets_input_scribble.png)
 
 ### 2. Manual Model Installation
 
@@ -46,12 +46,12 @@ If your network cannot successfully complete the automatic download of the corre
 </Note>
 
 - [awpainting_v14.safetensors](https://civitai.com/api/download/models/624939?type=Model&format=SafeTensor&size=full&fp=fp16)
-- [control_v11p_sd15_scribble_fp16.safetensors](https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_scribble_fp16.safetensors?download=true)
-- [control_v11p_sd15_openpose_fp16.safetensors](https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_openpose_fp16.safetensors?download=true)
+- [control_v11p_sd15_scribble_fp16.safetensors](https://huggingface.co/hanzoai/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_scribble_fp16.safetensors?download=true)
+- [control_v11p_sd15_openpose_fp16.safetensors](https://huggingface.co/hanzoai/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_openpose_fp16.safetensors?download=true)
 - [vae-ft-mse-840000-ema-pruned.safetensors](https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors?download=true)
 
 ```
-ComfyUI/
+Hanzo Studio/
 ├── models/
 │   ├── checkpoints/
 │   │   └── awpainting_v14.safetensors
@@ -64,7 +64,7 @@ ComfyUI/
 
 ### 3. Step-by-Step Workflow Execution
 
-![ComfyUI Workflow - Mixing ControlNet Flow Diagram](/images/tutorial/controlnet/flow_diagram_mixing_controlnet.jpg)
+![Hanzo Studio Workflow - Mixing ControlNet Flow Diagram](/images/tutorial/controlnet/flow_diagram_mixing_controlnet.jpg)
 
 Follow these steps according to the numbered markers in the image:
 

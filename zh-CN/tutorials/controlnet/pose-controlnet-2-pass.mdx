@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI Pose ControlNet 使用示例"
-description: "本篇将引导了解基础的 Pose ControlNet，并通过二次图生图的方式，在 ComfyUI 中完成大尺寸的图像生成"
+title: "Hanzo Studio Pose ControlNet 使用示例"
+description: "本篇将引导了解基础的 Pose ControlNet，并通过二次图生图的方式，在 Hanzo Studio 中完成大尺寸的图像生成"
 sidebarTitle: "Pose ControlNet"
 ---
 
@@ -18,22 +18,22 @@ sidebarTitle: "Pose ControlNet"
 在 AI 图像生成领域，OpenPose 生成的骨骼结构图作为 ControlNet 的条件输入，能够精确控制生成人物的姿势、动作和表情，让我们能够按照预期的姿态和动作生成逼真的人物图像，极大提高了 AI 生成内容的可控性和实用价值。
 特别针对早期 Stable diffusion 1.5 系列的模型，通过 OpenPose 生成的骨骼图，可以有效避免人物动作、肢体、表情畸变的问题。
 
-## ComfyUI 2 Pass Pose ControlNet 使用示例
+## Hanzo Studio 2 Pass Pose ControlNet 使用示例
 
 ### 1. Pose ControlNet 工作流素材
 
-请下载下面的工作流图片,并拖入 ComfyUI 以加载工作流
+请下载下面的工作流图片,并拖入 Hanzo Studio 以加载工作流
 
-![ComfyUI 工作流 - Pose ControlNet](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/pose_controlnet_2_pass.png)
+![Hanzo Studio 工作流 - Pose ControlNet](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/pose_controlnet_2_pass.png)
 
 <Tip>
-Metadata 中包含工作流 json 的图片可直接拖入 ComfyUI 或使用菜单 `Workflows` -> `Open（ctrl+o）` 来加载对应的工作流。
-该图片已包含对应模型的下载链接，直接拖入 ComfyUI 将会自动提示下载。
+Metadata 中包含工作流 json 的图片可直接拖入 Hanzo Studio 或使用菜单 `Workflows` -> `Open（ctrl+o）` 来加载对应的工作流。
+该图片已包含对应模型的下载链接，直接拖入 Hanzo Studio 将会自动提示下载。
 </Tip>
 
 请下载下面的图片，我们将会将它作为输入
 
-![ComfyUI Pose 输入图片](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/pose_controlnet_2_pass_input.png)
+![Hanzo Studio Pose 输入图片](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/pose_controlnet_2_pass_input.png)
 
 ### 2. 手动模型安装
 
@@ -41,13 +41,13 @@ Metadata 中包含工作流 json 的图片可直接拖入 ComfyUI 或使用菜�
 如果你网络无法顺利完成对应模型的自动下载，请尝试手动下载下面的模型，并放置到指定目录中
 </Note>
 
-- [control_v11p_sd15_openpose_fp16.safetensors](https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_openpose_fp16.safetensors?download=true)
+- [control_v11p_sd15_openpose_fp16.safetensors](https://huggingface.co/hanzoai/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_openpose_fp16.safetensors?download=true)
 - [majicmixRealistic_v7.safetensors](https://civitai.com/api/download/models/176425?type=Model&format=SafeTensor&size=pruned&fp=fp16)
 - [japaneseStyleRealistic_v20.safetensors](https://civitai.com/api/download/models/85426?type=Model&format=SafeTensor&size=pruned&fp=fp16)
 - [vae-ft-mse-840000-ema-pruned.safetensors](https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors?download=true)
 
 ```
-ComfyUI/
+Hanzo Studio/
 ├── models/
 │   ├── checkpoints/
 │   │   └── majicmixRealistic_v7.safetensors
@@ -60,7 +60,7 @@ ComfyUI/
 
 ### 3. 按步骤完成工作流的运行
 
-![ComfyUI 工作流 - Pose ControlNet 流程图](/images/tutorial/controlnet/flow_diagram_pose_controlnet_2_pass.jpg)
+![Hanzo Studio 工作流 - Pose ControlNet 流程图](/images/tutorial/controlnet/flow_diagram_pose_controlnet_2_pass.jpg)
 
 按照图片中的数字标记，执行以下步骤：
 

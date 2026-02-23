@@ -141,11 +141,11 @@ app.registerExtension({
 
 ## Notes and Limitations
 
-- Keybindings defined in the ComfyUI core cannot be overwritten by extensions. Check the core keybindings in these source files:
-  - [Core Commands](https://github.com/Comfy-Org/ComfyUI_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/composables/useCoreCommands.ts)
-  - [Core Menu Commands](https://github.com/Comfy-Org/ComfyUI_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/coreMenuCommands.ts) 
-  - [Core Keybindings](https://github.com/Comfy-Org/ComfyUI_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/coreKeybindings.ts)
-  - [Reserved Key Combos](https://github.com/Comfy-Org/ComfyUI_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/reservedKeyCombos.ts)
+- Keybindings defined in the Hanzo Studio core cannot be overwritten by extensions. Check the core keybindings in these source files:
+  - [Core Commands](https://github.com/hanzoui/studio_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/composables/useCoreCommands.ts)
+  - [Core Menu Commands](https://github.com/hanzoui/studio_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/coreMenuCommands.ts) 
+  - [Core Keybindings](https://github.com/hanzoui/studio_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/coreKeybindings.ts)
+  - [Reserved Key Combos](https://github.com/hanzoui/studio_frontend/blob/e76e9ec61a068fd2d89797762f08ee551e6d84a0/src/constants/reservedKeyCombos.ts)
 
 - Some key combinations are reserved by the browser (like Ctrl+F for search) and cannot be overridden
 - If multiple extensions register the same keybinding, the behavior is undefined

@@ -1,4 +1,4 @@
-# ComfyUI 文档
+# Hanzo Studio 文档
 
 | [English](./README.md) | [中文](./README.zh-CN.md) |
 
@@ -18,7 +18,7 @@ npx mintlify dev
 
 ### 创建 PR
 
-创建一个 PR。一旦被接受，Vercel 将把更改部署到 https://docs.comfy.org/
+创建一个 PR。一旦被接受，Vercel 将把更改部署到 https://docs.hanzo.ai/
 
 ### 生成 API 参考文档
 
@@ -49,18 +49,18 @@ npx @mintlify/scraping@latest openapi-file <path-to-openapi-file>
 > ```
 > 同时不要忘记在 `zh-CN` 目录中包含相应的中文翻译文件！
 
-## 关于 ComfyUI 节点文档的更新说明
+## 关于 Hanzo Studio 节点文档的更新说明
 
-目前 ComfyUI 已经针对内置节点和自己定义节点等，都增加了内置的节点菜单，目前所有的节点文档将在[这个仓库](https://github.com/Comfy-Org/embedded-docs)进行维护
+目前 Hanzo Studio 已经针对内置节点和自己定义节点等，都增加了内置的节点菜单，目前所有的节点文档将在[这个仓库](https://github.com/hanzoui/embedded-docs)进行维护
 
 ### 更新同步频率
 
-我们会每周定期将已更新的文档从对应仓库中同步到 docs.comfy.org 中来，以保证内容同步和更新,如需贡献对应的文档，请在 [这个仓库](https://github.com/Comfy-Org/embedded-docs) 提交 PR 和更新。
+我们会每周定期将已更新的文档从对应仓库中同步到 docs.hanzo.ai 中来，以保证内容同步和更新,如需贡献对应的文档，请在 [这个仓库](https://github.com/hanzoui/embedded-docs) 提交 PR 和更新。
 
 ### 节点文档文件组织
 
 对于节点文档，我们将采用在 `built-in-node` 文件夹下使用一级目录的形式，以下是对应的原因：
-- ComfyUI 可能会在更新过程中调整对应的节点分类和目录，使用多级目录层级意味着要对对应节点文档进行频繁调整
+- Hanzo Studio 可能会在更新过程中调整对应的节点分类和目录，使用多级目录层级意味着要对对应节点文档进行频繁调整
 - 对应的频繁调整意味着我们需要频繁添加重定向和检查
 - Mintlify 支持在 `docs.json` 文件设置文档层级，我们可以统一在这里进行修改
 
@@ -70,7 +70,7 @@ npx @mintlify/scraping@latest openapi-file <path-to-openapi-file>
 
 请直接创建 PR，我们会在几天内进行审核。
 
-或者在我们的 [Discord](https://discord.com/invite/comfyorg) 上与我们交流。
+或者在我们的 [Discord](https://discord.com/invite/hanzoai) 上与我们交流。
 
 文档使用 Mintlify 构建，请参考 [Mintlify 文档](https://mintlify.com/docs) 了解如何使用
 
@@ -163,19 +163,19 @@ locale 将翻译 Mintlify 默认 UI 组件的文本。这是可选的。完整�
 
 向文档中添加工作流示例时，请遵循以下步骤：
 
-1. 使用 ComfyUI 输出的工作流文件（PNG/WebP），并在元数据中添加模型下载链接。用户拖入工作流时将自动获取这些资源。可以使用这个[在线工具](https://comfyui-embeded-workflow-editor.vercel.app/)编辑 PNG/WebP 文件的元数据。
+1. 使用 Hanzo Studio 输出的工作流文件（PNG/WebP），并在元数据中添加模型下载链接。用户拖入工作流时将自动获取这些资源。可以使用这个[在线工具](https://hanzo-studio-embeded-workflow-editor.vercel.app/)编辑 PNG/WebP 文件的元数据。
 
 [![视频教程](https://img.youtube.com/vi/_zYbP8w7G8A/0.jpg)](https://youtu.be/_zYbP8w7G8A)
 
-2. 将工作流 JSON 文件和预览图上传至 [example_workflows 仓库](https://github.com/Comfy-Org/example_workflows)
+2. 将工作流 JSON 文件和预览图上传至 [example_workflows 仓库](https://github.com/hanzoui/example-workflows)
 3. 在文档中使用 GitHub 原始内容链接。转换 GitHub 文件链接的方法：
    - 原始 GitHub 文件链接格式：
      ```
-     https://github.com/Comfy-Org/example_workflows/blob/main/your-workflow.json
+     https://github.com/hanzoui/example-workflows/blob/main/your-workflow.json
      ```
    - 转换为原始内容链接：
      ```
-     https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/your-workflow.json
+     https://raw.githubusercontent.com/hanzoui/example-workflows/main/your-workflow.json
      ```
      转换方法：
      - 将域名改为 raw.githubusercontent.com
@@ -183,4 +183,4 @@ locale 将翻译 Mintlify 默认 UI 组件的文本。这是可选的。完整�
    
    也可以直接在 GitHub 文件页面点击 "Raw" 按钮获取原始链接。
 
-这样可以确保在文档站点中拖入工作流时，元数据信息能完整保留到 ComfyUI 中。
+这样可以确保在文档站点中拖入工作流时，元数据信息能完整保留到 Hanzo Studio 中。

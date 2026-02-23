@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI ControlNet 使用示例"
-description: "本篇将引导了解基础的 ControlNet 概念，并在 ComfyUI 中完成对应的图像生成"
+title: "Hanzo Studio ControlNet 使用示例"
+description: "本篇将引导了解基础的 ControlNet 概念，并在 Hanzo Studio 中完成对应的图像生成"
 sidebarTitle: "ControlNet"
 ---
 
@@ -13,15 +13,15 @@ ControlNet 模型通过引入多模态输入条件（如边缘检测图、深度
 
 在没有 ControlNet 之前，我们每次只能让模型生成图像，直到生成我们满意的图像，充满了随机性。
 
-![ComfyUI 随机种子生成的图片](/images/tutorial/controlnet/generated_with_random_seed.jpg)
+![Hanzo Studio 随机种子生成的图片](/images/tutorial/controlnet/generated_with_random_seed.jpg)
 
 但随着 ControlNet 的出现，我们可以通过引入额外的条件，来控制图像的生成，比如我们可以使用一张简单的涂鸦，来控制图像的生成，就可以生成差不多类似的图片。
 
-![ComfyUI 涂鸦控制图像生成](/images/tutorial/controlnet/scribble_example.jpg)
+![Hanzo Studio 涂鸦控制图像生成](/images/tutorial/controlnet/scribble_example.jpg)
 
-在本示例中，我们将引导你完成在 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 中 ControlNet 模型的安装与使用, 并完成一个涂鸦控制图像生成的示例。
+在本示例中，我们将引导你完成在 [Hanzo Studio](https://github.com/hanzoai/studio) 中 ControlNet 模型的安装与使用, 并完成一个涂鸦控制图像生成的示例。
 
-![ComfyUI ControlNet 工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/scribble_controlnet.png)
+![Hanzo Studio ControlNet 工作流](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/scribble_controlnet.png)
 
 <Tip>
 ControlNet V1.1 其它类型的 ControlNet 模型的工作流也与都与本篇示例相同，你只需要根据需要选择对应的模型和上传对应的参考图即可。
@@ -31,32 +31,32 @@ ControlNet V1.1 其它类型的 ControlNet 模型的工作流也与都与本篇�
 
 不同类型的 ControlNet 模型，通常需要使用不同类型的参考图：
 
-![参考图](https://github.com/Fannovel16/comfyui_controlnet_aux/blob/main/examples/CNAuxBanner.jpg?raw=true)
+![参考图](https://github.com/Fannovel16/hanzo_studio_controlnet_aux/blob/main/examples/CNAuxBanner.jpg?raw=true)
 
-> 图源：[ComfyUI ControlNet aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+> 图源：[Hanzo Studio ControlNet aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux)
 
 由于目前 **Comfy Core** 节点中，不包含所有类型的 **预处理器** 类型，但在本文档的实际示例中，我们都将提供已经经过处理后的图片，
 但在实际使用过程中，你可能需要借助一些自定义节点来对图片进行预处理，以满足不同 ControlNet 模型的需求，下面是一些相关的插件
 
-- [ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet)
-- [ComfyUI ControlNet aux](https://github.com/Fannovel16/comfyui_controlnet_aux)
+- [Hanzo Studio-Advanced-ControlNet](https://github.com/Kosinkadink/Hanzo Studio-Advanced-ControlNet)
+- [Hanzo Studio ControlNet aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux)
 
-## ComfyUI ControlNet 工作流示例讲解
+## Hanzo Studio ControlNet 工作流示例讲解
 
 ### 1. ControlNet 工作流素材
 
-请下载下面的工作流图片,并拖入 ComfyUI 以加载工作流
+请下载下面的工作流图片,并拖入 Hanzo Studio 以加载工作流
 
-![ComfyUI 工作流 - ControlNet](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/scribble_controlnet.png)
+![Hanzo Studio 工作流 - ControlNet](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/scribble_controlnet.png)
 
 <Tip>
-Metadata 中包含工作流 json 的图片可直接拖入 ComfyUI 或使用菜单 `Workflows` -> `Open（ctrl+o）` 来加载对应的工作流。
-该图片已包含对应模型的下载链接，直接拖入 ComfyUI 将会自动提示下载。
+Metadata 中包含工作流 json 的图片可直接拖入 Hanzo Studio 或使用菜单 `Workflows` -> `Open（ctrl+o）` 来加载对应的工作流。
+该图片已包含对应模型的下载链接，直接拖入 Hanzo Studio 将会自动提示下载。
 </Tip>
 
 请下载下面的图片，我们将会将它作为输入
 
-![ComfyUI 涂鸦图片](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/controlnet/scribble_input.png)
+![Hanzo Studio 涂鸦图片](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/scribble_input.png)
 
 ### 2.  手动模型安装
 
@@ -66,10 +66,10 @@ Metadata 中包含工作流 json 的图片可直接拖入 ComfyUI 或使用菜�
 
 - [dreamCreationVirtual3DECommerce_v10.safetensors](https://civitai.com/api/download/models/731340?type=Model&format=SafeTensor&size=full&fp=fp16)
 - [vae-ft-mse-840000-ema-pruned.safetensors](https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.safetensors?download=true)
-- [control_v11p_sd15_scribble_fp16.safetensors](https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_scribble_fp16.safetensors?download=true)
+- [control_v11p_sd15_scribble_fp16.safetensors](https://huggingface.co/hanzoai/ControlNet-v1-1_fp16_safetensors/resolve/main/control_v11p_sd15_scribble_fp16.safetensors?download=true)
 
 ```
-ComfyUI/
+Hanzo Studio/
 ├── models/
 │   ├── checkpoints/
 │   │   └── dreamCreationVirtual3DECommerce_v10.safetensors
@@ -85,7 +85,7 @@ ComfyUI/
 
 ### 3. 按步骤完成工作流的运行
 
-![ComfyUI 工作流 - ControlNet 流程图](/images/tutorial/controlnet/flow_diagram_scribble.png)
+![Hanzo Studio 工作流 - ControlNet 流程图](/images/tutorial/controlnet/flow_diagram_scribble.png)
 
 1. 确保`Load Checkpoint`可以加载 **dreamCreationVirtual3DECommerce_v10.safetensors**
 2. 确保`Load VAE`可以加载 **vae-ft-mse-840000-ema-pruned.safetensors**
@@ -98,7 +98,7 @@ ComfyUI/
 
 ![load controlnet](/images/comfy_core/loaders/load_controlnet_model.jpg)
 
-位于`ComfyUI\models\controlnet` 的模型会被 ComfyUI 检测到，并在这个节点中识别并加载
+位于`Hanzo Studio\models\controlnet` 的模型会被 Hanzo Studio 检测到，并在这个节点中识别并加载
 
 ### Apply ControlNet 节点讲解
 
@@ -139,4 +139,4 @@ ComfyUI/
 
 1. 试着制作类似的涂鸦图片，甚至自己手绘，并使用 ControlNet 模型生成图像，体验 ControlNet 带来的乐趣
 2. 调整 Apply ControlNet 节点的 `Control Strength` 参数，来控制 ControlNet 模型对生成图像的影响
-3. 访问 [ControlNet-v1-1_fp16_safetensors](https://huggingface.co/comfyanonymous/ControlNet-v1-1_fp16_safetensors/tree/main)  仓库下载其它类型的 ControlNet 模型，并尝试使用它们生成图像
+3. 访问 [ControlNet-v1-1_fp16_safetensors](https://huggingface.co/hanzoai/ControlNet-v1-1_fp16_safetensors/tree/main)  仓库下载其它类型的 ControlNet 模型，并尝试使用它们生成图像

@@ -1,6 +1,6 @@
 ---
-title: "ComfyUI Image Upscale Workflow"
-description: "This guide explains the concept of image upscaling in AI drawing and demonstrates how to implement an image upscaling workflow in ComfyUI"
+title: "Hanzo Studio Image Upscale Workflow"
+description: "This guide explains the concept of image upscaling in AI drawing and demonstrates how to implement an image upscaling workflow in Hanzo Studio"
 sidebarTitle: "Upscale"
 ---
 
@@ -12,7 +12,7 @@ Unlike traditional interpolation methods, AI upscaling models (like ESRGAN) can 
 For instance, the default SD1.5 model often struggles with large-size image generation. 
 To achieve high-resolution results,we typically generate smaller images first and then use upscaling techniques.
 
-This article covers one of many upscaling methods in ComfyUI. In this tutorial, we'll guide you through:
+This article covers one of many upscaling methods in Hanzo Studio. In this tutorial, we'll guide you through:
 1. Downloading and installing upscaling models
 2. Performing basic image upscaling
 3. Combining text-to-image workflows with upscaling
@@ -38,18 +38,18 @@ We'll use the [4x-ESRGAN](https://openmodeldb.info/models/4x-ESRGAN) model for t
 
 </Step>
 <Step title="Save Model Files in Directory">
-Save the model file (.pth) in `ComfyUI/models/upscale_models` directory
+Save the model file (.pth) in `Hanzo Studio/models/upscale_models` directory
 </Step>
 </Steps>
 
 
 ### Workflow and Assets
 
-Download and drag the following image into ComfyUI to load the basic upscaling workflow:
+Download and drag the following image into Hanzo Studio to load the basic upscaling workflow:
 ![Upscale workflow](/images/tutorial/basic/upscale/upscale_workflow.png)
 
 <Tip>
-Images containing workflow JSON in their metadata can be directly dragged into ComfyUI or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
+Images containing workflow JSON in their metadata can be directly dragged into Hanzo Studio or loaded using the menu `Workflows` -> `Open (ctrl+o)`.
 </Tip>
 
 Use this image in smaller size as input:
@@ -71,7 +71,7 @@ The core components are the `Load Upscale Model` and `Upscale Image (Using Model
 
 After mastering basic upscaling, we can combine it with the [text-to-image](/tutorials/basic/text-to-image) workflow. For text-to-image basics, refer to the [text-to-image tutorial](/tutorials/basic/text-to-image).
 
-Download and drag this image into ComfyUI to load the combined workflow:
+Download and drag this image into Hanzo Studio to load the combined workflow:
 ![Text-to-image upscale workflow](/images/tutorial/basic/upscale/esrgan_example.png)
 
 This workflow connects the text-to-image output image directly to the upscaling nodes for final processing.

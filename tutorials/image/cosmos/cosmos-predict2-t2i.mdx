@@ -1,6 +1,6 @@
 ---
-title: "Cosmos Predict2 Text-to-Image ComfyUI Official Example"
-description: "This guide demonstrates how to complete Cosmos-Predict2 text-to-image workflow in ComfyUI"
+title: "Cosmos Predict2 Text-to-Image Hanzo Studio Official Example"
+description: "This guide demonstrates how to complete Cosmos-Predict2 text-to-image workflow in Hanzo Studio"
 sidebarTitle: "Cosmos-Predict2"
 ---
 
@@ -15,7 +15,7 @@ GitHub:[Cosmos-predict2](https://github.com/nvidia-cosmos/cosmos-predict2)
 huggingface: [Cosmos-Predict2](https://huggingface.co/collections/nvidia/cosmos-predict2-68028efc052239369a0f2959)
 
 
-This guide will walk you through completing **text-to-image** workflow in ComfyUI.
+This guide will walk you through completing **text-to-image** workflow in Hanzo Studio.
 
 For the video generation section, please refer to the following part:
 
@@ -29,9 +29,9 @@ For the video generation section, please refer to the following part:
 
 ### 1. Workflow File
 
-Please download the image below and drag it into ComfyUI to load the workflow. The workflow already has embedded model download links.
+Please download the image below and drag it into Hanzo Studio to load the workflow. The workflow already has embedded model download links.
 
-![Input Image](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/cosmos/predict2/cosmos_predict2_2B_t2i.png)
+![Input Image](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/image/cosmos/predict2/cosmos_predict2_2B_t2i.png)
 
 
 ### 2. Manual Model Installation
@@ -40,22 +40,22 @@ If the model download wasn't successful, you can try to download them manually b
 
 **Diffusion model**
 
-- [cosmos_predict2_2B_t2i.safetensors](https://huggingface.co/Comfy-Org/Cosmos_Predict2_repackaged/resolve/main/cosmos_predict2_2B_t2i.safetensors)
+- [cosmos_predict2_2B_t2i.safetensors](https://huggingface.co/hanzoui/Cosmos_Predict2_repackaged/resolve/main/cosmos_predict2_2B_t2i.safetensors)
 
-For other weights, please visit [Cosmos_Predict2_repackaged](https://huggingface.co/Comfy-Org/Cosmos_Predict2_repackaged) to download
+For other weights, please visit [Cosmos_Predict2_repackaged](https://huggingface.co/hanzoui/Cosmos_Predict2_repackaged) to download
 
 **Text encoder**
 
-[oldt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/comfyanonymous/cosmos_1.0_text_encoder_and_VAE_ComfyUI/resolve/main/text_encoders/oldt5_xxl_fp8_e4m3fn_scaled.safetensors)
+[oldt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoai/cosmos_1.0_text_encoder_and_VAE_Hanzo Studio/resolve/main/text_encoders/oldt5_xxl_fp8_e4m3fn_scaled.safetensors)
 
 **VAE**
 
-[wan_2.1_vae.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors)
+[wan_2.1_vae.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors)
 
 
 File Storage Location
 ```
-📂 ComfyUI/
+📂 Hanzo Studio/
 ├──📂 models/
 │   ├── 📂 diffusion_models/
 │   │   └─── cosmos_predict2_2B_t2i.safetensors
@@ -77,4 +77,4 @@ Please follow the steps in the image to run the workflow:
 4. Set the image size in `EmptySD3LatentImage`
 5. Modify the prompts in the `ClipTextEncode` node
 6. Click the `Run` button or use the shortcut `Ctrl(cmd) + Enter` to run the worklfow
-7. Once generation is complete, the image will automatically save to the `ComfyUI/output/` directory. You can also preview it in the `save image` node.
+7. Once generation is complete, the image will automatically save to the `Hanzo Studio/output/` directory. You can also preview it in the `save image` node.

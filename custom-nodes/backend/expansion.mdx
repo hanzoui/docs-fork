@@ -26,7 +26,7 @@ def load_and_merge_checkpoints(self, checkpoint_path1, checkpoint_path2, ratio):
     }
 ```
 
-While this same node could previously be implemented by manually calling into ComfyUI internals, using expansion means that each subnode will be cached separately (so if you change `model2`, you don't have to reload `model1`).
+While this same node could previously be implemented by manually calling into Hanzo Studio internals, using expansion means that each subnode will be cached separately (so if you change `model2`, you don't have to reload `model1`).
 
 ### Requirements
 
@@ -36,7 +36,7 @@ In order to perform node expansion, a node must return a dictionary with the fol
 
 #### Additional Requirements if not using GraphBuilder
 
-The format expected from the `expand` key is the same as the ComfyUI API format. The following requirements are handled by the `GraphBuilder`, but must be handled manually if you choose to forego it:
+The format expected from the `expand` key is the same as the Hanzo Studio API format. The following requirements are handled by the `GraphBuilder`, but must be handled manually if you choose to forego it:
 
 1. Node IDs must be unique across the entire graph. (This includes between multiple executions of the same node due to the use of lists.)
 2. Node IDs must be deterministic and consistent between multiple executions of the graph (including partial executions due to caching).

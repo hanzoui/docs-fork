@@ -1,13 +1,13 @@
 
 <Tabs>
   <Tab title="Portable">
-    **Recommended Method**: Use the `ComfyUI_windows_portable\update\update_comfyui.bat` batch script, which will update both ComfyUI code and all Python dependencies.
+    **Recommended Method**: Use the `Hanzo Studio_windows_portable\update\update_comfyui.bat` batch script, which will update both Hanzo Studio code and all Python dependencies.
 
     **Manual Dependency Update**:
     If you need to manually update dependencies, use the following command:
     ```bash
     # Open command line in portable version directory
-    .\python_embeded\python.exe -m pip install -r ComfyUI\requirements.txt
+    .\python_embeded\python.exe -m pip install -r Hanzo Studio\requirements.txt
     ```
   </Tab>
   <Tab title="Manual Installation">
@@ -17,7 +17,7 @@
     conda activate comfyui  # or other environment name
     
     # 2. Update code
-    cd <ComfyUI installation path>
+    cd <Hanzo Studio installation path>
     git pull
     
     # 3. Update dependencies (important step)

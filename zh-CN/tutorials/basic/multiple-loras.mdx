@@ -1,10 +1,10 @@
 ---
-title: "ComfyUI 应用多个 LoRA 示例"
+title: "Hanzo Studio 应用多个 LoRA 示例"
 sidebarTitle: "多LoRA应用"
-description: "本篇将引导你了解并完成在 ComfyUI 中同时应用多个 LoRA 模型"
+description: "本篇将引导你了解并完成在 Hanzo Studio 中同时应用多个 LoRA 模型"
 ---
 
-在 [ComfyUI LoRA 使用示例](/zh-CN/tutorials/basic/lora) 中，我们介绍了如何在 ComfyUI 中加载并使用 LoRA 模型，也提及了该节点支持链式连接。
+在 [Hanzo Studio LoRA 使用示例](/zh-CN/tutorials/basic/lora) 中，我们介绍了如何在 Hanzo Studio 中加载并使用 LoRA 模型，也提及了该节点支持链式连接。
 
 ![LoRA 节点链式连接](/images/tutorial/basic/lora/chain_link.png)
 
@@ -12,35 +12,35 @@ description: "本篇将引导你了解并完成在 ComfyUI 中同时应用多个
 
 下图是这两个 LoRA 模型在同样参数下单独使用的效果
 
-![ComfyUI 中 LoRA 模型单独使用效果](/images/tutorial/basic/multiple_loras/compare.png)
+![Hanzo Studio 中 LoRA 模型单独使用效果](/images/tutorial/basic/multiple_loras/compare.png)
 
 但通过多个 LoRA 模型链式连接后，我们可以在最终的效果中看到两种风格融合在一起的效果
 
-![ComfyUI 中多 LoRA 模型应用示例结果](/images/tutorial/basic/multiple_loras/multiple_loras.png)
+![Hanzo Studio 中多 LoRA 模型应用示例结果](/images/tutorial/basic/multiple_loras/multiple_loras.png)
 
 
 ## 相关模型安装
 
-请下载 [dreamshaper_8.safetensors](https://civitai.com/api/download/models/128713?type=Model&format=SafeTensor&size=pruned&fp=fp16) 并保存至 `ComfyUI/models/checkpoints` 目录
+请下载 [dreamshaper_8.safetensors](https://civitai.com/api/download/models/128713?type=Model&format=SafeTensor&size=pruned&fp=fp16) 并保存至 `Hanzo Studio/models/checkpoints` 目录
 
-请下载 [blindbox_V1Mix.safetensors](https://civitai.com/api/download/models/32988?type=Model&format=SafeTensor&size=full&fp=fp16) 并保存至 `ComfyUI/models/loras` 目录
+请下载 [blindbox_V1Mix.safetensors](https://civitai.com/api/download/models/32988?type=Model&format=SafeTensor&size=full&fp=fp16) 并保存至 `Hanzo Studio/models/loras` 目录
 
-请下载 [MoXinV1.safetensors](https://civitai.com/api/download/models/14856?type=Model&format=SafeTensor&size=full&fp=fp16) 并保存至 `ComfyUI/models/loras` 目录
+请下载 [MoXinV1.safetensors](https://civitai.com/api/download/models/14856?type=Model&format=SafeTensor&size=full&fp=fp16) 并保存至 `Hanzo Studio/models/loras` 目录
 
 ## 多 LoRA 模型应用示例工作流
 
-请下载下面的工作流图片,并拖入 ComfyUI 以加载工作流
-![ComfyUI 工作流 - 多 LoRA 模型应用示例](/images/tutorial/basic/multiple_loras/multiple_loras.png)
+请下载下面的工作流图片,并拖入 Hanzo Studio 以加载工作流
+![Hanzo Studio 工作流 - 多 LoRA 模型应用示例](/images/tutorial/basic/multiple_loras/multiple_loras.png)
 
 <Tip>
-Metadata 中包含工作流 json 的图片可直接拖入 ComfyUI 或使用菜单 `Workflows` -> `Open（ctrl+o）` 来加载对应的工作流。
+Metadata 中包含工作流 json 的图片可直接拖入 Hanzo Studio 或使用菜单 `Workflows` -> `Open（ctrl+o）` 来加载对应的工作流。
 </Tip>
 
 ## 按步骤完成工作流的运行
 
 请参照下图步骤完成，确保工作流能够正常运行
 
-![ComfyUI 工作流 - 多 LoRA 模型应用示例流程图](/images/tutorial/basic/multiple_loras/flow_diagram.png)
+![Hanzo Studio 工作流 - 多 LoRA 模型应用示例流程图](/images/tutorial/basic/multiple_loras/flow_diagram.png)
 
 1. 确保`Load Checkpoint`可以加载 **dreamshaper_8.safetensors**
 2. 确保`Load LoRA`可以加载 **blindbox_V1Mix.safetensors** 

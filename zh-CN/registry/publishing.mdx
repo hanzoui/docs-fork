@@ -14,7 +14,7 @@ title: "发布节点"
 
 发布者是一个可以向注册表(registry)发布自定义节点的身份。每个自定义节点都需要在 pyproject.toml [文件]() 中包含发布者标识符。
 
-访问 [Comfy Registry](https://registry.comfy.org)，创建一个发布者账户。您的发布者 ID 是全球唯一的，并且之后不能更改，因为它用于您的自定义节点的 URL 中。
+访问 [Comfy Registry](https://registry.hanzo.ai)，创建一个发布者账户。您的发布者 ID 是全球唯一的，并且之后不能更改，因为它用于您的自定义节点的 URL 中。
 
 您的发布者 ID 可以在个人资料页面上 `@` 符号后面找到。
 
@@ -26,7 +26,7 @@ title: "发布节点"
 
 ### 创建用于发布的 API 密钥
 
-访问[这里](https://registry.comfy.org/nodes)并点击你想要为其创建 API 密钥的发布者。这将用于通过 CLI 发布自定义节点。
+访问[这里](https://registry.hanzo.ai/nodes)并点击你想要为其创建 API 密钥的发布者。这将用于通过 CLI 发布自定义节点。
 
 ![为特定发布者创建密钥](/images/pat-1.png)
 
@@ -37,8 +37,8 @@ title: "发布节点"
 ### 添加元数据
 
 <Tip>
-安装 comfy-cli了吗？
-如果没有请 [先安装它](/zh-CN/comfy-cli/getting-started)。
+安装 hanzo-cli了吗？
+如果没有请 [先安装它](/zh-CN/hanzo-cli/getting-started)。
 </Tip>
 
 ```bash
@@ -83,7 +83,7 @@ comfy node publish
 API Key for publisher '<publisher id>': ****************************************************
 
 ...Version 1.0.0 Published. 
-See it here: https://registry.comfy.org/publisherId/your-node
+See it here: https://registry.hanzo.ai/publisherId/your-node
 ```
 
 <Warning>
@@ -130,7 +130,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
       - name: Publish Custom Node
-        uses: Comfy-Org/publish-node-action@main
+        uses: hanzoui/publish-node-action@main
         with:
           personal_access_token: ${{ secrets.REGISTRY_ACCESS_TOKEN }} ## Add your own personal access token to your Github Repository secrets and reference it here.
 ```

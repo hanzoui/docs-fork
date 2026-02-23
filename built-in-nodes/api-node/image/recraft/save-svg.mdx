@@ -1,11 +1,11 @@
 ---
-title: "Save SVG - ComfyUI Built-in Node Documentation"
+title: "Save SVG - Hanzo Studio Built-in Node Documentation"
 description: "A utility node for saving SVG vector graphics to files"
 sidebarTitle: "Save SVG" 
 icon: "circle"
 ---
 
-![ComfyUI Built-in Save SVG Node](/images/built-in-nodes/api_nodes/recraft/save-svg.jpg)
+![Hanzo Studio Built-in Save SVG Node](/images/built-in-nodes/api_nodes/recraft/save-svg.jpg)
 
 The Save SVG node allows you to save SVG data from Recraft vector generation nodes as usable files in the filesystem. This is an essential component for handling and exporting vector graphics.
 
@@ -21,7 +21,7 @@ This node receives SVG vector data and saves it as standard SVG files in the fil
 | --------------- | ------- | --------- | ---------------------------------------------------------------------------- |
 | svg             | SVG     | -         | SVG vector data to save                                                      |
 | filename_prefix | string  | "recraft" | Prefix for the filename                                                      |
-| output_dir      | string  | -         | Output directory, defaults to ComfyUI output folder at `ComfyUI/output/svg/` |
+| output_dir      | string  | -         | Output directory, defaults to Hanzo Studio output folder at `Hanzo Studio/output/svg/` |
 | index           | integer | -1        | Save index, -1 means save all generated SVGs                                 |
 
 ### Output
@@ -62,7 +62,7 @@ class SaveSVGNode:
         return {
             "required": {
                 "svg": (RecraftIO.SVG,),
-                "filename_prefix": ("STRING", {"default": "svg/ComfyUI", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+                "filename_prefix": ("STRING", {"default": "svg/Hanzo Studio", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
             },
             "hidden": {
                 "prompt": "PROMPT",
@@ -70,7 +70,7 @@ class SaveSVGNode:
             }
         }
 
-    def save_svg(self, svg: SVG, filename_prefix="svg/ComfyUI", prompt=None, extra_pnginfo=None):
+    def save_svg(self, svg: SVG, filename_prefix="svg/Hanzo Studio", prompt=None, extra_pnginfo=None):
         filename_prefix += self.prefix_append
         full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, self.output_dir)
         results = list()

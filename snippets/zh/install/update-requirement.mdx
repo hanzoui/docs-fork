@@ -1,13 +1,13 @@
 
 <Tabs>
   <Tab title="便携版">
-    **推荐方法**：使用 `ComfyUI_windows_portable\update\update_comfyui.bat` 这个批处理脚本，这个脚本会同时更新 ComfyUI 代码和所有 Python 依赖包。
+    **推荐方法**：使用 `Hanzo Studio_windows_portable\update\update_comfyui.bat` 这个批处理脚本，这个脚本会同时更新 Hanzo Studio 代码和所有 Python 依赖包。
 
     **手动更新依赖**：
     如果你需要手动更新依赖，可以使用以下命令：
     ```bash
     # 在便携版目录下打开命令行
-    .\python_embeded\python.exe -m pip install -r ComfyUI\requirements.txt
+    .\python_embeded\python.exe -m pip install -r Hanzo Studio\requirements.txt
     ```
   </Tab>
   <Tab title="手动安装">
@@ -17,7 +17,7 @@
     conda activate comfyui  # 或其他环境名
     
     # 2. 更新代码
-    cd <ComfyUI安装路径>
+    cd <Hanzo Studio安装路径>
     git pull
     
     # 3. 更新依赖（重要步骤）

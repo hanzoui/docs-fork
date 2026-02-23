@@ -1,5 +1,5 @@
 ---
-title: "How to Troubleshoot and Solve ComfyUI Issues"
+title: "How to Troubleshoot and Solve Hanzo Studio Issues"
 description: "Troubleshoot and fix problems caused by custom nodes and extensions"
 icon: "puzzle-piece"
 sidebarTitle: "Custom Node Issues"
@@ -8,7 +8,7 @@ sidebarTitle: "Custom Node Issues"
 ## Quick Issue Diagnosis
 
 If you're experiencing any of these issues, there is a high likelihood that it is caused by custom nodes:
-- ComfyUI crashes or won't start
+- Hanzo Studio crashes or won't start
 - "Failed to import" errors in console/logs
 - UI completely breaks or shows blank screen
 - "Prompt execution failed" errors not related to memory issues
@@ -16,15 +16,15 @@ If you're experiencing any of these issues, there is a high likelihood that it i
 
 ## Is It a Custom Node Problem?
 
-Most ComfyUI issues are caused by custom nodes (extensions). Let's check if this is the case.
+Most Hanzo Studio issues are caused by custom nodes (extensions). Let's check if this is the case.
 
 ### Step 1: Test with all custom nodes disabled
 
-Run ComfyUI with all custom nodes disabled:
+Run Hanzo Studio with all custom nodes disabled:
 
 <Tabs>
 <Tab title="Desktop Users">
-Start ComfyUI Desktop with custom nodes disabled from the settings menu
+Start Hanzo Desktop with custom nodes disabled from the settings menu
 
 ![Settings menu - Disable custom nodes](/images/troubleshooting/desktop-diable-custom-node.jpg)
 
@@ -37,7 +37,7 @@ python main.py --disable-all-custom-nodes
 </Tab>
 <Tab title="Manual Install">
 ```bash
-cd ComfyUI
+cd Hanzo Studio
 python main.py --disable-all-custom-nodes
 ```
 </Tab>
@@ -52,23 +52,23 @@ python main.py --disable-all-custom-nodes
    3. Add the `--disable-all-custom-nodes` parameter to the file, or copy the parameters below into a `.txt` file and rename the file to `run_nvidia_gpu_disable_custom_nodes.bat`
 
    ```bash
-   .\python_embeded\python.exe -s ComfyUI\main.py --disable-all-custom-nodes  --windows-standalone-build
+   .\python_embeded\python.exe -s Hanzo Studio\main.py --disable-all-custom-nodes  --windows-standalone-build
    pause
    ```
    4. Save the file and close it
-   5. Double-click the file to run it. If everything is normal, you should see ComfyUI start and custom nodes disabled
+   5. Double-click the file to run it. If everything is normal, you should see Hanzo Studio start and custom nodes disabled
    </Tab>
    <Tab title="Through Command Line">
-   ![ComfyUI troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-1.jpg)
+   ![Hanzo Studio troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-1.jpg)
    1. Enter the folder where the portable version is located
    2. Open the terminal by right-clicking the menu → Open terminal
 
-   ![ComfyUI troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-2.jpg)
+   ![Hanzo Studio troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-2.jpg)
 
    3. Ensure that the folder name is the current directory of the portable version
-   4. Enter the following command to start ComfyUI through the portable python and disable custom nodes
+   4. Enter the following command to start Hanzo Studio through the portable python and disable custom nodes
    ```
-   .\python_embeded\python.exe -s ComfyUI\main.py --disable-all-custom-nodes
+   .\python_embeded\python.exe -s Hanzo Studio\main.py --disable-all-custom-nodes
    ```
     </Tab>
  </Tabs>
@@ -85,20 +85,20 @@ We'll use **binary search** to quickly find which custom node is causing issues.
 
 ### Option A: Using Comfy CLI (Recommended)
 
-If you have [Comfy CLI](/comfy-cli/getting-started) installed, you can use the automated bisect tool to find the problematic node:
+If you have [Comfy CLI](/hanzo-cli/getting-started) installed, you can use the automated bisect tool to find the problematic node:
 
 ```bash
 # Start a bisect session
-comfy-cli node bisect start
+hanzo-cli node bisect start
 
 # Follow the prompts:
-# - Test ComfyUI with the current set of enabled nodes
-# - Mark as 'good' if the issue is gone: comfy-cli node bisect good
-# - Mark as 'bad' if the issue persists: comfy-cli node bisect bad
+# - Test Hanzo Studio with the current set of enabled nodes
+# - Mark as 'good' if the issue is gone: hanzo-cli node bisect good
+# - Mark as 'bad' if the issue persists: hanzo-cli node bisect bad
 # - Repeat until the problematic node is identified
 
 # Reset when done
-comfy-cli node bisect reset
+hanzo-cli node bisect reset
 ```
 
 The bisect tool will automatically enable/disable nodes and guide you through the process.
@@ -158,7 +158,7 @@ mkdir /content/custom_nodes_backup
 mkdir /content/custom_nodes_temp
 
 # Backup everything first
-cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
+cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
 ```
 </Tab>
 </Tabs>
@@ -179,7 +179,7 @@ cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
    </Tab>
    <Tab title="Cloud like Colab">
    ```bash
-   ls /content/ComfyUI/custom_nodes/
+   ls /content/Hanzo Studio/custom_nodes/
    ```
    </Tab>
    </Tabs>
@@ -210,15 +210,15 @@ cp -r /content/ComfyUI/custom_nodes/* /content/custom_nodes_backup/
    <Tab title="Cloud/Colab">
    ```bash
    # Move first half (nodes 1-4) to temp
-   mv /content/ComfyUI/custom_nodes/node1 /content/custom_nodes_temp/
-   mv /content/ComfyUI/custom_nodes/node2 /content/custom_nodes_temp/
-   mv /content/ComfyUI/custom_nodes/node3 /content/custom_nodes_temp/
-   mv /content/ComfyUI/custom_nodes/node4 /content/custom_nodes_temp/
+   mv /content/Hanzo Studio/custom_nodes/node1 /content/custom_nodes_temp/
+   mv /content/Hanzo Studio/custom_nodes/node2 /content/custom_nodes_temp/
+   mv /content/Hanzo Studio/custom_nodes/node3 /content/custom_nodes_temp/
+   mv /content/Hanzo Studio/custom_nodes/node4 /content/custom_nodes_temp/
    ```
    </Tab>
    </Tabs>
 
-3. **Test ComfyUI:**
+3. **Test Hanzo Studio:**
    ```bash
    python main.py
    ```
@@ -239,53 +239,53 @@ Let's walk through a complete example with 8 custom nodes:
 
 ```
 📁 custom_nodes/
-├── 🔧 ComfyUI-Manager
-├── 🎨 ComfyUI-Custom-Scripts  
-├── 🖼️ ComfyUI-Impact-Pack
-├── 🔄 ComfyUI-Workflow-Component
-├── 📊 ComfyUI-AnimateDiff-Evolved
-├── 🎭 ComfyUI-FaceRestore
-├── ⚡ ComfyUI-Advanced-ControlNet
-└── 🛠️ ComfyUI-Inspire-Pack
+├── 🔧 Hanzo Manager
+├── 🎨 Hanzo Studio-Custom-Scripts  
+├── 🖼️ Hanzo Studio-Impact-Pack
+├── 🔄 Hanzo Studio-Workflow-Component
+├── 📊 Hanzo Studio-AnimateDiff-Evolved
+├── 🎭 Hanzo Studio-FaceRestore
+├── ⚡ Hanzo Studio-Advanced-ControlNet
+└── 🛠️ Hanzo Studio-Inspire-Pack
 ```
 
 **Round 1:** Move first 4 to temp
 - Test → Issue persists ✓
-- Problem is in: ComfyUI-AnimateDiff-Evolved, ComfyUI-FaceRestore, ComfyUI-Advanced-ControlNet, ComfyUI-Inspire-Pack
+- Problem is in: Hanzo Studio-AnimateDiff-Evolved, Hanzo Studio-FaceRestore, Hanzo Studio-Advanced-ControlNet, Hanzo Studio-Inspire-Pack
 
 **Round 2:** Move 2 of the remaining 4 to temp
 - Test → Issue gone ✓
-- Problem is in: ComfyUI-Advanced-ControlNet, ComfyUI-Inspire-Pack
+- Problem is in: Hanzo Studio-Advanced-ControlNet, Hanzo Studio-Inspire-Pack
 
 **Round 3:** Move 1 of the remaining 2 to temp
 - Test → Issue persists ✓
-- **Found it!** ComfyUI-Inspire-Pack is the problematic node
+- **Found it!** Hanzo Studio-Inspire-Pack is the problematic node
 
 ## Step 3: Fix the Issue
 
 Once you've identified the problematic custom node:
 
 ### Option 1: Update the Node
-1. Check if there's an update available in ComfyUI Manager
+1. Check if there's an update available in Hanzo Manager
 2. Update the node and test again
 
 ### Option 2: Replace the Node
 1. Look for alternative custom nodes with similar functionality
-2. Check the [ComfyUI Registry](https://registry.comfy.org) for alternatives
+2. Check the [Hanzo Registry](https://registry.hanzo.ai) for alternatives
 
 ### Option 3: Report the Issue
 Contact the custom node developer:
 1. Find the node's GitHub repository
 2. Create an issue with:
-   - Your ComfyUI version
+   - Your Hanzo Studio version
    - Error messages/logs
    - Steps to reproduce
    - Your operating system
 
 ### Option 4: Remove or Disable the Node
 If no fix is available and you don't need the functionality:
-1. Remove the problematic node from `custom_nodes/` or disable it in the ComfyUI Manager interface
-2. Restart ComfyUI
+1. Remove the problematic node from `custom_nodes/` or disable it in the Hanzo Manager interface
+2. Restart Hanzo Studio
 
 ## Reporting Issues
 
@@ -294,18 +294,18 @@ If the issue isn't caused by custom nodes, refer to the general [troubleshooting
 ### For Custom Node-Specific Issues
 Contact the custom node developer:
 - Find the node's GitHub repository  
-- Create an issue with your ComfyUI version, error messages, reproduction steps, and OS
+- Create an issue with your Hanzo Studio version, error messages, reproduction steps, and OS
 - Check the node's documentation and Issues page for known issues
 
-### For ComfyUI Core Issues
-- **GitHub**: [ComfyUI Issues](https://github.com/comfyanonymous/ComfyUI/issues)
-- **Forum**: [Official ComfyUI Forum](https://forum.comfy.org/)
+### For Hanzo Studio Core Issues
+- **GitHub**: [Hanzo Studio Issues](https://github.com/hanzoai/studio/issues)
+- **Forum**: [Official Hanzo Studio Forum](https://forum.hanzo.ai/)
 
 ### For Desktop App Issues  
-- **GitHub**: [ComfyUI Desktop Issues](https://github.com/Comfy-Org/desktop/issues)
+- **GitHub**: [Hanzo Desktop Issues](https://github.com/hanzoui/desktop/issues)
 
 ### For Frontend Issues
-- **GitHub**: [ComfyUI Frontend Issues](https://github.com/Comfy-Org/ComfyUI_frontend/issues)
+- **GitHub**: [Hanzo Frontend Issues](https://github.com/hanzoui/studio_frontend/issues)
 
 <Note>
 For general installation, model, or performance issues, see our [troubleshooting overview](/troubleshooting/overview) and [model issues](/troubleshooting/model-issues) pages.
