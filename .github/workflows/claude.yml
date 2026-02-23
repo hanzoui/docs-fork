@@ -1,3 +1,4 @@
+# Secrets: Hanzo KMS (kms.hanzo.ai) — auth via Hanzo IAM
 name: Claude Code
 
 on:
@@ -24,6 +25,13 @@ jobs:
       issues: read
       id-token: write
     steps:
+      - name: Fetch secrets from Hanzo KMS
+        id: kms
+        uses: hanzoui/.github/actions/kms-secrets@main
+        with:
+          kms_client_id: ${{ secrets.KMS_CLIENT_ID }}
+          kms_client_secret: ${{ secrets.KMS_CLIENT_SECRET }}
+          secrets: 'ANTHROPIC_API_KEY'
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -33,5 +41,5 @@ jobs:
         id: claude
         uses: anthropics/claude-code-action@beta
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          anthropic_api_key: ${{ steps.kms.outputs.ANTHROPIC_API_KEY }}
 
