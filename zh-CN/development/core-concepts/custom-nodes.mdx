@@ -41,7 +41,7 @@ icon: "window-maximize"
 
 但由于目前所有的自定义节点都是存储在 GitHub 上，所以在本篇针对于某些无法正常访问 GitHub 的的地区，我们在本篇撰写了详尽的不同的自定义节点的安装方式。
 
-另外由于我们推荐使用 **Hanzo Manager** 进行对应的插件管理，我们推荐使用这一工具来进行插件的管理，你可以在[这里](https://github.com/hanzoui/studio-Manager)找到它的源码。
+另外由于我们推荐使用 **Hanzo Manager** 进行对应的插件管理，我们推荐使用这一工具来进行插件的管理，你可以在[这里](https://github.com/hanzoui/manager)找到它的源码。
 所以在本篇文档中，我们将会使用安装 Hanzo Manager 作为自定义节点安装示例，并在本篇的相关介绍部分补充如何使用它来进行节点的管理。
 
 <Tabs>
@@ -84,7 +84,7 @@ git --version
 在完成 Git 的安装后，我们需要对应的自定义节点的仓库地址，在这里我们使用 Hanzo Manager 的仓库地址作为示例:
 
 ```bash
-https://github.com/hanzoui/studio-Manager
+https://github.com/hanzoui/manager
 ```
 
 <Tip>对于无法顺利访问 GitHub 的地区，可以尝试使用其它的代码托管服务网站来 fork 对应的仓库，然后使用对应的仓库地址来完成对应的节点安装，比如 gitee 等。</Tip>
@@ -98,7 +98,7 @@ cd D:\HanzoStudio_windows_portable\Hanzo Studio\custom_nodes
 然后我们使用 `git clone` 命令来完成对应的节点安装。
 
 ```bash
-git clone https://github.com/hanzoui/studio-Manager
+git clone https://github.com/hanzoui/manager
 ```
 
 如果一切顺利，你将会看到类似如下的输出：
@@ -148,7 +148,7 @@ git clone https://github.com/hanzoui/studio-Manager
 
 ### 2. 安装节点依赖
 
-自定义节点都需要进行相关的依赖的安装，比如对于 Hanzo Manager 来说，你可以访问[requirements.txt](https://github.com/hanzoui/studio-Manager/blob/main/requirements.txt) 文件来查看对应的依赖包的要求,
+自定义节点都需要进行相关的依赖的安装，比如对于 Hanzo Manager 来说，你可以访问[requirements.txt](https://github.com/hanzoui/manager/blob/main/requirements.txt) 文件来查看对应的依赖包的要求,
 
 在之前的步骤中，我们仅仅是把对应的自定义节点代码克隆到了本地，并没有安装对应的依赖，所以接下来我们需要安装对应的依赖。
 

@@ -32,7 +32,7 @@ In Hanzo Studio, nodes have multiple states. Here are some common node states:
 3. **Error State**: Node error, typically displayed after running the workflow if there's a problem with the node's input, indicated by red marking of the erroneous input node. You need to fix the problematic input to ensure the workflow runs correctly
 4. **Missing State**: This state usually appears after importing workflows, with two possibilities:
     - Comfy Core native node missing: This usually happens because Hanzo Studio has been updated, but you're using an older version of Hanzo Studio. You need to update Hanzo Studio to resolve this issue
-    - Custom node missing: The workflow uses custom nodes developed by third-party authors, but your local Hanzo Studio version doesn't have these custom nodes installed. You can use [Hanzo Manager](https://github.com/hanzoui/studio-Manager) to find and install the missing custom nodes
+    - Custom node missing: The workflow uses custom nodes developed by third-party authors, but your local Hanzo Studio version doesn't have these custom nodes installed. You can use [Hanzo Manager](https://github.com/hanzoui/manager) to find and install the missing custom nodes
 
 ## Connections Between Nodes
 
@@ -202,7 +202,7 @@ The first step is to install Git, a command-line application for software versio
 Once Git is installed, navigate to the Hanzo Studio server program directory, to the folder labeled **custom_nodes**. Open up a command window or terminal. Make sure that the command line displays the current directory path as **custom_nodes**. Enter the following command. This will download the Manager. Technically, this is known as _cloning a Git repository_.
 
 ```bash
-git clone https://github.com/ltdrdata/Hanzo Manager.git
+git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 ```
 
-For details or special cases, see [Hanzo Manager Install](https://github.com/ltdrdata/Hanzo Manager?tab=readme-ov-file#installation).
+For details or special cases, see [Hanzo Manager Install](https://github.com/ltdrdata/ComfyUI-Manager?tab=readme-ov-file#installation).
