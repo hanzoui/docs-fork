@@ -70,7 +70,7 @@ source venv/bin/activate
 <Step title="Pull Latest Code">
 Navigate to your Hanzo Studio installation directory and pull the latest code:
 ```bash
-cd <Hanzo Studio-installation-path>
+cd <HanzoStudio-installation-path>
 git pull
 ```
 </Step>
@@ -138,7 +138,7 @@ It's important to understand the difference between development (nightly) and st
 - **Development version (nightly)**: Latest commit code, giving you access to the newest features, but may contain potential issues
 - **Stable version (release)**: Built on stable releases, usually lags behind development versions but offers higher stability. We support stable versions after features are tested and stabilized
 
-Many users often find themselves on release versions or desktop versions during updates, but discover that needed features are only available in development versions. In such cases, check if your local `Hanzo Studio/requirements.txt` matches the [nightly version dependencies](https://github.com/hanzoai/studio/blob/master/requirements.txt) to determine if all dependencies support the latest features.
+Many users often find themselves on release versions or desktop versions during updates, but discover that needed features are only available in development versions. In such cases, check if your local `HanzoStudio/requirements.txt` matches the [nightly version dependencies](https://github.com/hanzoai/studio/blob/master/requirements.txt) to determine if all dependencies support the latest features.
 
 ## Common Update Issues
 
@@ -187,7 +187,7 @@ If core dependency updates fail, follow these troubleshooting steps:
     ```
   </Step>
   <Step title="Install Core Packages Individually">
-    If batch installation fails, try installing packages individually. **First check version requirements in `Hanzo Studio/requirements.txt`**:
+    If batch installation fails, try installing packages individually. **First check version requirements in `HanzoStudio/requirements.txt`**:
     
     **Then install according to specified versions:**
     ```bash
@@ -196,7 +196,7 @@ If core dependency updates fail, follow these troubleshooting steps:
     pip install hanzo-studio-embedded-docs==1.0.0
     ```
     <Warning>
-    It's recommended to use the exact version numbers specified in `Hanzo Studio/requirements.txt`. Don't upgrade to the latest versions independently, as this may cause compatibility issues.
+    It's recommended to use the exact version numbers specified in `HanzoStudio/requirements.txt`. Don't upgrade to the latest versions independently, as this may cause compatibility issues.
     </Warning>
   </Step>
 </Steps>

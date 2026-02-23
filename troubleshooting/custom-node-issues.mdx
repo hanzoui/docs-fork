@@ -158,7 +158,7 @@ mkdir /content/custom_nodes_backup
 mkdir /content/custom_nodes_temp
 
 # Backup everything first
-cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
+cp -r /content/HanzoStudio/custom_nodes/* /content/custom_nodes_backup/
 ```
 </Tab>
 </Tabs>
@@ -179,7 +179,7 @@ cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
    </Tab>
    <Tab title="Cloud like Colab">
    ```bash
-   ls /content/Hanzo Studio/custom_nodes/
+   ls /content/HanzoStudio/custom_nodes/
    ```
    </Tab>
    </Tabs>
@@ -210,10 +210,10 @@ cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
    <Tab title="Cloud/Colab">
    ```bash
    # Move first half (nodes 1-4) to temp
-   mv /content/Hanzo Studio/custom_nodes/node1 /content/custom_nodes_temp/
-   mv /content/Hanzo Studio/custom_nodes/node2 /content/custom_nodes_temp/
-   mv /content/Hanzo Studio/custom_nodes/node3 /content/custom_nodes_temp/
-   mv /content/Hanzo Studio/custom_nodes/node4 /content/custom_nodes_temp/
+   mv /content/HanzoStudio/custom_nodes/node1 /content/custom_nodes_temp/
+   mv /content/HanzoStudio/custom_nodes/node2 /content/custom_nodes_temp/
+   mv /content/HanzoStudio/custom_nodes/node3 /content/custom_nodes_temp/
+   mv /content/HanzoStudio/custom_nodes/node4 /content/custom_nodes_temp/
    ```
    </Tab>
    </Tabs>
@@ -240,26 +240,26 @@ Let's walk through a complete example with 8 custom nodes:
 ```
 📁 custom_nodes/
 ├── 🔧 Hanzo Manager
-├── 🎨 Hanzo Studio-Custom-Scripts  
-├── 🖼️ Hanzo Studio-Impact-Pack
-├── 🔄 Hanzo Studio-Workflow-Component
-├── 📊 Hanzo Studio-AnimateDiff-Evolved
-├── 🎭 Hanzo Studio-FaceRestore
-├── ⚡ Hanzo Studio-Advanced-ControlNet
-└── 🛠️ Hanzo Studio-Inspire-Pack
+├── 🎨 HanzoStudio-Custom-Scripts  
+├── 🖼️ HanzoStudio-Impact-Pack
+├── 🔄 HanzoStudio-Workflow-Component
+├── 📊 HanzoStudio-AnimateDiff-Evolved
+├── 🎭 HanzoStudio-FaceRestore
+├── ⚡ HanzoStudio-Advanced-ControlNet
+└── 🛠️ HanzoStudio-Inspire-Pack
 ```
 
 **Round 1:** Move first 4 to temp
 - Test → Issue persists ✓
-- Problem is in: Hanzo Studio-AnimateDiff-Evolved, Hanzo Studio-FaceRestore, Hanzo Studio-Advanced-ControlNet, Hanzo Studio-Inspire-Pack
+- Problem is in: HanzoStudio-AnimateDiff-Evolved, HanzoStudio-FaceRestore, HanzoStudio-Advanced-ControlNet, HanzoStudio-Inspire-Pack
 
 **Round 2:** Move 2 of the remaining 4 to temp
 - Test → Issue gone ✓
-- Problem is in: Hanzo Studio-Advanced-ControlNet, Hanzo Studio-Inspire-Pack
+- Problem is in: HanzoStudio-Advanced-ControlNet, HanzoStudio-Inspire-Pack
 
 **Round 3:** Move 1 of the remaining 2 to temp
 - Test → Issue persists ✓
-- **Found it!** Hanzo Studio-Inspire-Pack is the problematic node
+- **Found it!** HanzoStudio-Inspire-Pack is the problematic node
 
 ## Step 3: Fix the Issue
 

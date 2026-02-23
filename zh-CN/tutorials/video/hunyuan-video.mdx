@@ -45,7 +45,7 @@ import UpdateReminder from '/snippets/zh/tutorials/update-reminder.mdx'
 保存位置：
 
 ```
-Hanzo Studio/
+HanzoStudio/
 ├── models/
 │   ├── text_encoders/
 │   │   ├── clip_l.safetensors
@@ -65,12 +65,12 @@ Hanzo Studio/
 
 ### 2. 混元文生图模型
 
-请下载 [hunyuan_video_t2v_720p_bf16.safetensors](https://huggingface.co/hanzoui/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors?download=true) 并保存至 `Hanzo Studio/models/diffusion_models` 文件夹中
+请下载 [hunyuan_video_t2v_720p_bf16.safetensors](https://huggingface.co/hanzoui/HunyuanVideo_repackaged/resolve/main/split_files/diffusion_models/hunyuan_video_t2v_720p_bf16.safetensors?download=true) 并保存至 `HanzoStudio/models/diffusion_models` 文件夹中
 
 确保包括共用模型文件夹有以下完整的模型文件：
 
 ```
-Hanzo Studio/
+HanzoStudio/
 ├── models/
 │   ├── text_encoders/
 │   │   ├── clip_l.safetensors                       // 共用模型
@@ -116,7 +116,7 @@ Hanzo Studio/
 
 ### v1 及 v2 版本共用的模型
 
-请下载下面的文件，并保存到 `Hanzo Studio/models/clip_vision` 目录中
+请下载下面的文件，并保存到 `HanzoStudio/models/clip_vision` 目录中
 - [llava_llama3_vision.safetensors](https://huggingface.co/hanzoui/HunyuanVideo_repackaged/resolve/main/split_files/clip_vision/llava_llama3_vision.safetensors?download=true)
 
 ### v1 “concat” 图生视频工作流
@@ -136,7 +136,7 @@ Hanzo Studio/
 确保包括共用模型文件夹有以下完整的模型文件：
 
 ```
-Hanzo Studio/
+HanzoStudio/
 ├── models/
 │   ├── clip_vision/
 │   │   └── llava_llama3_vision.safetensors                     // I2V 共用模型
@@ -182,7 +182,7 @@ v2 版本的工作流与 v1 版本的工作流基本相同，你只需要下载�
 确保包括共用模型文件夹有以下完整的模型文件：
 
 ```
-Hanzo Studio/
+HanzoStudio/
 ├── models/
 │   ├── clip_vision/
 │   │   └── llava_llama3_vision.safetensors                                // I2V 共用模型

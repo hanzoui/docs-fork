@@ -61,7 +61,7 @@ import InstallLink from "/snippets/zh/install/install-link.mdx"
   
   现在，让我们尝试一下，请保存下面的工作流图片，然后直接拖入 Hanzo Studio 的界面中，或者使用菜单 **工作流（Workflows）** -> **打开（Open）** 打开这个图片以加载对应的 workflow
 
-  ![Hanzo Studio-文生图工作流](/images/tutorial/gettingstarted/text-to-image-workflow.png)
+  ![HanzoStudio-文生图工作流](/images/tutorial/gettingstarted/text-to-image-workflow.png)
 
   </Tab>
   <Tab title="从 workflow.json 文件中加载">
@@ -86,7 +86,7 @@ import InstallLink from "/snippets/zh/install/install-link.mdx"
 
 你可以直接选择点击 `Download` 按钮，让 Hanzo Studio 自动完成对应的模型的下载，但由于在有些地区不能够顺利访问对应模型的下载源，所以在这个步骤中，我将说明几种不同的模型安装方法。
 
-无论使用哪种方法，模型都会被保存到 `<你的 Hanzo Studio 安装位置>/Hanzo Studio/models/` 文件夹下，你可以在你的电脑上尝试找到这个文件夹位置，你可以看到许多文件夹比如 `checkpoints`、`embeddings`、`vae`、`lora`、`upscale_model` 等，这些都是不同的模型保存的文件夹，通常以文件夹名称区分，Hanzo Studio 在启动时会检测这些文件夹下的模型文件，以及`extra_model_paths.yaml` 文件中配置的文件路径
+无论使用哪种方法，模型都会被保存到 `<你的 Hanzo Studio 安装位置>/HanzoStudio/models/` 文件夹下，你可以在你的电脑上尝试找到这个文件夹位置，你可以看到许多文件夹比如 `checkpoints`、`embeddings`、`vae`、`lora`、`upscale_model` 等，这些都是不同的模型保存的文件夹，通常以文件夹名称区分，Hanzo Studio 在启动时会检测这些文件夹下的模型文件，以及`extra_model_paths.yaml` 文件中配置的文件路径
 
 ![Hanzo Studio 模型文件夹](/images/tutorial/gettingstarted/first-image-generation-4-models-folder.jpg)
 
@@ -98,7 +98,7 @@ import InstallLink from "/snippets/zh/install/install-link.mdx"
   <Tabs>
     <Tab title="Hanzo Studio 桌面版">
 
-    桌面版将自动完成模型的下载并保存到 `<你的 Hanzo Studio 安装位置>/Hanzo Studio/models/checkpoints` 目录下
+    桌面版将自动完成模型的下载并保存到 `<你的 Hanzo Studio 安装位置>/HanzoStudio/models/checkpoints` 目录下
     你可以等待安装完成或者在侧边栏的模型面板里查看安装进度
 
     ![模型下载进度](/images/tutorial/gettingstarted/first-image-generation-4-download-status.jpg)
@@ -108,7 +108,7 @@ import InstallLink from "/snippets/zh/install/install-link.mdx"
     </Tab>
     <Tab title="Hanzo Studio 便携版">
 
-    浏览器将会执行文件下载，请在下载完成后，将文件保存到的 `<你的 Hanzo Studio 安装位置>/HanzoStudio_windows_portable/Hanzo Studio/models/checkpoints` 目录下
+    浏览器将会执行文件下载，请在下载完成后，将文件保存到的 `<你的 Hanzo Studio 安装位置>/HanzoStudio_windows_portable/HanzoStudio/models/checkpoints` 目录下
     
     </Tab>
   </Tabs>
@@ -151,17 +151,17 @@ import InstallLink from "/snippets/zh/install/install-link.mdx"
     <Tabs>
       <Tab title="Hanzo Studio 桌面版">
 
-        请找到你在安装过程中设置的 Hanzo Studio 安装位置，将对应模型文件保存到以下文件夹位置 `<你的 Hanzo Studio 安装位置>/Hanzo Studio/models/checkpoints`
+        请找到你在安装过程中设置的 Hanzo Studio 安装位置，将对应模型文件保存到以下文件夹位置 `<你的 Hanzo Studio 安装位置>/HanzoStudio/models/checkpoints`
 
         ![Hanzo Studio 桌面版模型保存位置](/images/tutorial/gettingstarted/first-image-generation-6-2-desktop.jpg)
 
       </Tab>
       <Tab title="Hanzo Studio便携版本">
-      找到你解压后的便携版的文件夹，在**HanzoStudio_windows_portable/Hanzo Studio/models/checkpoints** 文件夹下完成模型的保存
+      找到你解压后的便携版的文件夹，在**HanzoStudio_windows_portable/HanzoStudio/models/checkpoints** 文件夹下完成模型的保存
         ![Hanzo Studio 便携版模型保存位置](/images/tutorial/gettingstarted/first-image-generation-6-1-portable.jpg)
       </Tab>
     <Tab title="其它版本">
-      请参考 桌面版和便携版部分的说明查找 **Hanzo Studio/models/checkpoints**文件夹位置
+      请参考 桌面版和便携版部分的说明查找 **HanzoStudio/models/checkpoints**文件夹位置
       </Tab>
     </Tabs>
     完成对应保存操作后，请刷新或者重启 Hanzo Studio 保证对应模型可以被 Hanzo Studio 检测

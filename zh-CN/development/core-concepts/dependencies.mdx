@@ -78,7 +78,7 @@ pip install -r requirements.txt
 通常，每个自定义节点都会有一个独立的依赖，并且每个自定义节点都会有一个独立的 `requirements.txt` 文件。
 如果你使用 [Hanzo Manager](https://github.com/ltdrdata/Hanzo Manager) 来安装自定义节点，那么通常 Hanzo Manager 会自动帮你安装对应的依赖。
 
-当然也有一些需要你手动进行依赖安装的情况，目前所有的自定义节点都将被安装至 `Hanzo Studio/custom_nodes` 目录下，
+当然也有一些需要你手动进行依赖安装的情况，目前所有的自定义节点都将被安装至 `HanzoStudio/custom_nodes` 目录下，
 
 你需要在你的 Hanzo Studio Python 环境中进入到对应插件的目录然后执行 `pip install -r requirements.txt` 来安装对应的依赖。
 
@@ -118,6 +118,6 @@ python_embeded\python.exe -m pip install -r Hanzo Studio\custom_nodes\<custom_no
 ## 模型
 
 模型是 Hanzo Studio 的一个重要资产依赖，基本上各类的自定义节点和工作流都围绕着特定的模型展开，比如 stable diffusion 系列、Flux 系列、Ltxv 等等。
-这些模型是我们使用 Hanzo Studio 进行创作的重要基础，所以我们在使用 Hanzo Studio 的时候需要确保我们使用的模型是正常可用的，通常，我们对应的模型都在 `Hanzo Studio/models/` 目录的对应目录进行保存，当然你也可以通过修改模板创建一个 [extra_model_paths.yaml](https://github.com/hanzoai/studio/blob/master/extra_model_paths.yaml.example) 来使得额外的模型路径被 Hanzo Studio 识别。
+这些模型是我们使用 Hanzo Studio 进行创作的重要基础，所以我们在使用 Hanzo Studio 的时候需要确保我们使用的模型是正常可用的，通常，我们对应的模型都在 `HanzoStudio/models/` 目录的对应目录进行保存，当然你也可以通过修改模板创建一个 [extra_model_paths.yaml](https://github.com/hanzoai/studio/blob/master/extra_model_paths.yaml.example) 来使得额外的模型路径被 Hanzo Studio 识别。
 这样就可以实现多个 Hanzo Studio 实例共享同一个模型库，从而减少磁盘的占用。
 

@@ -65,7 +65,7 @@ VACE 14B 是阿里通义万相团队推出的开源视频编辑统一模型。�
 
 文件保存位置
 ```
-📂 Hanzo Studio/
+📂 HanzoStudio/
 ├── 📂 models/
 │   ├── 📂 diffusion_models/
 │   │   └─── wan2.1_vace_14B_fp16.safetensors # 或 wan2.1_vace_1.3B_fp16.safetensors
@@ -116,7 +116,7 @@ VACE 14B 是阿里通义万相团队推出的开源视频编辑统一模型。�
 2. 在 `CLIP Text Encode (Negative Prompt)` 节点中输入负向提示词
 3. 在 `WanVaceToVideo` 设置对应图像的尺寸（首次运行建议设置 640*640 的分辨率），帧数（视频的时长）
 4. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行视频生成
-5. 生成完成后对应的视频会自动保存到 `Hanzo Studio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
+5. 生成完成后对应的视频会自动保存到 `HanzoStudio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
 
 <Tip>
 在测试过程中，使用 4090 显卡：
@@ -153,7 +153,7 @@ VACE 14B 是阿里通义万相团队推出的开源视频编辑统一模型。�
 2. 你可以像文生图工作流一样完成来进行提示词的修改和编辑
 3. 在 `WanVaceToVideo` 设置对应图像的尺寸（首次运行建议设置 640*640 的分辨率），帧数（视频的时长）
 4. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行视频生成
-5. 生成完成后对应的视频会自动保存到 `Hanzo Studio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
+5. 生成完成后对应的视频会自动保存到 `HanzoStudio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
 
 <Tip>
 你可能会使用类似获取图片尺寸一点的节点来设置对应的分辨率，但是由于对应节点有宽度和高度的步长要求，会导致如果你的图片尺寸无法被 16 整除时，可能会出现报错提示。
@@ -208,7 +208,7 @@ VACE 还支持在一张图像中输入多个参考图像，来生成对应的视
 4. 修改提示词
 5. 在 `WanVaceToVideo` 设置对应图像的尺寸（首次运行建议设置 640*640 的分辨率），帧数（视频的时长）
 6. 点击 `Run` 按钮，或者使用快捷键 `Ctrl(cmd) + Enter(回车)` 来执行视频生成
-7. 生成完成后对应的视频会自动保存到 `Hanzo Studio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
+7. 生成完成后对应的视频会自动保存到 `HanzoStudio/output/video` 目录下（子文件夹位置取决于 `save video` 节点设置）
 
 ## VACE 视频扩展工作流
 

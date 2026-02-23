@@ -159,7 +159,7 @@ mkdir /content/custom_nodes_backup
 mkdir /content/custom_nodes_temp
 
 # 首先备份所有内容
-cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
+cp -r /content/HanzoStudio/custom_nodes/* /content/custom_nodes_backup/
 ```
 </Tab>
 </Tabs>
@@ -180,7 +180,7 @@ cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
    </Tab>
    <Tab title="云端/Colab">
    ```bash
-   ls /content/Hanzo Studio/custom_nodes/
+   ls /content/HanzoStudio/custom_nodes/
    ```
    </Tab>
    </Tabs>
@@ -211,10 +211,10 @@ cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
    <Tab title="云端/Colab">
    ```bash
    # 将前一半（节点 1-4）移动到临时文件夹
-   mv /content/Hanzo Studio/custom_nodes/node1 /content/custom_nodes_temp/
-   mv /content/Hanzo Studio/custom_nodes/node2 /content/custom_nodes_temp/
-   mv /content/Hanzo Studio/custom_nodes/node3 /content/custom_nodes_temp/
-   mv /content/Hanzo Studio/custom_nodes/node4 /content/custom_nodes_temp/
+   mv /content/HanzoStudio/custom_nodes/node1 /content/custom_nodes_temp/
+   mv /content/HanzoStudio/custom_nodes/node2 /content/custom_nodes_temp/
+   mv /content/HanzoStudio/custom_nodes/node3 /content/custom_nodes_temp/
+   mv /content/HanzoStudio/custom_nodes/node4 /content/custom_nodes_temp/
    ```
    </Tab>
    </Tabs>
@@ -241,26 +241,26 @@ cp -r /content/Hanzo Studio/custom_nodes/* /content/custom_nodes_backup/
 ```
 📁 custom_nodes/
 ├── 🔧 Hanzo Manager
-├── 🎨 Hanzo Studio-Custom-Scripts  
-├── 🖼️ Hanzo Studio-Impact-Pack
-├── 🔄 Hanzo Studio-Workflow-Component
-├── 📊 Hanzo Studio-AnimateDiff-Evolved
-├── 🎭 Hanzo Studio-FaceRestore
-├── ⚡ Hanzo Studio-Advanced-ControlNet
-└── 🛠️ Hanzo Studio-Inspire-Pack
+├── 🎨 HanzoStudio-Custom-Scripts  
+├── 🖼️ HanzoStudio-Impact-Pack
+├── 🔄 HanzoStudio-Workflow-Component
+├── 📊 HanzoStudio-AnimateDiff-Evolved
+├── 🎭 HanzoStudio-FaceRestore
+├── ⚡ HanzoStudio-Advanced-ControlNet
+└── 🛠️ HanzoStudio-Inspire-Pack
 ```
 
 **第 1 轮：** 将前 4 个移动到临时文件夹
 - 测试 → 问题仍然存在 ✓
-- 问题在：Hanzo Studio-AnimateDiff-Evolved、Hanzo Studio-FaceRestore、Hanzo Studio-Advanced-ControlNet、Hanzo Studio-Inspire-Pack
+- 问题在：HanzoStudio-AnimateDiff-Evolved、HanzoStudio-FaceRestore、HanzoStudio-Advanced-ControlNet、HanzoStudio-Inspire-Pack
 
 **第 2 轮：** 将剩余 4 个中的 2 个移动到临时文件夹
 - 测试 → 问题消失 ✓
-- 问题在：Hanzo Studio-Advanced-ControlNet、Hanzo Studio-Inspire-Pack
+- 问题在：HanzoStudio-Advanced-ControlNet、HanzoStudio-Inspire-Pack
 
 **第 3 轮：** 将剩余 2 个中的 1 个移动到临时文件夹
 - 测试 → 问题仍然存在 ✓
-- **找到了！** Hanzo Studio-Inspire-Pack 是有问题的节点
+- **找到了！** HanzoStudio-Inspire-Pack 是有问题的节点
 
 ## 步骤 3：修复问题
 

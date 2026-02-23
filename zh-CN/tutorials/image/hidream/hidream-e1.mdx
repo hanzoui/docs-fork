@@ -51,26 +51,26 @@ HiDream-E1 是智象未来(HiDream-ai) 于 2025 年 4 月 28 日正式开源的�
 
 ###  2.手动模型安装 HiDream-e1 相关模型
 
-本篇指南涉及的所有模型你都可以在[这里](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/tree/main/split_files)找到，请下载对应文件并保存到相应的文件夹。
+本篇指南涉及的所有模型你都可以在[这里](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/tree/main/split_files)找到，请下载对应文件并保存到相应的文件夹。
 
 下面的模型文件是我们会共用的模型文件，请点击对应的链接进行下载，并参照模型文件保存位置进行保存，对应的 **diffusion models** 模型我们会在对应工作流中引导你进行下载。
 
 **text_encoders**：
 
-- [clip_l_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/clip_l_hidream.safetensors)
-- [clip_g_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/clip_g_hidream.safetensors)
-- [t5xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/t5xxl_fp8_e4m3fn_scaled.safetensors) 这个模型在许多的工作流中都有使用过，你可能已经下载了这个文件。
-- [llama_3.1_8b_instruct_fp8_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/llama_3.1_8b_instruct_fp8_scaled.safetensors)
+- [clip_l_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/text_encoders/clip_l_hidream.safetensors)
+- [clip_g_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/text_encoders/clip_g_hidream.safetensors)
+- [t5xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/text_encoders/t5xxl_fp8_e4m3fn_scaled.safetensors) 这个模型在许多的工作流中都有使用过，你可能已经下载了这个文件。
+- [llama_3.1_8b_instruct_fp8_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/text_encoders/llama_3.1_8b_instruct_fp8_scaled.safetensors)
 
 **VAE**
--  [ae.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/vae/ae.safetensors) 这个是 Flux 的 VAE 模型，如果你之前使用过 Flux 的工作流，你可能已经下载了这个文件。
+-  [ae.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/vae/ae.safetensors) 这个是 Flux 的 VAE 模型，如果你之前使用过 Flux 的工作流，你可能已经下载了这个文件。
 
 **diffusion models**
-- [hidream_e1_full_bf16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/resolve/main/split_files/diffusion_models/hidream_e1_full_bf16.safetensors)
+- [hidream_e1_full_bf16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/resolve/main/split_files/diffusion_models/hidream_e1_full_bf16.safetensors)
 
 模型文件保存位置
 ```
-📂 Hanzo Studio/
+📂 HanzoStudio/
 ├── 📂 models/
 │   ├── 📂 text_encoders/
 │   │   ├─── clip_l_hidream.safetensors

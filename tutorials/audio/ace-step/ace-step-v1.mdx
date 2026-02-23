@@ -31,7 +31,7 @@ Click the button below to download the corresponding workflow file. Drag it into
     <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Download Json Format Workflow File</p>
 </a>
 
-You can also manually download [ace_step_v1_3.5b.safetensors](https://huggingface.co/hanzoui/ACE-Step_HanzoStudio_repackaged/blob/main/all_in_one/ace_step_v1_3.5b.safetensors) and save it to the `Hanzo Studio/models/checkpoints` folder
+You can also manually download [ace_step_v1_3.5b.safetensors](https://huggingface.co/hanzoui/ACE-Step_HanzoStudio_repackaged/blob/main/all_in_one/ace_step_v1_3.5b.safetensors) and save it to the `HanzoStudio/models/checkpoints` folder
 
 ### 2. Complete the Workflow Step by Step
 
@@ -42,7 +42,7 @@ You can also manually download [ace_step_v1_3.5b.safetensors](https://huggingfac
 4. (Optional) Input corresponding music styles etc. in the `tags` field of `TextEncodeAceStepAudio`
 5. (Optional) Input corresponding lyrics in the `lyrics` field of `TextEncodeAceStepAudio`
 6. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute the audio generation
-7. After the workflow completes,, you can preview the generated audio in the `Save Audio` node. You can click to play and listen to it, and the audio will also be saved to `Hanzo Studio/output/audio` (subdirectory determined by the `Save Audio` node).
+7. After the workflow completes,, you can preview the generated audio in the `Save Audio` node. You can click to play and listen to it, and the audio will also be saved to `HanzoStudio/output/audio` (subdirectory determined by the `Save Audio` node).
 
 ## ACE-Step Hanzo Studio Audio-to-Audio Workflow
 
@@ -72,7 +72,7 @@ Download the following audio file as the input audio:
 3. (Optional) Input corresponding music styles and lyrics in the `tags` and `lyrics` fields of `TextEncodeAceStepAudio`. Providing lyrics is very important for audio editing
 4. (Optional) Modify the `denoise` parameter in the `Ksampler` node to adjust the noise added during sampling to control similarity with the original audio (smaller values result in more similarity to the original audio; setting it to `1.00` is approximately equivalent to having no audio input)
 5. Click the `Run` button, or use the shortcut `Ctrl(cmd) + Enter` to execute the audio generation
-6. After the workflow completes, you can preview the generated audio in the `Save Audio` node. You can click to play and listen to it, and the audio will also be saved to `Hanzo Studio/output/audio` (subdirectory determined by the `Save Audio` node).
+6. After the workflow completes, you can preview the generated audio in the `Save Audio` node. You can click to play and listen to it, and the audio will also be saved to `HanzoStudio/output/audio` (subdirectory determined by the `Save Audio` node).
 
 You can also implement the lyrics modification and editing functionality from the ACE-Step project page, modifying the original lyrics to change the audio effect.
 

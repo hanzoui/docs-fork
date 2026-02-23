@@ -35,7 +35,7 @@ HiDream-ai provides three versions of the HiDream-I1 model to meet different nee
 
 ## About This Workflow Example
 
-In this example, we will use the repackaged version from ComfyOrg. You can find all the model files we'll use in this example in the [HiDream-I1_Hanzo Studio](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/) repository.
+In this example, we will use the repackaged version from ComfyOrg. You can find all the model files we'll use in this example in the [HiDream-I1_Hanzo Studio](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/) repository.
 
 <Tip>
 Before starting, please update your Hanzo Studio version to ensure it's at least after this [commit](https://github.com/hanzoai/studio/commit/9ad792f92706e2179c58b2e5348164acafa69288) to make sure your Hanzo Studio has native support for HiDream
@@ -43,7 +43,7 @@ Before starting, please update your Hanzo Studio version to ensure it's at least
 
 ## HiDream-I1 Workflow
 
-The model requirements for different Hanzo Studio native HiDream-I1 workflows are basically the same, with only the [diffusion models](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/tree/main/split_files/diffusion_models) files being different.
+The model requirements for different Hanzo Studio native HiDream-I1 workflows are basically the same, with only the [diffusion models](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/tree/main/split_files/diffusion_models) files being different.
 
 If you don't know which version to choose, please refer to the following suggestions:
 
@@ -67,20 +67,20 @@ We will guide you to download the corresponding **diffusion models** in the corr
 
 **text_encoders**：
 
-- [clip_l_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/clip_l_hidream.safetensors)
-- [clip_g_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/clip_g_hidream.safetensors)
-- [t5xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/t5xxl_fp8_e4m3fn_scaled.safetensors) This model has been used in many workflows, you may have already downloaded this file.
-- [llama_3.1_8b_instruct_fp8_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/text_encoders/llama_3.1_8b_instruct_fp8_scaled.safetensors)
+- [clip_l_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/text_encoders/clip_l_hidream.safetensors)
+- [clip_g_hidream.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/text_encoders/clip_g_hidream.safetensors)
+- [t5xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/text_encoders/t5xxl_fp8_e4m3fn_scaled.safetensors) This model has been used in many workflows, you may have already downloaded this file.
+- [llama_3.1_8b_instruct_fp8_scaled.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/text_encoders/llama_3.1_8b_instruct_fp8_scaled.safetensors)
 
 **VAE**
--  [ae.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/blob/main/split_files/vae/ae.safetensors) This is Flux's VAE model, if you have used Flux's workflow before, you may have already downloaded this file.
+-  [ae.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/blob/main/split_files/vae/ae.safetensors) This is Flux's VAE model, if you have used Flux's workflow before, you may have already downloaded this file.
 
 **diffusion models**
 We will guide you to download the corresponding model files in the corresponding workflows.
 
 Model file save location
 ```
-📂 Hanzo Studio/
+📂 HanzoStudio/
 ├── 📂 models/
 │   ├── 📂 text_encoders/
 │   │   ├─── clip_l_hidream.safetensors
@@ -96,10 +96,10 @@ Model file save location
 
 #### 1. Model File Download
 
-Please select the appropriate version based on your hardware. Click the link and download the corresponding model file to save it to the `Hanzo Studio/models/diffusion_models/` folder.
+Please select the appropriate version based on your hardware. Click the link and download the corresponding model file to save it to the `HanzoStudio/models/diffusion_models/` folder.
 
-- FP8 version: [hidream_i1_full_fp8.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/resolve/main/split_files/diffusion_models/hidream_i1_full_fp8.safetensors?download=true) requires more than 16GB of VRAM
-- Full version: [hidream_i1_full_f16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/resolve/main/split_files/diffusion_models/hidream_i1_full_fp16.safetensors?download=true) requires more than 27GB of VRAM
+- FP8 version: [hidream_i1_full_fp8.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/resolve/main/split_files/diffusion_models/hidream_i1_full_fp8.safetensors?download=true) requires more than 16GB of VRAM
+- Full version: [hidream_i1_full_f16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/resolve/main/split_files/diffusion_models/hidream_i1_full_fp16.safetensors?download=true) requires more than 27GB of VRAM
 
 #### 2. Workflow File Download
 
@@ -129,10 +129,10 @@ Complete the workflow execution step by step
 ### HiDream-I1 Dev Version Workflow
 
 #### 1. Model File Download
-Please select the appropriate version based on your hardware, click the link and download the corresponding model file to save to the `Hanzo Studio/models/diffusion_models/` folder.
+Please select the appropriate version based on your hardware, click the link and download the corresponding model file to save to the `HanzoStudio/models/diffusion_models/` folder.
 
-- FP8 version: [hidream_i1_dev_fp8.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/resolve/main/split_files/diffusion_models/hidream_i1_dev_fp8.safetensors?download=true) requires more than 16GB of VRAM
-- Full version: [hidream_i1_dev_bf16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/resolve/main/split_files/diffusion_models/hidream_i1_dev_bf16.safetensors?download=true) requires more than 27GB of VRAM
+- FP8 version: [hidream_i1_dev_fp8.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/resolve/main/split_files/diffusion_models/hidream_i1_dev_fp8.safetensors?download=true) requires more than 16GB of VRAM
+- Full version: [hidream_i1_dev_bf16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/resolve/main/split_files/diffusion_models/hidream_i1_dev_bf16.safetensors?download=true) requires more than 27GB of VRAM
 
 #### 2. Workflow File Download
 Please download the image below and drag it into Hanzo Studio to load the corresponding workflow
@@ -161,10 +161,10 @@ Complete the workflow execution step by step
 ### HiDream-I1 Fast Version Workflow
 
 #### 1. Model File Download
-Please select the appropriate version based on your hardware, click the link and download the corresponding model file to save to the `Hanzo Studio/models/diffusion_models/` folder.
+Please select the appropriate version based on your hardware, click the link and download the corresponding model file to save to the `HanzoStudio/models/diffusion_models/` folder.
 
-- FP8 version: [hidream_i1_fast_fp8.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/resolve/main/split_files/diffusion_models/hidream_i1_fast_fp8.safetensors?download=true) requires more than 16GB of VRAM
-- Full version: [hidream_i1_fast_bf16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_Hanzo Studio/resolve/main/split_files/diffusion_models/hidream_i1_fast_bf16.safetensors?download=true) requires more than 27GB of VRAM
+- FP8 version: [hidream_i1_fast_fp8.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/resolve/main/split_files/diffusion_models/hidream_i1_fast_fp8.safetensors?download=true) requires more than 16GB of VRAM
+- Full version: [hidream_i1_fast_bf16.safetensors](https://huggingface.co/hanzoui/HiDream-I1_HanzoStudio/resolve/main/split_files/diffusion_models/hidream_i1_fast_bf16.safetensors?download=true) requires more than 27GB of VRAM
 
 #### 2. Workflow File Download
 Please download the image below and drag it into Hanzo Studio to load the corresponding workflow
@@ -198,8 +198,8 @@ Complete the workflow execution step by step
 - [HiDream-I1-Full-gguf](https://huggingface.co/city96/HiDream-I1-Full-gguf) 
 - [HiDream-I1-Dev-gguf](https://huggingface.co/city96/HiDream-I1-Dev-gguf) 
 
-You need to use the “Unet Loader (GGUF)” node in City96's [Hanzo Studio-GGUF](https://github.com/city96/Hanzo Studio-GGUF) to replace the “Load Diffusion Model” node.
+You need to use the “Unet Loader (GGUF)” node in City96's [HanzoStudio-GGUF](https://github.com/city96/HanzoStudio-GGUF) to replace the “Load Diffusion Model” node.
 
 ### NF4 Version Models
 - [HiDream-I1-nf4](https://github.com/hykilpikonna/HiDream-I1-nf4) 
-- Use the [Hanzo Studio-HiDream-Sampler](https://github.com/SanDiegoDude/Hanzo Studio-HiDream-Sampler) node to use the NF4 version model.
+- Use the [HanzoStudio-HiDream-Sampler](https://github.com/SanDiegoDude/HanzoStudio-HiDream-Sampler) node to use the NF4 version model.

@@ -29,7 +29,7 @@ Metadata 中包含工作流 json 的图片可直接拖入 Hanzo Studio 或使用
 本篇示例中的图片包含对应模型的下载链接，直接拖入 Hanzo Studio 将会自动提示下载。
 
 对于图像预处理器，你可以使用以下自定义节点来完成图像的预处理，在本示例中，我们将提供处理过的图片作为输入。
-- [Hanzo Studio-Advanced-ControlNet](https://github.com/Kosinkadink/Hanzo Studio-Advanced-ControlNet)
+- [HanzoStudio-Advanced-ControlNet](https://github.com/Kosinkadink/HanzoStudio-Advanced-ControlNet)
 - [Hanzo Studio ControlNet aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux)
 </Tip>
 
@@ -60,7 +60,7 @@ Metadata 中包含工作流 json 的图片可直接拖入 Hanzo Studio 或使用
 
 文件保存位置：
 ```
-Hanzo Studio/
+HanzoStudio/
 ├── models/
 │   ├── text_encoders/
 │   │   ├── clip_l.safetensors
@@ -91,7 +91,7 @@ Hanzo Studio/
 ![Hanzo Studio 室内深度图](https://raw.githubusercontent.com/hanzoui/example-workflows/main/controlnet/depth-t2i-adapter_input.png)
 
 或者借助下面自定义节点中完成图像预处理:
-- [Hanzo Studio-Advanced-ControlNet](https://github.com/Kosinkadink/Hanzo Studio-Advanced-ControlNet)
+- [HanzoStudio-Advanced-ControlNet](https://github.com/Kosinkadink/HanzoStudio-Advanced-ControlNet)
 - [Hanzo Studio ControlNet aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux)
 
 ## FLUX.1-Depth-dev-lora 工作流
@@ -123,7 +123,7 @@ LoRA 版本的工作流是在完整版本的基础上，添加了 LoRA 模型,�
 
 文件保存位置：
 ```
-Hanzo Studio/
+HanzoStudio/
 ├── models/
 │   ├── text_encoders/
 │   │   ├── clip_l.safetensors
@@ -153,7 +153,7 @@ Hanzo Studio/
 
 尝试使用[FLUX.1-Canny-dev-lora](https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev-lora) 模型完成 Canny 版本的工作流
 
-借助 [Hanzo Studio-Advanced-ControlNet](https://github.com/Kosinkadink/Hanzo Studio-Advanced-ControlNet) 或者 [Hanzo Studio ControlNet aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux) 完成图像预处理
+借助 [HanzoStudio-Advanced-ControlNet](https://github.com/Kosinkadink/HanzoStudio-Advanced-ControlNet) 或者 [Hanzo Studio ControlNet aux](https://github.com/Fannovel16/hanzo_studio_controlnet_aux) 完成图像预处理
 
 ## 社区版本 Flux Controlnets
 
@@ -166,6 +166,6 @@ XLab 和 InstantX + Shakker Labs 已经为 Flux 发布了 Controlnet。
 
 **XLab**: [flux-controlnet-collections](https://huggingface.co/XLabs-AI/flux-controlnet-collections) 
 
-将这些文件放在 `Hanzo Studio/models/controlnet` 目录下。
+将这些文件放在 `HanzoStudio/models/controlnet` 目录下。
 
 你可以访问[Flux Controlnet 示例](https://raw.githubusercontent.com/hanzoai/studio_examples/refs/heads/master/flux/flux_controlnet_example.png)来获取对应工作流图片，并使用[这里](https://raw.githubusercontent.com/hanzoai/studio_examples/refs/heads/master/flux/girl_in_field.png)的图片作为输入图片。

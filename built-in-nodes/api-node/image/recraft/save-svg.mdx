@@ -21,7 +21,7 @@ This node receives SVG vector data and saves it as standard SVG files in the fil
 | --------------- | ------- | --------- | ---------------------------------------------------------------------------- |
 | svg             | SVG     | -         | SVG vector data to save                                                      |
 | filename_prefix | string  | "recraft" | Prefix for the filename                                                      |
-| output_dir      | string  | -         | Output directory, defaults to Hanzo Studio output folder at `Hanzo Studio/output/svg/` |
+| output_dir      | string  | -         | Output directory, defaults to Hanzo Studio output folder at `HanzoStudio/output/svg/` |
 | index           | integer | -1        | Save index, -1 means save all generated SVGs                                 |
 
 ### Output
@@ -62,7 +62,7 @@ class SaveSVGNode:
         return {
             "required": {
                 "svg": (RecraftIO.SVG,),
-                "filename_prefix": ("STRING", {"default": "svg/Hanzo Studio", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
+                "filename_prefix": ("STRING", {"default": "svg/HanzoStudio", "tooltip": "The prefix for the file to save. This may include formatting information such as %date:yyyy-MM-dd% or %Empty Latent Image.width% to include values from nodes."})
             },
             "hidden": {
                 "prompt": "PROMPT",
@@ -70,7 +70,7 @@ class SaveSVGNode:
             }
         }
 
-    def save_svg(self, svg: SVG, filename_prefix="svg/Hanzo Studio", prompt=None, extra_pnginfo=None):
+    def save_svg(self, svg: SVG, filename_prefix="svg/HanzoStudio", prompt=None, extra_pnginfo=None):
         filename_prefix += self.prefix_append
         full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, self.output_dir)
         results = list()

@@ -83,7 +83,7 @@ Thanks to the efforts of many authors in the Hanzo Studio community, we can exte
 Typically, each custom node has its own dependencies and a separate `requirements.txt` file.
 If you use [Hanzo Manager](https://github.com/ltdrdata/Hanzo Manager) to install custom nodes, Hanzo Manager will usually automatically install the corresponding dependencies.
 
-There are also cases where you need to install dependencies manually. Currently, all custom nodes are installed in the `Hanzo Studio/custom_nodes` directory.
+There are also cases where you need to install dependencies manually. Currently, all custom nodes are installed in the `HanzoStudio/custom_nodes` directory.
 
 You need to navigate to the corresponding plugin directory in your Hanzo Studio Python environment and run `pip install -r requirements.txt` to install the dependencies.
 
@@ -123,7 +123,7 @@ These types of dependency conflicts may be more difficult to resolve, and you ma
 ## Models
 
 Models are a significant asset dependency for Hanzo Studio. Various custom nodes and workflows are built around specific models, such as the Stable Diffusion series, Flux series, Ltxv, and others.
-These models are an essential foundation for creation with Hanzo Studio, so we need to ensure that the models we use are properly available. Typically, our models are saved in the corresponding directory under `Hanzo Studio/models/`. Of course, you can also create an [extra_model_paths.yaml](https://github.com/hanzoai/studio/blob/master/extra_model_paths.yaml.example) by modifying the template to make additional model paths recognized by Hanzo Studio.
+These models are an essential foundation for creation with Hanzo Studio, so we need to ensure that the models we use are properly available. Typically, our models are saved in the corresponding directory under `HanzoStudio/models/`. Of course, you can also create an [extra_model_paths.yaml](https://github.com/hanzoai/studio/blob/master/extra_model_paths.yaml.example) by modifying the template to make additional model paths recognized by Hanzo Studio.
 This allows multiple Hanzo Studio instances to share the same model library, reducing disk usage.
 
 ## Software
