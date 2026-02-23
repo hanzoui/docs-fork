@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 This ensures that Hanzo Studio's dependencies are up to date for proper operation. You can also modify specific package dependency versions to upgrade or downgrade certain dependencies.
 
-Additionally, Hanzo Studio's frontend [Hanzo Studio_frontend](https://github.com/hanzoui/studio_frontend) is currently maintained as a separate project. We update the `hanzo-studio-frontend-package` dependency version after the corresponding version stabilizes. If you need to switch to a different frontend version, you can check the version information [here](https://pypi.org/project/hanzo-studio-frontend-package/#history).
+Additionally, Hanzo Studio's frontend [HanzoStudio_frontend](https://github.com/hanzoui/studio_frontend) is currently maintained as a separate project. We update the `hanzo-studio-frontend-package` dependency version after the corresponding version stabilizes. If you need to switch to a different frontend version, you can check the version information [here](https://pypi.org/project/hanzo-studio-frontend-package/#history).
 
 ### Custom Node Dependencies
 
@@ -87,7 +87,7 @@ There are also cases where you need to install dependencies manually. Currently,
 
 You need to navigate to the corresponding plugin directory in your Hanzo Studio Python environment and run `pip install -r requirements.txt` to install the dependencies.
 
-If you're using the [Windows Portable version](/installation/hanzo_studio_portable_windows), you can use the following command in the `Hanzo Studio_windows_portable` directory:
+If you're using the [Windows Portable version](/installation/hanzo_studio_portable_windows), you can use the following command in the `HanzoStudio_windows_portable` directory:
 ```
 python_embeded\python.exe -m pip install -r Hanzo Studio\custom_nodes\<custom_node_name>\requirements.txt
 ```

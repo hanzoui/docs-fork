@@ -30,17 +30,17 @@ Please update Hanzo Studio to the latest version before starting the examples to
 
 ## Model Installation
 
-All models mentioned in this guide can be found [here](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/tree/main/split_files). Below are the common models you'll need for the examples in this guide, which you can download in advance:
+All models mentioned in this guide can be found [here](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/tree/main/split_files). Below are the common models you'll need for the examples in this guide, which you can download in advance:
 
 Choose one version from **Text encoders** to download:
-- [umt5_xxl_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
-- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
+- [umt5_xxl_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true)
+- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true)
 
 **VAE**
-- [wan_2.1_vae.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
+- [wan_2.1_vae.safetensors](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors?download=true)
 
 **CLIP Vision**
-- [clip_vision_h.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors?download=true)
+- [clip_vision_h.safetensors](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors?download=true)
 
 File storage locations:
 ```
@@ -57,14 +57,14 @@ Hanzo Studio/
 ```
 
 <Note>
-For diffusion models, we'll use the fp16 precision models in this guide because we've found that they perform better than the bf16 versions. If you need other precision versions, please visit [here](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/tree/main/split_files/diffusion_models) to download them.
+For diffusion models, we'll use the fp16 precision models in this guide because we've found that they perform better than the bf16 versions. If you need other precision versions, please visit [here](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/tree/main/split_files/diffusion_models) to download them.
 </Note>
 
 ## Wan2.1 Text-to-Video Workflow
 
-Before starting the workflow, please download [wan2.1_t2v_1.3B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors?download=true) and save it to the `Hanzo Studio/models/diffusion_models/` directory.
+Before starting the workflow, please download [wan2.1_t2v_1.3B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors?download=true) and save it to the `Hanzo Studio/models/diffusion_models/` directory.
 
-> If you need other t2v precision versions, please visit [here](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/tree/main/split_files/diffusion_models) to download them.
+> If you need other t2v precision versions, please visit [here](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/tree/main/split_files/diffusion_models) to download them.
 
 ### 1. Workflow File Download
 
@@ -99,7 +99,7 @@ We'll use the following image as input:
 ![Wan2.1 Image-to-Video Workflow 14B 480P Workflow Example Input Image](https://raw.githubusercontent.com/hanzoui/example-workflows/refs/heads/main/wan2.1/input/flux_dev_example.png)
 
 #### 2. Model Download
-Please download [wan2.1_i2v_480p_14B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp16.safetensors?download=true) and save it to the `Hanzo Studio/models/diffusion_models/` directory.
+Please download [wan2.1_i2v_480p_14B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp16.safetensors?download=true) and save it to the `Hanzo Studio/models/diffusion_models/` directory.
 
 #### 3. Complete the Workflow Step by Step
 
@@ -127,7 +127,7 @@ We'll use the following image as input:
 
 #### 2. Model Download
 
-Please download [wan2.1_i2v_720p_14B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_Hanzo Studio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_fp16.safetensors?download=true) and save it to the `Hanzo Studio/models/diffusion_models/` directory.
+Please download [wan2.1_i2v_720p_14B_fp16.safetensors](https://huggingface.co/hanzoui/Wan_2.1_HanzoStudio_repackaged/resolve/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_fp16.safetensors?download=true) and save it to the `Hanzo Studio/models/diffusion_models/` directory.
 
 #### 3. Complete the Workflow Step by Step 
 
